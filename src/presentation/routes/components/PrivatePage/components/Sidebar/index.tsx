@@ -83,7 +83,10 @@ export const SideBar = () => {
         <Menu>
           {menuItems.map((item) => (
             <MenuItem
-              onClick={() => handleMenuItemClick(item)}
+              onClick={() => {
+                handleMenuItemClick(item);
+                setIsOpen(false); // Fechar o menu após clicar em um item
+              }}
               key={item.name}
               className={activeItem === item.name ? "activated" : ""}
             >
