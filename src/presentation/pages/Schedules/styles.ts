@@ -52,7 +52,6 @@ export const ContainerButtons = styled.div`
 export const WrapperTable = styled.div`
   max-width: 100%;
   padding: 1rem;
-  height: 600px;
   overflow-x: auto;
   @media screen and (max-width: 768px) {
     justify-content: center;
