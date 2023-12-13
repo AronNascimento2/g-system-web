@@ -3,11 +3,22 @@ import styled from 'styled-components';
 interface ButtonContainerProps {
   disabled?: boolean;
   loading?: boolean;
+  size?: 'small' | 'medium' | 'large';
+  secondaryColor?: string;
 }
+
+const sizes = {
+  small: '100px',
+  medium: '150px',
+  large: '200px',
+};
+
+
+
 
 export const ButtonContainer = styled.button<ButtonContainerProps>`
   position: relative;
-  padding: 10px 20px;
+  width: ${({ size }) => sizes[size || 'medium']};
   font-size: 16px;
   cursor: ${({ disabled, loading }) => (disabled || loading ? 'not-allowed' : 'pointer')};
   background-color: ${({ disabled }) => (disabled ? '#ccc' : '#3498db')};
@@ -16,10 +27,11 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   border-radius: 4px;
   outline: none;
   transition: background-color 0.3s ease;
-  width: 100%;
   align-items: center;
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+
   &:hover {
     background-color: ${({ disabled }) => (disabled ? '#ccc' : '#2980b9')};
   }
@@ -28,7 +40,16 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
     opacity: 0.6;
     cursor: not-allowed;
   }
+
+  @media screen and (max-width: 768px) {
+    /* Estilos para telas menores que 768px de largura */
+    width: 120px;
+    height: 25px;
+    font-size: 12px;
+    /* Adicione mais estilos conforme necessário para ajustar a responsividade */
+  }
 `;
+
 
 export const Loader = styled.div`
   border: 6px solid #f3f3f3;
@@ -46,4 +67,12 @@ export const Loader = styled.div`
       transform: rotate(360deg);
     }
   }
+`;
+
+
+
+
+export const IconContainer = styled.span<{ position: 'left' | 'right' }>`
+  order: ${({ position }) => (position === 'left' ? '-1' : '1')};
+  margin: 0 8px; /* Ajuste conforme necessário */
 `;

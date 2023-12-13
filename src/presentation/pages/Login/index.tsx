@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/Button";
 import { useAuth } from "../../utils/useAuth";
 import InputMask from "react-input-mask";
+import { WrapperButton } from "../../components/WrapperButton/styles";
 
 export const LoginPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -123,7 +124,10 @@ export const LoginPage: React.FC = () => {
             <p>{error}</p>
           </div>
         )}
-        <Button title={"Entrar"} loading={loading} />
+        <WrapperButton className="buttons">
+          <Button title={"Entrar"} loading={loading} />
+          <Button title={"Esqueci a senha"} loading={loading} />
+        </WrapperButton>
       </form>
     </LoginContainer>
   );

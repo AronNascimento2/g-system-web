@@ -10,7 +10,10 @@ export const LoginContainer = styled.div`
   align-items: center;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
+  .buttons{
+    padding-top: 1rem;
+    justify-content: center;
+  }
   .error-message {
     color: #d8000c;
     background-color: #ffbaba;
@@ -30,7 +33,7 @@ export const InputGroup = styled.div`
   .inputmask {
     font-size: 20px;
     width: 400px;
-    height: 30px;
+    height: 50px;
     padding: 8px;
     border-radius: 3px;
     border: 1px solid #ccc;
@@ -43,7 +46,7 @@ export const InputGroup = styled.div`
 export const Input = styled.input`
   font-size: 20px;
   width: 400px;
-  height: 30px;
+  height: 50px;
   padding: 8px;
   border-radius: 3px;
   border: 1px solid #ccc;

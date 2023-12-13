@@ -18,4 +18,7 @@ export const PageRightContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  width: auto;
+  overflow-x: hidden;
+
 `;
