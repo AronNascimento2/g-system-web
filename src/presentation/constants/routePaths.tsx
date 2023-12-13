@@ -7,6 +7,7 @@ import {
   HomePage,
   LoginPage,
   PendenciesPage,
+  SalesPage,
   SchedulesPage,
   SettingsPage,
   SinistersPage,
@@ -31,7 +32,7 @@ export const ROUTES_PATHS = [
   },
   {
     path: "/Vendas",
-    element: ChargesPage,
+    element: SalesPage,
     title: "Vendas",
     isPrivate: true,
     Permissions: [],

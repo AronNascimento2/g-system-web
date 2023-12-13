@@ -4,7 +4,7 @@ export const SinistersPage = () => {
 
     return (
       <Container>
-            Página Sinistro em Construção !!!
+            Página Sinistros em Construção !!!
 
       </Container>
     );
