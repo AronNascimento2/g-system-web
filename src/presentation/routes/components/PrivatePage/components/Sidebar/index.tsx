@@ -46,7 +46,7 @@ export const SideBar = () => {
     navigate("/");
   };
 
-  const userPermissions = user && user.Permissions ? user.Permissions : [];
+  const userPermissions = user && user?.Permissions ? user?.Permissions : [];
 
   const menuItems = ROUTES_PATHS.filter(
     (route) => route.isPrivate && userPermissions.includes(route.title) // Filter based on permissions

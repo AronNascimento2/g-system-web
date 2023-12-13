@@ -5,7 +5,7 @@ import { Button } from "../../components/Button";
 import { Table } from "../../components/Table";
 import { BarLoader } from "react-spinners";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRightRotate, faArrowsRotate, faCheck, faClose, faDollar, faEdit, faEnvelope, faFile, faFilter, faGlobe, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {  faArrowsRotate, faCheck, faClose, faDollar, faEdit, faEnvelope, faFile, faFilter, faGlobe, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export const SchedulesPage = () => {
   const [appointments, setAppointments] = useState<Appointment[]>([]);

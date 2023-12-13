@@ -18,7 +18,7 @@ const sizes = {
 
 export const ButtonContainer = styled.button<ButtonContainerProps>`
   position: relative;
-  width: ${({ size }) => sizes[size || 'medium']};
+  width: ${({ size }) => sizes[size ?? 'medium']};
   font-size: 16px;
   cursor: ${({ disabled, loading }) => (disabled || loading ? 'not-allowed' : 'pointer')};
   background-color: ${({ disabled }) => (disabled ? '#ccc' : '#3498db')};

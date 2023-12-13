@@ -1,7 +1,6 @@
 import {
   faCalendarCheck,
   faChartLine,
-  faEarthAmerica,
   faExclamation,
   faHandHoldingDollar,
   faHandshake,
