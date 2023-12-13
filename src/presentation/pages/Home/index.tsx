@@ -1,11 +1,5 @@
-import "./styles.css";
+import { Container } from "../Attendance/styles";
 
 export const HomePage = () => {
-
-  return (
-    <div>
-     Sumari
-    </div>
-  );
+  return <Container>Página Sumario em Construção !!!</Container>;
 };
-

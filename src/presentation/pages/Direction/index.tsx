@@ -1,12 +1,5 @@
+import { Container } from "../Attendance/styles";
 
 export const DirectionPage = () => {
-
-    return (
-      <div>
-        Direction
-       
-      </div>
-    );
-  };
-  
-  
+  return <Container>Página Diretoria em Construção !!!</Container>;
+};

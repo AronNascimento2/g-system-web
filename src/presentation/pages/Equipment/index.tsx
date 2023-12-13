@@ -1,10 +1,12 @@
+import { Container } from "../Attendance/styles";
 
 export const EquipmentPage = () => {
 
     return (
-      <div>
-       Equipment
-      </div>
+      <Container>
+            Página Equipamentos em Construção !!!
+
+      </Container>
     );
   };
   

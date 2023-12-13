@@ -1,10 +1,9 @@
+import { Container } from "./styles";
 
 export const AttendancePage = () => {
-
   return (
-    <div>
-     Atttendance
-    </div>
+    <Container>
+      Página Atendimento em Construção !!!{" "}
+    </Container>
   );
 };
-

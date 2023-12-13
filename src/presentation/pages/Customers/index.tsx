@@ -1,10 +1,12 @@
+import { Container } from "../Attendance/styles";
 
 export const CustomersPage = () => {
 
     return (
-      <div>
-       Customers
-      </div>
+      <Container>
+            Página Clientes em Construção !!!
+
+      </Container>
     );
   };
   

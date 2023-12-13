@@ -1,12 +1,5 @@
+import { Container } from "../Attendance/styles";
 
 export const PendenciesPage = () => {
-
-    return (
-      <div>
-        Pendencies
-       
-      </div>
-    );
-  };
-  
-  
+  return <Container>Página Pendencias em Construção !!!</Container>;
+};

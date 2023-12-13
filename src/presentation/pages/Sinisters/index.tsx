@@ -1,10 +1,12 @@
+import { Container } from "../Attendance/styles";
 
 export const SinistersPage = () => {
 
     return (
-      <div>
-       Sinister
-      </div>
+      <Container>
+            Página Sinistro em Construção !!!
+
+      </Container>
     );
   };
   

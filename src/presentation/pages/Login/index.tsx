@@ -37,7 +37,7 @@ export const LoginPage: React.FC = () => {
     setShowPassword(!showPassword);
   };
 
-  //useEffect para redirecionar a pagina caso esteja autenticado e o usuário feche a janela
+  //useEffect para redirecionar a Página caso esteja autenticado e o usuário feche a janela
   useEffect(() => {
     const token = localStorage.getItem("token");
     const expiration = localStorage.getItem("expiration");

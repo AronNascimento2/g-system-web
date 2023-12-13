@@ -1,11 +1,5 @@
+import { Container } from "../Attendance/styles";
 
 export const ChargesPage = () => {
-
-    return (
-      <div>
-       Charges
-      </div>
-    );
-  };
-  
-  
+  return <Container>Página Cobranças em Construção !!!</Container>;
+};

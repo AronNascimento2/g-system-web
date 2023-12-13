@@ -1,11 +1,5 @@
+import { Container } from "../Attendance/styles";
 
 export const SupervisionPage = () => {
-
-    return (
-      <div>
-       Supervison
-      </div>
-    );
-  };
-  
-  
+  return <Container>Página Supervisao em Construção !!!</Container>;
+};
