@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createContext, useEffect, useState } from "react";
 import { AuthData, authenticate } from "../../../services/Authentication";
 
@@ -49,7 +50,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       } else {
         throw new Error(response.message || "Erro ao autenticar");
       }
-    } catch (error) {
+    } catch (error:any) {
       throw new Error("Erro ao autenticar: " + error.message);
     }
   };
