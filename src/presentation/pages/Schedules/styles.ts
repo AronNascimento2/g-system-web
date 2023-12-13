@@ -20,6 +20,8 @@ export const ContainerButtons = styled.div`
     height: 40px;
   }
   @media screen and (max-width: 768px) {
+    justify-content: center;
+    padding: 0;
     select {
       width: 120px;
       height: 25px;
@@ -34,4 +36,9 @@ export const WrapperTable = styled.div`
 
   height: 600px;
   overflow-x: auto;
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    padding: 0;
+    padding-top: 1rem;
+  }
 `;
