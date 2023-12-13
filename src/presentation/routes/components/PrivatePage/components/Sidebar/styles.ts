@@ -33,7 +33,8 @@ export const Menu = styled.ul`
   list-style: none;
   padding: 0;
   @media (max-width: 767px) {
-    width: 100%;
+    max-width: 50%;
+    height: 100%;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     background-color: #fff;
     top: 8%;
@@ -44,6 +45,7 @@ export const Menu = styled.ul`
 export const MenuItem = styled.li<SidebarProps>`
   padding: 15px;
   display: flex;
+  max-width: 100%;
   &.disabled {
     opacity: 0.5; /* Estilo para itens desabilitados */
     pointer-events: none; /* Desabilitar eventos de clique */
