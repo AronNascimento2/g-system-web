@@ -46,6 +46,7 @@ export const Menu = styled.ul`
 export const MenuItem = styled.li<SidebarProps>`
   padding: 15px;
   display: flex;
+  gap:0.5rem;
   &.disabled {
     opacity: 0.5; /* Estilo para itens desabilitados */
     pointer-events: none; /* Desabilitar eventos de clique */

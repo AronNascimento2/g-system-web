@@ -11,6 +11,8 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../../../utils/useAuth";
 import { ROUTES_PATHS } from "../../../../../constants/routePaths";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export const SideBar = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -51,6 +53,7 @@ export const SideBar = () => {
   ).map((route) => ({
     name: route.title,
     onClick: () => navigate(route.path),
+    icon: route.icon,
   }));
 
   // Adicionar item "Sair" para o logout
@@ -84,12 +87,18 @@ export const SideBar = () => {
           {menuItems.map((item) => (
             <MenuItem
               onClick={() => {
-                handleMenuItemClick(item);
-                setIsOpen(false); // Fechar o menu após clicar em um item
+                if (userPermissions.includes(item.name)) {
+                  handleMenuItemClick(item);
+                }
               }}
               key={item.name}
-              className={activeItem === item.name ? "activated" : ""}
+              className={`${activeItem === item.name ? "activated" : ""} ${
+                !userPermissions.includes(item.name) ? "disabled" : ""
+              }`}
+              disabled={!userPermissions.includes(item.name)}
             >
+              <FontAwesomeIcon icon={item.icon as IconProp} />{" "}
+              {/* Ícone antes do texto */}
               {item.name}
             </MenuItem>
           ))}
@@ -119,6 +128,8 @@ export const SideBar = () => {
                 }`}
                 disabled={!userPermissions.includes(item.name)}
               >
+                <FontAwesomeIcon icon={item.icon as IconProp} />{" "}
+                {/* Ícone antes do texto */}
                 {item.name}
               </MenuItem>
             ))}
