@@ -46,7 +46,7 @@ export const SideBar = () => {
     navigate("/");
   };
 
-  const userPermissions = user && user?.Permissions ? user?.Permissions : [];
+  const userPermissions = user && user.Permissions ? user.Permissions : [];
 
   const menuItems = ROUTES_PATHS.filter(
     (route) => route.isPrivate && userPermissions.includes(route.title) // Filter based on permissions
@@ -85,22 +85,24 @@ export const SideBar = () => {
       {isMobile && isOpen && (
         <Menu>
           {menuItems.map((item) => (
-            <MenuItem
-              onClick={() => {
-                if (userPermissions.includes(item.name)) {
-                  handleMenuItemClick(item);
-                }
-              }}
-              key={item.name}
-              className={`${activeItem === item.name ? "activated" : ""} ${
-                !userPermissions.includes(item.name) ? "disabled" : ""
-              }`}
-              disabled={!userPermissions.includes(item.name)}
-            >
-              <FontAwesomeIcon icon={item.icon as IconProp} />{" "}
-              {/* Ícone antes do texto */}
-              {item.name}
-            </MenuItem>
+           <MenuItem
+                onClick={() => {
+                  if (userPermissions.includes(item.name)) {
+                    handleMenuItemClick(item);
+                    
+                    setIsOpen(false); // Fechar o menu após clicar em um item
+                  }
+                }}
+                key={item.name}
+                className={`${activeItem === item.name ? "activated" : ""} ${
+                  !userPermissions.includes(item.name) ? "disabled" : ""
+                }`}
+                disabled={!userPermissions.includes(item.name)}
+              >
+                <FontAwesomeIcon icon={item.icon as IconProp} />{" "}
+                {/* Ícone antes do texto */}
+                {item.name}
+              </MenuItem>
           ))}
           <MenuItem onClick={() => handleMenuItemClick(logoutItem)}>
             {logoutItem.name}
