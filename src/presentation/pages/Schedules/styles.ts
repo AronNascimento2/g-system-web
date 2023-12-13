@@ -7,7 +7,7 @@ export const ContainerButtons = styled.div`
   display: flex;
   width: 100%;
   gap: 0.5rem;
-  padding: 2rem;
+  padding: 1rem;
   flex-wrap: wrap;
   .input-label {
     display: flex;
@@ -30,6 +30,8 @@ export const ContainerButtons = styled.div`
 
 export const WrapperTable = styled.div`
   max-width: 100%;
+  padding: 1rem;
+
   height: 600px;
   overflow-x: auto;
 `;
