@@ -22,6 +22,7 @@ export const Header = styled.header`
   @media (max-width: 767px) {
     width: 100%;
     height: 80px;
+    padding-bottom: 0.5rem;
     display: flex;
     align-items: center;
     img {
