@@ -22,7 +22,7 @@ export const Container = styled.div`
 export const ContainerButtons = styled.div`
   display: flex;
   width: 100%;
-  gap: 0.5rem;
+  gap: 0.4rem;
   padding: 1rem;
   flex-wrap: wrap;
 

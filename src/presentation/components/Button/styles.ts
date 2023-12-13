@@ -8,7 +8,7 @@ interface ButtonContainerProps {
 }
 
 const sizes = {
-  small: '100px',
+  small: '120px',
   medium: '150px',
   large: '200px',
 };
@@ -45,7 +45,8 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
     /* Estilos para telas menores que 768px de largura */
     width: 120px;
     height: 25px;
-    font-size: 12px;
+    font-size: 11px;
+    padding: 0.1rem;
     /* Adicione mais estilos conforme necessário para ajustar a responsividade */
   }
 `;
