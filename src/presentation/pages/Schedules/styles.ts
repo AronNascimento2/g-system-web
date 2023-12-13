@@ -22,6 +22,7 @@ export const ContainerButtons = styled.div`
   @media screen and (max-width: 768px) {
     justify-content: center;
     padding: 0;
+    margin-top: 2rem;
     margin-bottom: 2rem;
     select {
       width: 120px;
