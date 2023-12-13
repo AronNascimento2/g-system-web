@@ -37,6 +37,7 @@ export const Menu = styled.ul`
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     background-color: #fff;
     top: 6%;
+    position:absolute;
   }
 `;
 
@@ -62,7 +63,10 @@ export const MenuItem = styled.li<SidebarProps>`
   @media (max-width: 767px) {
     color: black;
   }
-
+  &.activated {
+    background-color: #0098da;
+    color: white;
+  }
   /* Estiliza o último item */
   &:last-child {
     flex:1;
