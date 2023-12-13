@@ -1,6 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  .loader-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-size: 20px;
+      color: #2980b9;
+    }
+  }
   width: 100%;
 `;
 export const ContainerButtons = styled.div`
@@ -9,6 +21,7 @@ export const ContainerButtons = styled.div`
   gap: 0.5rem;
   padding: 1rem;
   flex-wrap: wrap;
+
   .input-label {
     display: flex;
     align-items: center;

@@ -3,20 +3,25 @@ import { Appointment, fetchAppointments } from "../../../services/Schedule";
 import { Container, ContainerButtons, WrapperTable } from "./styles";
 import { Button } from "../../components/Button";
 import { Table } from "../../components/Table";
+import { BarLoader } from "react-spinners";
 
 export const SchedulesPage = () => {
   const [appointments, setAppointments] = useState<Appointment[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const startDate = "2023-10-01";
     const endDate = "2023-10-31";
 
     const fetchData = async () => {
+      setLoading(true);
       try {
         const data = await fetchAppointments(startDate, endDate);
         setAppointments(data);
+        setLoading(false);
       } catch (error) {
         console.error("Erro ao buscar os agendamentos:", error);
+        setLoading(false);
       }
     };
 
@@ -54,7 +59,7 @@ export const SchedulesPage = () => {
     <Container>
       <ContainerButtons className="">
         <Button size="small" title="Atualizar" />
-        <div  className="input-label">
+        <div className="input-label">
           <select name="" id=""></select>
         </div>
         <Button size="small" title="Confirmar" />
@@ -68,10 +73,17 @@ export const SchedulesPage = () => {
         <Button size="small" title="Enviar" />
         <Button size="small" title="Filtrar" />
       </ContainerButtons>
-
-      <WrapperTable>
-        <Table rows={appointments} columns={tableColumns} />
-      </WrapperTable>
+      {!loading ? (
+        <div className="loader-container">
+        <BarLoader width={300} height={10} color="#3498db"/>
+          <p>Carregando...</p>
+      </div>
+   
+      ) : (
+        <WrapperTable>
+          <Table rows={appointments} columns={tableColumns} />
+        </WrapperTable>
+      )}
     </Container>
   );
 };
