@@ -1,12 +1,10 @@
 import React from 'react';
 import { StyledTable } from './styles';
 
-interface Appointment {
-  [key: string]: string | number | boolean; // Tipos genéricos para os dados dos agendamentos
-}
+
 
 interface TableProps {
-  rows: Appointment[];
+  rows ;
   columns: { key: string; title: string }[]; // Array de objetos representando as colunas da tabela
 }
 
