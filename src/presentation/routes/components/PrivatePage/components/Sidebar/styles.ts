@@ -22,7 +22,6 @@ export const Header = styled.header`
   @media (max-width: 767px) {
     width: 100%;
     height: 80px;
-    padding-bottom: 0.5rem;
     display: flex;
     align-items: center;
     img {
@@ -37,7 +36,7 @@ export const Menu = styled.ul`
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     background-color: #fff;
-    top: 6%;
+    top: 8%;
     position:absolute;
   }
 `;
