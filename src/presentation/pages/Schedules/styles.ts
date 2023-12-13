@@ -13,7 +13,11 @@ export const Container = styled.div`
       color: #2980b9;
     }
   }
-  width: 100%;
+  @media screen and (max-width: 768px) {
+    .loader-container {
+      height: 70%;
+    }
+  }
 `;
 export const ContainerButtons = styled.div`
   display: flex;
