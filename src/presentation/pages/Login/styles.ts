@@ -17,9 +17,8 @@ export const LoginContainer = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: 1;
-    padding: 20px;
     overflow: hidden;
   }
 
@@ -60,7 +59,6 @@ export const LoginContainer = styled.div`
       width: 80%;
       position: absolute;
       top: 0%;
-      height: 90%;
       .buttons {
         width: 100%;
 
