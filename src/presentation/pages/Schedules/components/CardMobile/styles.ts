@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  height: 300px;
   border: 1px solid lightgray;
   border-radius: 20px;
   margin-bottom: 1rem;
@@ -13,9 +12,14 @@ export const DetailsContent = styled.div`
   display: flex;
   gap: 2rem;
   padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  height: auto;
   .content {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem;
     div {
       display: flex;
       flex-direction: column;
@@ -29,7 +33,6 @@ export const DetailsContent = styled.div`
     .info {
       display: flex;
       align-items: center;
-      height: 30px;
       margin: 0;
     }
   }
@@ -41,7 +44,7 @@ export const WrapperContent = styled.div`
     gap: 0.5rem;
     background-color: #2980b9;
     border-radius: 20px 20px 0 0;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     color: #fff;
     .name {
       font-size: 20px;
