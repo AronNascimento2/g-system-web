@@ -14,6 +14,8 @@ export const Sidebar = styled.div<SidebarProps>`
     align-items: center;
     justify-content: center;
     padding: 1rem;
+    width:300px;
+    height: 178px;
   }
   @media (max-width: 767px) {
     left: ${({ isopen }) => (isopen ? "0" : "-250px")};

@@ -4,6 +4,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import {
+  Container,
   Input,
   InputGroup,
   InputWrapper,
@@ -74,61 +75,74 @@ export const LoginPage: React.FC = () => {
   };
 
   return (
-    <LoginContainer>
-      <img
-        src="/logo.png"
-        alt="Logo"
-        style={{ maxWidth: "100%", height: "auto" }}
-      />
-      <form onSubmit={handleLogin}>
-        <InputGroup>
-          <InputMask
-            mask="99.999.999/9999-99"
-            value={cnpj}
-            onChange={(e) => setCnpj(e.target.value)}
-            placeholder="CNPJ"
-            autoComplete="tax-id"
-            required
-            className="inputmask"
-            type="text"
-            ref={cnpjInputRef} // Aplicar a ref ao elemento de CNPJ
+    <Container>
+      <div className="div-logo">
+        <img
+          src="/logo.png"
+          alt="Logo"
+        />
+      </div>
+      <LoginContainer>
+        <form onSubmit={handleLogin}>
+          <img
+            className="icon"
+            src="/logo.png"
+            alt="Logo"
+            style={{ maxWidth: "100%", height: "auto" }}
           />
-        </InputGroup>
-        <InputGroup>
-          <Input
-            placeholder="Usuário"
-            type="text"
-            autoComplete="name"
-            value={username}
-            onChange={(e) => setUserName(e.target.value)}
-            required
-          />
-        </InputGroup>
-        <InputGroup>
-          <InputWrapper>
-            <Input
-              placeholder="Senha"
-              type={showPassword ? "text" : "password"}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+          <InputGroup>
+            <InputMask
+              mask="99.999.999/9999-99"
+              value={cnpj}
+              onChange={(e) => setCnpj(e.target.value)}
+              placeholder="CNPJ"
+              autoComplete="tax-id"
               required
-              autoComplete="current-password" // Adicionar o atributo autocomplete
+              className="inputmask"
+              type="text"
+              ref={cnpjInputRef} // Aplicar a ref ao elemento de CNPJ
             />
-            <TogglePasswordVisibility onClick={togglePasswordVisibility}>
-              {showPassword ? <FaEyeSlash /> : <FaEye />}
-            </TogglePasswordVisibility>
-          </InputWrapper>
-        </InputGroup>
-        {error && (
-          <div className="error-message">
-            <p>{error}</p>
-          </div>
-        )}
-        <WrapperButton className="buttons">
-          <Button title={"Entrar"} loading={loading} />
-          <Button title={"Esqueci a senha"} loading={loading} />
-        </WrapperButton>
-      </form>
-    </LoginContainer>
+          </InputGroup>
+          <InputGroup>
+            <Input
+              placeholder="Usuário"
+              type="text"
+              autoComplete="name"
+              value={username}
+              onChange={(e) => setUserName(e.target.value)}
+              required
+            />
+          </InputGroup>
+          <InputGroup>
+            <InputWrapper>
+              <Input
+                placeholder="Senha"
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                autoComplete="current-password" // Adicionar o atributo autocomplete
+              />
+              <TogglePasswordVisibility onClick={togglePasswordVisibility}>
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </TogglePasswordVisibility>
+            </InputWrapper>
+          </InputGroup>
+          {error && (
+            <div className="error-message">
+              <p>{error}</p>
+            </div>
+          )}
+          <WrapperButton className="buttons">
+            <Button className="button" title={"Entrar"} loading={loading} />
+            <Button
+              className="button"
+              title={"Esqueci a senha"}
+              loading={loading}
+            />
+          </WrapperButton>
+        </form>
+      </LoginContainer>
+    </Container>
   );
 };
