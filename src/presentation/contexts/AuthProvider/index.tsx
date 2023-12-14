@@ -26,17 +26,17 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [logo, setLogo] = useState<string | null>('');
 
   useEffect(() => {
-    const storedToken = localStorage.getItem("token");
-    const storedExpiration = localStorage.getItem("expiration");
-    const storedPermissions = localStorage.getItem("permissions");
-    const storedLogo = localStorage.getItem("logo");
-
+    const storedToken = localStorage.getItem("token") ?? ''; // Definir um valor padrão caso seja nulo ou undefined
+    const storedExpiration = localStorage.getItem("expiration") ?? '';
+    const storedPermissions = localStorage.getItem("permissions") ?? '';
+    const storedLogo = localStorage.getItem("logo") ?? '';
+  
     if (
       storedToken &&
       storedExpiration &&
       storedPermissions &&
-      storedLogo !== null &&
-      storedLogo !== undefined // Verifica se storedLogo não é null ou undefined
+      storedLogo !== ''
+ 
     ) {
       const expiration = new Date(storedExpiration).getTime();
       const currentDate = new Date().getTime();
@@ -51,6 +51,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       }
     }
   }, []);
+  
 
   const login = useCallback(async (username: string, password: string, cnpj: string) => {
     try {

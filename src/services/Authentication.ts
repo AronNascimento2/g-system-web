@@ -4,7 +4,7 @@ export interface AuthData {
       Expiration?: string;
     };
     Permissions: string[];
-    Logo?: string; 
+    Logo?: any; 
   }
   
   export interface AuthResponse {

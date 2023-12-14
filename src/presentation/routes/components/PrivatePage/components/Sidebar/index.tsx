@@ -89,7 +89,7 @@ export const SideBar = () => {
           <>
             <img
             className="img-mobile"
-              src={logo}
+              src={logo ?? ''}
               alt="Logo"
               style={{ maxWidth: "100px", height: "auto" }}
             />{" "}
@@ -132,7 +132,7 @@ export const SideBar = () => {
         <Sidebar>
           <div className="container-logo">
             <img
-              src={logo}
+              src={logo ?? ''}
               alt="Logo"
               style={{ maxWidth: "100%", height: "auto" }}
             />{" "}
