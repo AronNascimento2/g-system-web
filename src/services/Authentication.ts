@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface AuthData {
     JWT: {
       Token: string;
       Expiration?: string;
     };
-    Permissions: string[]; // Adicionando as permissões ao AuthData
+    Permissions: string[];
+    Logo?: string; 
   }
   
   export interface AuthResponse {

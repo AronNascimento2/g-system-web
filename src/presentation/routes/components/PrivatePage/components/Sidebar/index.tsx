@@ -17,16 +17,16 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 export const SideBar = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { logout, user } = useAuth();
+  const { logout, user,logo } = useAuth();
 
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState('');
+  const [activeItem, setActiveItem] = useState("");
 
   const userPermissions = useMemo(() => {
     return user?.Permissions ?? [];
   }, [user]);
-  
+
   const menuItems = useMemo(() => {
     return ROUTES_PATHS.filter(
       (route) => route.isPrivate && userPermissions.includes(route.title)
@@ -59,7 +59,6 @@ export const SideBar = () => {
     }
   }, [location.pathname, userPermissions]);
 
-
   const checkIfMobile = () => {
     setIsMobile(window.innerWidth <= 767);
   };
@@ -83,36 +82,35 @@ export const SideBar = () => {
     }
   };
 
-
-
   return (
     <>
-    <Header>
-      {isMobile && (
-        <>
-          <img
-            src="/logo.png"
-            alt="Logo"
-            style={{ maxWidth: "100px", height: "auto" }}
-          />{" "}
-          <BurgerMenu onClick={toggleMenu}>
-            <BurgerMenuContainer>
-              <MenuIcon />
-              <MenuIcon />
-              <MenuIcon />
-            </BurgerMenuContainer>
-          </BurgerMenu>
-        </>
-      )}
-    </Header>
-    {isMobile && isOpen && (
-      <Menu>
-        {menuItems.map((item) => (
-         <MenuItem
+      <Header>
+        {isMobile && (
+          <>
+            <img
+            className="img-mobile"
+              src={logo}
+              alt="Logo"
+              style={{ maxWidth: "100px", height: "auto" }}
+            />{" "}
+            <BurgerMenu onClick={toggleMenu}>
+              <BurgerMenuContainer>
+                <MenuIcon />
+                <MenuIcon />
+                <MenuIcon />
+              </BurgerMenuContainer>
+            </BurgerMenu>
+          </>
+        )}
+      </Header>
+      {isMobile && isOpen && (
+        <Menu>
+          {menuItems.map((item) => (
+            <MenuItem
               onClick={() => {
                 if (userPermissions.includes(item.name)) {
                   handleMenuItemClick(item);
-                  
+
                   setIsOpen(false); // Fechar o menu após clicar em um item
                 }
               }}
@@ -122,46 +120,45 @@ export const SideBar = () => {
               }`}
               disabled={!userPermissions.includes(item.name)}
             >
-              <FontAwesomeIcon icon={item.icon as IconProp} />{" "}
-              {/* Ícone antes do texto */}
-              {item.name}
-            </MenuItem>
-        ))}
-        <MenuItem onClick={() => handleMenuItemClick(logoutItem)}>
-          {logoutItem.name}
-        </MenuItem>
-      </Menu>
-    )}
-    {!isMobile && (
-      <Sidebar>
-        <img
-          src="/logo.png"
-          alt="Logo"
-          style={{ maxWidth: "100%", height: "auto" }}
-        />{" "}
-        <Menu>
-          {menuItems.map((item) => (
-            <MenuItem
-              onClick={() => {
-                if (userPermissions.includes(item.name)) {
-                  handleMenuItemClick(item);
-                }
-              }}
-              key={item.name}
-              className={`${activeItem === item.name ? "activated" : ""} ${
-                !userPermissions.includes(item.name) ? "disabled" : ""
-              }`}
-              disabled={!userPermissions.includes(item.name)}
-            >
-              <FontAwesomeIcon icon={item.icon as IconProp} />{" "}
-              {/* Ícone antes do texto */}
-              {item.name}
+              <FontAwesomeIcon icon={item.icon as IconProp} /> {item.name}
             </MenuItem>
           ))}
-          <MenuItem onClick={logoutItem.onClick}>{logoutItem.name}</MenuItem>
+          <MenuItem onClick={() => handleMenuItemClick(logoutItem)}>
+            {logoutItem.name}
+          </MenuItem>
         </Menu>
-      </Sidebar>
-    )}
-  </>
-);
+      )}
+      {!isMobile && (
+        <Sidebar>
+          <div className="container-logo">
+            <img
+              src={logo}
+              alt="Logo"
+              style={{ maxWidth: "100%", height: "auto" }}
+            />{" "}
+          </div>
+
+          <Menu>
+            {menuItems.map((item) => (
+              <MenuItem
+                onClick={() => {
+                  if (userPermissions.includes(item.name)) {
+                    handleMenuItemClick(item);
+                  }
+                }}
+                key={item.name}
+                className={`${activeItem === item.name ? "activated" : ""} ${
+                  !userPermissions.includes(item.name) ? "disabled" : ""
+                }`}
+                disabled={!userPermissions.includes(item.name)}
+              >
+                <FontAwesomeIcon icon={item.icon as IconProp} /> {item.name}
+              </MenuItem>
+            ))}
+            <MenuItem onClick={logoutItem.onClick}>{logoutItem.name}</MenuItem>
+          </Menu>
+        </Sidebar>
+      )}
+    </>
+  );
 };

@@ -1,30 +1,36 @@
 import styled from "styled-components";
 import { SidebarProps } from "./types";
 
-
-
 export const Sidebar = styled.div<SidebarProps>`
-  width: 250px;
+  width: 300px;
   background-color: #fff;
   top: 0;
   left: 0;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); /* Sombra desejada */
 
   transition: left 0.3s ease-in-out;
-  img {
-    margin-left: 10px;
+  .container-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
   }
   @media (max-width: 767px) {
     left: ${({ isopen }) => (isopen ? "0" : "-250px")};
   }
 `;
 export const Header = styled.header`
+ 
   @media (max-width: 767px) {
     width: 100%;
     height: 80px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra desejada */
+    z-index: 999;
     display: flex;
     align-items: center;
-    img {
+    padding: 3rem 0 3rem 0;
+
+    .img-mobile{
       margin-left: 10px;
     }
   }
@@ -35,18 +41,19 @@ export const Menu = styled.ul`
   @media (max-width: 767px) {
     width: 50%;
     height: 100%;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); /* Sombra desejada */
     background-color: #fff;
-    top: 8%;
-    position:absolute;
-    z-index: 999;
+    top: 11.4%;
+    position: absolute;
+    z-index: 1;
+    margin: 0;
   }
 `;
 
 export const MenuItem = styled.li<SidebarProps>`
   padding: 15px;
   display: flex;
-  gap:0.5rem;
+  gap: 0.5rem;
   &.disabled {
     opacity: 0.5; /* Estilo para itens desabilitados */
     pointer-events: none; /* Desabilitar eventos de clique */
@@ -72,7 +79,7 @@ export const MenuItem = styled.li<SidebarProps>`
   }
   /* Estiliza o último item */
   &:last-child {
-    flex:1;
+    flex: 1;
     align-items: end;
   }
 
