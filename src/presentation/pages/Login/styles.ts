@@ -55,7 +55,7 @@ export const LoginContainer = styled.div`
     @media (max-width: 767px) {
       width: 80%;
       position: absolute;
-      top: 0%;
+     
       .buttons {
         width: 100%;
 
