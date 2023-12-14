@@ -50,7 +50,7 @@ export const WrapperContent = styled.div`
       font-size: 20px;
     }
     .code {
-      background-color: #3498db;
+      background-color: rgba(52, 152, 219, 0.4); 
       color: #fff;
       padding: 0.3rem;
     }
