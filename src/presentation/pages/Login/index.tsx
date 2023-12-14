@@ -23,7 +23,7 @@ export const LoginPage: React.FC = () => {
   const [cnpj, setCnpj] = useState<string>(() => {
     // Carregar CNPJ do localStorage, se existir
     const storedCnpj = localStorage.getItem("cnpj");
-    return storedCnpj || "";
+    return storedCnpj ?? "";
   });
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");

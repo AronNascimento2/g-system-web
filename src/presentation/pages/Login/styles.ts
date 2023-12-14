@@ -57,6 +57,8 @@ export const LoginContainer = styled.div`
     height: 100%;
     z-index: 1;
     padding: 20px;
+    overflow: auto;
+
     form {
       position: absolute;
       top: 10%;
@@ -127,5 +129,7 @@ export const Container = styled.div`
       padding-top: 3rem;
     }
     background-color: #fff;
+  }
+  @media (max-width: 767px) {
   }
 `;
