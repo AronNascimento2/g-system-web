@@ -2,14 +2,11 @@ import styled from "styled-components";
 
 export const LoginContainer = styled.div`
   flex: 3;
-  margin: 0 auto;
-  padding: 20px;
+  height: 100%;
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
   background-color: #2980b9;
-  height: 100vh;
   overflow: hidden;
 
   @media (max-width: 767px) {
@@ -130,6 +127,8 @@ export const TogglePasswordVisibility = styled.span`
 export const Container = styled.div`
   width: 100vw;
   display: flex;
+  height: 100vh;
+  overflow: auto;
   justify-content: center;
   .div-logo {
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); /* Sombra desejada */
