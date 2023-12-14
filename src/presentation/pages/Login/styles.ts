@@ -28,6 +28,7 @@ export const LoginContainer = styled.div`
     background-color: #fff;
     border-radius: 10px;
     width: 40%;
+    height:60%;
     max-width: 600px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 3rem 1.5rem;
@@ -55,7 +56,8 @@ export const LoginContainer = styled.div`
 
     @media (max-width: 767px) {
       width: 80%;
-
+      position: absolute;
+      top: 8%;
       .buttons {
         width: 100%;
 
