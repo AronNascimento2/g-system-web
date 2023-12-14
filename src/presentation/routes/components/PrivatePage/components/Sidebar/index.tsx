@@ -85,7 +85,7 @@ export const SideBar = () => {
   return (
     <>
       <Header>
-        aq
+        
         {isMobile && (
           <>
             <img
