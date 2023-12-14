@@ -14,16 +14,33 @@ export const CardMobile = ({ appointments }) => {
               </div>
               <DetailsContent>
                 <div className="content">
-                  <div ><p className="title">Serviço</p> <p className="info">{appointment.Servico}</p></div>
-                  <div ><p className="title">Data</p><p className="info">{formatDate(appointment.Data)}</p></div>
-                  <div ><p className="title">Período</p><p className="info">{appointment.Periodo}</p></div>
+                  <div>
+                    <p className="title">Serviço</p>{" "}
+                    <p className="info">{appointment.Servico}</p>
+                  </div>
+                  <div>
+                    <p className="title">Data</p>
+                    <p className="info">{formatDate(appointment.Data)}</p>
+                  </div>
+                  <div>
+                    <p className="title">Período</p>
+                    <p className="info">{appointment.Periodo}</p>
+                  </div>
                 </div>
                 <div className="content">
-                  <div ><p className="title">Técnico</p> <p className="info">{appointment.Tecnico}</p></div>
-                  <div ><p className="title">Ordem</p><p className="info">{appointment.Ordem}</p></div>
-                  <div ><p className="title">Endereço</p><p className="info">{appointment.Endereco}</p></div>
+                  <div>
+                    <p className="title">Técnico</p>{" "}
+                    <p className="info">{appointment.Tecnico}</p>
+                  </div>
+                  <div>
+                    <p className="title">Ordem</p>
+                    <p className="info">{appointment.Ordem}</p>
+                  </div>
+                  <div>
+                    <p className="title">Endereço</p>
+                    <p className="info">{appointment.Endereco}</p>
+                  </div>
                 </div>
-               
               </DetailsContent>
             </WrapperContent>
           </Container>
