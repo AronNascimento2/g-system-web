@@ -17,7 +17,7 @@ export const LoginContainer = styled.div`
     height: 100%;
     z-index: 1;
     padding: 20px;
-    overflow: auto;
+    overflow: hidden;
   }
 
   form {
