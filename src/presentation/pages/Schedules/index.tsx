@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {  fetchAppointments } from "../../../services/Schedule";
+import { fetchAppointments } from "../../../services/Schedule";
 import {
   Container,
   ContainerButtons,
@@ -14,10 +14,9 @@ import { HeaderButtons } from "./components/HeaderButtons";
 import { AppointmentType } from "./types";
 import { ScheduleTable } from "./components/ScheduleTable";
 
-
 export const SchedulesPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
-  const [appointments, setAppointments] = useState<AppointmentType[]>([]);
+  const [appointments, setAppointments] = useState<AppointmentType>([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalContent, setModalContent] = useState("");
   const { firstDay, lastDay } = getFirstAndLastDayOfMonth();
@@ -51,14 +50,11 @@ export const SchedulesPage: React.FC = () => {
   };
 
   const handleRowClick = (rowData) => {
-    const details = rowData; 
+    const details = rowData;
 
-    openModal(
-      <ContentModal details={details}/>
-     
-    );
+    openModal(<ContentModal details={details} />);
   };
-  
+
   const tableColumns = [
     { title: "Código" },
     { title: "Cliente" },
@@ -66,11 +62,10 @@ export const SchedulesPage: React.FC = () => {
     { title: "Endereço" },
   ];
 
-
   return (
     <Container>
       <ContainerButtons className="">
-      <HeaderButtons/>
+        <HeaderButtons />
       </ContainerButtons>
       {loading ? (
         <div className="loader-container">
@@ -79,13 +74,21 @@ export const SchedulesPage: React.FC = () => {
         </div>
       ) : (
         <WrapperTable>
-         <ScheduleTable appointments={appointments} tableColumns={tableColumns} handleRowClick={handleRowClick} />
+          <ScheduleTable
+            appointments={appointments}
+            tableColumns={tableColumns}
+            handleRowClick={handleRowClick}
+          />
         </WrapperTable>
       )}
       {modalIsOpen && (
         <ModalBackground onClick={closeModal}>
           <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-            <span className="closeButton" onClick={closeModal}>
+            <span
+              className="closeButton"
+              onClick={closeModal}
+              tabIndex={0}
+            >
               &times;
             </span>
             <div>{modalContent}</div>
