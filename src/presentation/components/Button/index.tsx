@@ -4,7 +4,6 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
   title: string;
   size?: 'small' | 'medium' | 'large';
-  secondaryColor?: string;
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
 }
@@ -13,7 +12,6 @@ export const Button: React.FC<ButtonProps> = ({
   loading,
   title,
   size = 'medium',
-  secondaryColor = '#2980b9',
   icon,
   iconPosition = 'left',
   ...rest
@@ -28,7 +26,6 @@ export const Button: React.FC<ButtonProps> = ({
     <ButtonContainer
       size={size}
       disabled={rest.disabled ?? loading}
-      secondaryColor={secondaryColor}
       {...rest}
     >
       {iconPosition === 'left' && renderIcon}

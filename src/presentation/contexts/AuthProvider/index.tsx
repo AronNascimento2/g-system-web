@@ -48,7 +48,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setPermissions(Permissions); // Atualize as permissões no estado do contexto
         localStorage.setItem("permissions", JSON.stringify(Permissions)); // Salve as permissões no localStorage
       } else {
-        throw new Error(response.message || "Erro ao autenticar");
+        throw new Error(response.message ?? "Erro ao autenticar");
       }
     } catch (error:any) {
       throw new Error("Erro ao autenticar: " + error.message);

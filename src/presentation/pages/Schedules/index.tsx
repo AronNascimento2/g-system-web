@@ -1,83 +1,76 @@
-import { useEffect, useState } from "react";
-import { Appointment, fetchAppointments } from "../../../services/Schedule";
-import { Container, ContainerButtons, WrapperTable } from "./styles";
-import { Button } from "../../components/Button";
-import { Table } from "../../components/Table";
-import { BarLoader } from "react-spinners";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {  faArrowsRotate, faCheck, faClose, faDollar, faEdit, faEnvelope, faFile, faFilter, faGlobe, faTrash } from "@fortawesome/free-solid-svg-icons";
+import React, { useState, useEffect } from "react";
+import {  fetchAppointments } from "../../../services/Schedule";
+import {
+  Container,
+  ContainerButtons,
+  ModalBackground,
+  WrapperTable,
+} from "./styles";
 
-export const SchedulesPage = () => {
-  const [appointments, setAppointments] = useState<Appointment[]>([]);
-  const [loading, setLoading] = useState(true);
+import { BarLoader } from "react-spinners";
+import { ContentModal } from "./components/ContentModal";
+import { getFirstAndLastDayOfMonth } from "../../utils/getFirstAndLastDayofMonth";
+import { HeaderButtons } from "./components/HeaderButtons";
+import { AppointmentType } from "./types";
+import { ScheduleTable } from "./components/ScheduleTable";
+
+
+export const SchedulesPage: React.FC = () => {
+  const [loading, setLoading] = useState(false);
+  const [appointments, setAppointments] = useState<AppointmentType[]>([]);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [modalContent, setModalContent] = useState("");
+  const { firstDay, lastDay } = getFirstAndLastDayOfMonth();
+
+  const fetchData = async () => {
+    const startDate = firstDay;
+    const endDate = lastDay;
+
+    setLoading(true);
+    try {
+      const data = await fetchAppointments(startDate, endDate);
+      setAppointments(data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Erro ao buscar os agendamentos:", error);
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const startDate = "2023-10-01";
-    const endDate = "2023-10-31";
-
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const data = await fetchAppointments(startDate, endDate);
-        setAppointments(data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Erro ao buscar os agendamentos:", error);
-        setLoading(false);
-      }
-    };
-
     fetchData();
   }, []);
+
+  const openModal = (content) => {
+    setModalContent(content);
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
+  const handleRowClick = (rowData) => {
+    const details = rowData; 
+
+    openModal(
+      <ContentModal details={details}/>
+     
+    );
+  };
+  
   const tableColumns = [
-    { key: "Codigo", title: "Código" },
-    { key: "Cliente", title: "Cliente" },
-    { key: "Servico", title: "Serviço" },
-    { key: "Tipo", title: "Tipo" },
-    { key: "Data", title: "Data" },
-    { key: "Periodo", title: "Período" },
-    { key: "NaoPresencial", title: "Não Presencial" },
-    { key: "VisitaTecnica", title: "Visita Técnica" },
-    { key: "Endereco", title: "Endereço" },
-    { key: "DataCriacao", title: "Data de Criação" },
-    { key: "Observacao", title: "Observação" },
-    { key: "Verificado", title: "Verificado" },
-    { key: "Tecnico", title: "Técnico" },
-    { key: "Ordem", title: "Ordem" },
-    { key: "CustoServico", title: "Custo do Serviço" },
-    { key: "CustoDeslocamento", title: "Custo de Deslocamento" },
-    { key: "Custos", title: "Custos" },
-    { key: "KM", title: "KM" },
-    { key: "CriadoPor", title: "Criado Por" },
-    { key: "ValorAdicional", title: "Valor Adicional" },
-    { key: "CodigoCliente", title: "Código do Cliente" },
-    { key: "CodigoClienteAntigo", title: "Código do Cliente Antigo" },
-    { key: "ValorServico", title: "Valor do Serviço" },
-    { key: "StatusFaturamento", title: "Status de Faturamento" },
-    // { key: 'Veiculos', title: 'Veículos' },
+    { title: "Código" },
+    { title: "Cliente" },
+    { title: "Data" },
+    { title: "Endereço" },
   ];
+
 
   return (
     <Container>
       <ContainerButtons className="">
-        <Button  icon={<FontAwesomeIcon icon={faArrowsRotate} />}size="small" title="Atualizar" />
-        <div className="input-label">
-          <select name="" id=""></select>
-        </div>
-        <Button
-          icon={<FontAwesomeIcon icon={faCheck} />}
-          size="small"
-          title="Confirmar"
-        />
-        <Button  icon={<FontAwesomeIcon icon={faEdit} />} size="small" title="Editar" />
-        <Button icon={<FontAwesomeIcon icon={faClose} />}size="small" title="Cancelar" />
-        <Button icon={<FontAwesomeIcon icon={faEdit} />}size="small" title="Registrar" />
-        <Button icon={<FontAwesomeIcon icon={faDollar}/>} size="small" title="Faturar" />
-        <Button icon={<FontAwesomeIcon icon={faTrash}/>}size="small" title="Excluir" />
-        <Button icon={<FontAwesomeIcon icon={faGlobe}/>}size="small" title="Mapa de Serviços" />
-        <Button icon={<FontAwesomeIcon icon={faFile}/>} size="small" title="Documentos" />
-        <Button icon={<FontAwesomeIcon icon={faEnvelope}/>}size="small" title="Enviar" />
-        <Button icon={<FontAwesomeIcon icon={faFilter}/>}size="small" title="Filtrar" />
+      <HeaderButtons/>
       </ContainerButtons>
       {loading ? (
         <div className="loader-container">
@@ -86,8 +79,18 @@ export const SchedulesPage = () => {
         </div>
       ) : (
         <WrapperTable>
-          <Table rows={appointments} columns={tableColumns} />
+         <ScheduleTable appointments={appointments} tableColumns={tableColumns} handleRowClick={handleRowClick} />
         </WrapperTable>
+      )}
+      {modalIsOpen && (
+        <ModalBackground onClick={closeModal}>
+          <div className="modalContent" onClick={(e) => e.stopPropagation()}>
+            <span className="closeButton" onClick={closeModal}>
+              &times;
+            </span>
+            <div>{modalContent}</div>
+          </div>
+        </ModalBackground>
       )}
     </Container>
   );
