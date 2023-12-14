@@ -9,15 +9,17 @@ export const LoginContainer = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: #2980b9;
+  height: 100vh;
+
   @media (max-width: 767px) {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     z-index: 1;
     padding: 20px;
-    overflow: auto;
+    overflow: hidden;
   }
 
   form {
@@ -116,7 +118,7 @@ export const InputWrapper = styled.div`
 
   position: relative;
   @media (max-width: 767px) {
-    max-width: 300px;
+    width: 100%;
   }
 `;
 export const TogglePasswordVisibility = styled.span`
