@@ -13,6 +13,8 @@ import { getFirstAndLastDayOfMonth } from "../../utils/getFirstAndLastDayofMonth
 import { HeaderButtons } from "./components/HeaderButtons";
 import { AppointmentType } from "./types";
 import { ScheduleTable } from "./components/ScheduleTable";
+import { CardMobile } from "./components/CardMobile";
+import { useMediaQuery } from "react-responsive";
 
 export const SchedulesPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -20,6 +22,8 @@ export const SchedulesPage: React.FC = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalContent, setModalContent] = useState("");
   const { firstDay, lastDay } = getFirstAndLastDayOfMonth();
+
+  const isMobile = useMediaQuery({ maxWidth: 767 }); // Define o limite para dispositivos móveis
 
   const fetchData = async () => {
     const startDate = firstDay;
@@ -59,7 +63,13 @@ export const SchedulesPage: React.FC = () => {
     { title: "Código" },
     { title: "Cliente" },
     { title: "Data" },
+    { title: "Serviço" },
+    { title: "Periodo" },
+    { title: "Técnico" },
+    { title: "Ordem" },
     { title: "Endereço" },
+
+    
   ];
 
   return (
@@ -73,13 +83,19 @@ export const SchedulesPage: React.FC = () => {
           <p>Carregando...</p>
         </div>
       ) : (
-        <WrapperTable>
-          <ScheduleTable
-            appointments={appointments}
-            tableColumns={tableColumns}
-            handleRowClick={handleRowClick}
-          />
-        </WrapperTable>
+        <>
+          {isMobile ? (
+            <CardMobile appointments={appointments}/>
+          ) : (
+            <WrapperTable>
+              <ScheduleTable
+                appointments={appointments}
+                tableColumns={tableColumns}
+                handleRowClick={handleRowClick}
+              />
+            </WrapperTable>
+          )}
+        </>
       )}
       {modalIsOpen && (
         <ModalBackground onClick={closeModal}>
