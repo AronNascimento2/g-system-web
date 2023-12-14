@@ -10,6 +10,7 @@ export const LoginContainer = styled.div`
   align-items: center;
   background-color: #2980b9;
   height: 100vh;
+  overflow: hidden;
 
   @media (max-width: 767px) {
     position: absolute;
