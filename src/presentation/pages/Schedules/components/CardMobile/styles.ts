@@ -5,7 +5,6 @@ export const Container = styled.div`
   border: 1px solid lightgray;
   border-radius: 20px;
   margin-bottom: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;
 
 export const DetailsContent = styled.div`
