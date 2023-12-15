@@ -5,7 +5,7 @@ export const LoginContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
   background-color: #2980b9;
-  padding-top: 1rem;
+  padding-top: 3rem;
   height: 100%;
   @media (max-width: 767px) {
 
