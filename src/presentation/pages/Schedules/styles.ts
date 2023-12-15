@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-overflow: hidden;
+  overflow: hidden;
   .loader-container {
     width: 100%;
     height: 100vh;
@@ -14,20 +14,21 @@ overflow: hidden;
       color: #2980b9;
     }
   }
-  .overflow-items{
-      height: 100%;
-      overflow: auto;
-    }
+  .overflow-items {
+    padding-top: 1rem;
+    height: 100%;
+    overflow: auto;
+  }
   @media screen and (max-width: 768px) {
     overflow: hidden;
     height: 100%;
 
-    .overflow-items{
+    .overflow-items {
       height: 100%;
       overflow: auto;
     }
     .loader-container {
-      height:90%;
+      height: 90%;
     }
   }
 `;
@@ -94,7 +95,6 @@ export const ModalBackground = styled.div`
     position: relative;
     @media screen and (max-width: 768px) {
       max-width: 90%;
-
     }
   }
 
