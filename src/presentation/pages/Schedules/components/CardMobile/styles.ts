@@ -25,10 +25,11 @@ export const StyledModalMobileDownSide = styled(ModalMobileDownSide)`
   }
   .buttons {
     height: 100%;
+    width: 100%;
+    flex-wrap:wrap;
     .wrapperbuttons {
       padding-top: 0.5rem;
       display: flex;
-      gap: 1rem;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
