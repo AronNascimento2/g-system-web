@@ -1,79 +1,75 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowsRotate,
-  faCheck,
-  faClose,
-  faDollar,
   faEdit,
-  faEnvelope,
   faFile,
-  faFilter,
   faGlobe,
-  faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "../../../../components/Button";
+import { FilterOptions } from "../FilterOptions";
+import { Container } from "./styles";
+import { DynamicButton } from "../../../../components/DynamicButton";
 
-export const HeaderButtons = () => {
+type HeaderButtonsProps = {
+  update: () => void;
+  onSearch: (text: string) => void;
+  searchText: string; // Definindo searchText como uma string
+};
+
+export const HeaderButtons = ({
+  update,
+  onSearch,
+  searchText,
+}: HeaderButtonsProps) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const text = event.target.value;
+    onSearch(text); // Chama a função de busca com o texto atualizado
+  };
+
+  const buttonsData = [
+    {
+      icon: faFile,
+      text: "Documentos",
+      onClick: () => console.log("Botão Confirmar clicado"),
+    },
+    {
+      icon: faGlobe,
+      text: "Mapa de Serviços",
+      onClick: () => console.log("Botão Faturar clicado"),
+    },
+    {
+      icon: faEdit,
+      text: "Registrar",
+      onClick: () => console.log("Botão Editar clicado"),
+    },
+  ];
+
   return (
-    <>
+    <Container>
       <Button
+        onClick={update}
         icon={<FontAwesomeIcon icon={faArrowsRotate} />}
         size="small"
         title="Atualizar"
       />
-      <div className="input-label">
-        <select name="" id=""></select>
-      </div>
-      <Button
-        icon={<FontAwesomeIcon icon={faCheck} />}
-        size="small"
-        title="Confirmar"
+      <input
+        className="input-search"
+        type="text"
+        placeholder="Buscar"
+        value={searchText}
+        onChange={handleInputChange}
       />
-      <Button
-        icon={<FontAwesomeIcon icon={faEdit} />}
-        size="small"
-        title="Editar"
-      />
-      <Button
-        icon={<FontAwesomeIcon icon={faClose} />}
-        size="small"
-        title="Cancelar"
-      />
-      <Button
-        icon={<FontAwesomeIcon icon={faEdit} />}
-        size="small"
-        title="Registrar"
-      />
-      <Button
-        icon={<FontAwesomeIcon icon={faDollar} />}
-        size="small"
-        title="Faturar"
-      />
-      <Button
-        icon={<FontAwesomeIcon icon={faTrash} />}
-        size="small"
-        title="Excluir"
-      />
-      <Button
-        icon={<FontAwesomeIcon icon={faGlobe} />}
-        size="small"
-        title="Mapa de Serviços"
-      />
-      <Button
-        icon={<FontAwesomeIcon icon={faFile} />}
-        size="small"
-        title="Documentos"
-      />
-      <Button
-        icon={<FontAwesomeIcon icon={faEnvelope} />}
-        size="small"
-        title="Enviar"
-      />
-      <Button
-        icon={<FontAwesomeIcon icon={faFilter} />}
-        size="small"
-        title="Filtrar"
-      />
-    </>
+
+      {buttonsData.map((button, index) => (
+        <DynamicButton
+          key={index}
+          icon={button.icon}
+          text={button.text}
+          onClick={button.onClick}
+          disabled
+        />
+      ))}
+      <FilterOptions />
+    </Container>
   );
 };

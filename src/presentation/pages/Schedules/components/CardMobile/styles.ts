@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ModalMobileDownSide } from "../../../../components/ModalMobileDownSide";
 
 export const Container = styled.div`
   width: 100%;
@@ -6,7 +7,16 @@ export const Container = styled.div`
   border-radius: 20px;
   margin-bottom: 1rem;
 `;
-
+export const StyledModalMobileDownSide =styled(ModalMobileDownSide)`
+  height: auto;
+  padding: 2rem;
+  ul{
+    list-style: none;
+    padding: 0;
+  }
+.modal{
+}
+`
 export const DetailsContent = styled.div`
   display: flex;
   gap: 2rem;

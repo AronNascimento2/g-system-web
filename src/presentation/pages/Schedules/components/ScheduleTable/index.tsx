@@ -5,8 +5,11 @@ export const ScheduleTable = ({
   tableColumns,
   appointments,
   handleRowClick,
+  searchText,
 }) => {
-
+  const filteredAppointments = appointments.filter((appointment) =>
+    appointment.Cliente.toLowerCase().includes(searchText.toLowerCase())
+  );
   return (
     <ScheduleTableContainer>
       <table>
@@ -18,7 +21,7 @@ export const ScheduleTable = ({
           </tr>
         </thead>
         <tbody>
-          {appointments.map((appointment, index) => (
+          {filteredAppointments.map((appointment, index) => (
             <tr key={index} onClick={() => handleRowClick(appointment)}>
               <td>{appointment.Codigo}</td>
               <td>{appointment.Cliente}</td>

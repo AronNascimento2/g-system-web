@@ -80,7 +80,7 @@ const [userName, setUserName] = useState("");
         <form onSubmit={handleLogin}>
           <img
             className="icon"
-            src="/logo.png"
+            src="/icon.png"
             alt="Logo"
             style={{ maxWidth: "100%", height: "auto" }}
           />

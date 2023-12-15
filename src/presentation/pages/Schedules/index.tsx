@@ -3,7 +3,6 @@ import { fetchAppointments } from "../../../services/Schedule";
 import {
   Container,
   ContainerButtons,
-  ModalBackground,
   WrapperTable,
 } from "./styles";
 
@@ -16,6 +15,7 @@ import { ScheduleTable } from "./components/ScheduleTable";
 import { CardMobile } from "./components/CardMobile";
 import { useMediaQuery } from "react-responsive";
 import { HeaderButtonsMobile } from "./components/HeaderButtonsMobile";
+import { SideModal } from "../../components/SideModal";
 
 export const SchedulesPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -23,7 +23,6 @@ export const SchedulesPage: React.FC = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalContent, setModalContent] = useState("");
   const { firstDay, lastDay } = getFirstAndLastDayOfMonth();
-  // Adicione este estado ao componente SchedulesPage
   const [searchText, setSearchText] = useState("");
 
   const isMobile = useMediaQuery({ maxWidth: 767 }); // Define o limite para dispositivos móveis
@@ -72,25 +71,26 @@ export const SchedulesPage: React.FC = () => {
     { title: "Ordem" },
     { title: "Endereço" },
   ];
-  // Adicione esta função ao componente SchedulesPage
+
   const handleSearch = (text) => {
-    setSearchText(text); // Atualiza o estado com o texto de busca
-    // Execute a lógica de filtragem dos usuários com base no texto
-    // Aqui você pode usar o estado 'text' para filtrar 'appointments'
-    // Exemplo:
-    // const filteredAppointments = appointments.filter((appointment) =>
-    //   appointment.client.toLowerCase().includes(text.toLowerCase())
-    // );
-    // setAppointments(filteredAppointments); // Atualiza a lista de usuários filtrados
+    setSearchText(text);
   };
 
   return (
     <Container>
       <ContainerButtons className="">
         {isMobile ? (
-          <HeaderButtonsMobile update={fetchData} onSearch={handleSearch} searchText={searchText} />
+          <HeaderButtonsMobile
+            update={fetchData}
+            onSearch={handleSearch}
+            searchText={searchText}
+          />
         ) : (
-          <HeaderButtons />
+          <HeaderButtons
+            update={fetchData}
+            onSearch={handleSearch}
+            searchText={searchText}
+          />
         )}
       </ContainerButtons>
 
@@ -102,11 +102,11 @@ export const SchedulesPage: React.FC = () => {
       ) : (
         <div className="overflow-items">
           {isMobile ? (
-            // Dentro do bloco onde você renderiza o CardMobile
             <CardMobile appointments={appointments} searchText={searchText} />
           ) : (
             <WrapperTable>
               <ScheduleTable
+                searchText={searchText}
                 appointments={appointments}
                 tableColumns={tableColumns}
                 handleRowClick={handleRowClick}
@@ -115,16 +115,9 @@ export const SchedulesPage: React.FC = () => {
           )}
         </div>
       )}
-      {modalIsOpen && (
-        <ModalBackground onClick={closeModal}>
-          <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-            <span className="closeButton" onClick={closeModal} tabIndex={0}>
-              &times;
-            </span>
-            <div>{modalContent}</div>
-          </div>
-        </ModalBackground>
-      )}
+      <SideModal show={modalIsOpen} handleClose={closeModal}>
+        {modalContent}
+      </SideModal>
     </Container>
   );
 };

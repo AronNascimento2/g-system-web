@@ -1,14 +1,9 @@
 import { useState } from "react";
 import {
   faEllipsisVertical,
-  faCheck,
   faEdit,
-  faClose,
-  faDollar,
-  faTrash,
   faGlobe,
   faFile,
-  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container, ModalContainer, ModalContent } from "./styles";
@@ -21,32 +16,6 @@ export const ModalOptionsMobile = () => {
   };
 
   const buttonsData = [
-    {
-      icon: faCheck,
-      text: "Confirmar",
-      onClick: () => console.log("Botão Confirmar clicado"),
-    },
-    {
-      icon: faDollar,
-      text: "Faturar",
-      onClick: () => console.log("Botão Faturar clicado"),
-    },
-    {
-      icon: faEdit,
-      text: "Editar",
-      onClick: () => console.log("Botão Editar clicado"),
-    },
-    {
-      icon: faTrash,
-      text: "Excluir",
-      onClick: () => console.log("Botão Excluir clicado"),
-    },
-
-    {
-      icon: faClose,
-      text: "Cancelar",
-      onClick: () => console.log("Botão Cancelar clicado"),
-    },
     {
       icon: faGlobe,
       text: "Mapa de Serviços",
@@ -63,11 +32,6 @@ export const ModalOptionsMobile = () => {
       icon: faFile,
       text: "Documentos",
       onClick: () => console.log("Botão Documentos clicado"),
-    },
-    {
-      icon: faEnvelope,
-      text: "Enviar",
-      onClick: () => console.log("Botão Enviar clicado"),
     },
   ];
 

@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ModalOptionsMobile } from "../ModalOptionsMobile";
 import { Container } from "./styles";
-import { faArrowsRotate, faFilter } from "@fortawesome/free-solid-svg-icons";
+import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
+import { FilterOptionsMobile } from "../FilterOptionsMobile";
 
 type HeaderButtonsMobileProps = {
   update: () => void;
@@ -9,7 +10,11 @@ type HeaderButtonsMobileProps = {
   searchText: string; // Definindo searchText como uma string
 };
 
-export const HeaderButtonsMobile: React.FC<HeaderButtonsMobileProps> = ({ update, onSearch, searchText }) => {
+export const HeaderButtonsMobile: React.FC<HeaderButtonsMobileProps> = ({
+  update,
+  onSearch,
+  searchText,
+}) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const text = event.target.value;
     onSearch(text); // Chama a função de busca com o texto atualizado
@@ -27,9 +32,7 @@ export const HeaderButtonsMobile: React.FC<HeaderButtonsMobileProps> = ({ update
         value={searchText}
         onChange={handleInputChange}
       />
-      <button className="open-options-button" onClick={update}>
-        <FontAwesomeIcon className="collapsed-icon" icon={faFilter} />
-      </button>{" "}
+      <FilterOptionsMobile />
       <ModalOptionsMobile />
     </Container>
   );
