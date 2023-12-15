@@ -29,7 +29,7 @@ export const LoginContainer = styled.div`
     .icon {
       padding-bottom: 0.5rem;
     }
-    h1 {
+    h2 {
       color: #2980b9;
     }
     .buttons {
