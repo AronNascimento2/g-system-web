@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Navigate, useNavigate, useLocation } from "react-router-dom";
-import { useAuth } from "../../../utils/useAuth";
 
 export interface PrivateRouteProps {
   children: React.ReactNode;
@@ -11,8 +10,6 @@ export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children, redirectTo
   const isAuthenticated = localStorage.getItem('token') !== null;
   const tokenExpiration = localStorage.getItem('expiration');
   const userPermissions = JSON.parse(localStorage.getItem('permissions') ?? '[]'); // Obtém as permissões do usuário
-  const { user } = useAuth();
-  console.log("a", user?.Permissions);
 
   const navigate = useNavigate();
   const location = useLocation();

@@ -20,9 +20,5 @@ export function getFirstAndLastDayOfMonth() {
     };
   }
   
-  // Exemplo de uso
-  const { firstDay, lastDay } = getFirstAndLastDayOfMonth();
-  
-  console.log('Primeiro dia do mês:', firstDay); // Primeiro dia do mês: 2023-12-01 (exemplo)
-  console.log('Último dia do mês:', lastDay); // Último dia do mês: 2023-12-31 (exemplo)
+
   
