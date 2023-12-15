@@ -33,7 +33,6 @@ export const Header = styled.header`
     padding: 1rem 0 1rem 0;
 
     .img-mobile{
-      margin-left: 10px;
     }
   }
 `;
@@ -88,7 +87,7 @@ export const MenuItem = styled.li<SidebarProps>`
   /* Define estilos para o estado ativo */
 `;
 export const BurgerMenuContainer = styled.div`
-  border: 1px solid #777;
+  border: 1px solid lightgray;
 
   border-radius: 4px;
   padding: 5px 10px;
@@ -105,8 +104,8 @@ export const BurgerMenu = styled.div`
   }
 `;
 export const MenuIcon = styled.div`
-  width: 22px;
-  height: 2px;
+  width: 18px;
+  height: 1px;
   background-color: #555;
   margin: 4px 0;
   border-radius: 1px;
