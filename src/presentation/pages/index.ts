@@ -11,5 +11,4 @@ export * from "./Sinisters";
 export * from "./Supervision";
 export * from "./Login";
 export * from "./Home";
-export * from "./testes";
 
