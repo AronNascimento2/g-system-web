@@ -77,10 +77,7 @@ export const LoginPage: React.FC = () => {
   return (
     <Container>
       <div className="div-logo">
-        <img
-          src="/logo.png"
-          alt="Logo"
-        />
+        <img src="/logo.png" alt="Logo" />
       </div>
       <LoginContainer>
         <form onSubmit={handleLogin}>
@@ -135,12 +132,7 @@ export const LoginPage: React.FC = () => {
           )}
           <WrapperButton className="buttons">
             <Button className="button" title={"Entrar"} loading={loading} />
-            <Button
-            disabled
-              className="button"
-              title={"Esqueci a senha"}
-              loading={loading}
-            />
+            <Button disabled className="button" title={"Esqueci a senha"} />
           </WrapperButton>
         </form>
       </LoginContainer>
