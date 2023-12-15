@@ -20,18 +20,23 @@ export const ModalOptionsMobile = () => {
       icon: faGlobe,
       text: "Mapa de Serviços",
       onClick: () => console.log("Botão Mapa de Serviços clicado"),
+      disabled:true
     },
 
     {
       icon: faEdit,
       text: "Registrar",
       onClick: () => console.log("Botão Registrar clicado"),
+      disabled:true
+
     },
 
     {
       icon: faFile,
       text: "Documentos",
       onClick: () => console.log("Botão Documentos clicado"),
+      disabled:true
+
     },
   ];
 
@@ -53,6 +58,7 @@ export const ModalOptionsMobile = () => {
                 icon={button.icon}
                 text={button.text}
                 onClick={button.onClick}
+                disabled={button.disabled}
               />
             ))}
           </div>
