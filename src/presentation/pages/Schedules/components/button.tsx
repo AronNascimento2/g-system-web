@@ -7,7 +7,7 @@ const ButtonContainer = styled.button`
   justify-content: center;
   border: none;
   background: none;
-  width: 190px;
+  width: 48%;
   background-color: #3498db;
   cursor: pointer;
   border-radius: 4px;
