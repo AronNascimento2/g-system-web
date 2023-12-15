@@ -87,7 +87,7 @@ export const MenuItem = styled.li<SidebarProps>`
   /* Define estilos para o estado ativo */
 `;
 export const BurgerMenuContainer = styled.div`
-  border: 1px solid lightgray;
+  border: 1px solid #555;
 
   border-radius: 4px;
   padding: 5px 10px;
