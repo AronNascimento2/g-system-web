@@ -18,7 +18,7 @@ export const StyledModalMobileDownSide = styled(ModalMobileDownSide)`
   .obs {
     width: 100%;
     border: 1px solid lightgray;
-    height: 100px;
+    height: 70px;
     margin-top: 1rem;
     padding: 1rem;
     overflow: auto;
@@ -26,7 +26,6 @@ export const StyledModalMobileDownSide = styled(ModalMobileDownSide)`
   .buttons-mobile {
     height: 100%;
     .wrapperbuttons-mobile {
-      padding-top: 0.5rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
