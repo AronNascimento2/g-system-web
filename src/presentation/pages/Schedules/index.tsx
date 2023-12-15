@@ -3,7 +3,7 @@ import { fetchAppointments } from "../../../services/Schedule";
 import { Container, ContainerButtons, WrapperTable } from "./styles";
 
 import { BarLoader } from "react-spinners";
-import { ContentModal } from "./components/ContentModalTable";
+import {  ContentModalTable } from "./components/ContentModalTable";
 import { getFirstAndLastDayOfMonth } from "../../utils/getFirstAndLastDayofMonth";
 import { HeaderButtons } from "./components/HeaderButtons";
 import { AppointmentType } from "./types";
@@ -54,7 +54,7 @@ export const SchedulesPage: React.FC = () => {
   const handleRowClick = (rowData) => {
     const details = rowData;
 
-    openModal(<ContentModal details={details} />);
+    openModal(<ContentModalTable details={details} />);
   };
 
   const handleRowClickCard = (rowData) => {

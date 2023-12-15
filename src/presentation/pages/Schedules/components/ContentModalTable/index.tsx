@@ -13,7 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { DynamicButton } from "../../../../components/DynamicButton";
 
-export const ContentModal = ({ details }) => {
+export const ContentModalTable = ({ details }) => {
   const buttonsData = [
     {
       icon: faCheck,
