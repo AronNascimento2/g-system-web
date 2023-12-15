@@ -3,29 +3,15 @@ import styled from "styled-components";
 export const LoginContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background-color: #2980b9;
-
+  padding-top: 1rem;
   height: 100%;
-  .wrapperform {
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100%;
-    padding-top: 3rem;
-    width: 100%;
-    @media (max-width: 767px) {
-      padding: 0.5rem;
-    }
-
-  }
   @media (max-width: 767px) {
-
     align-items: flex-start;
     overflow: hidden;
-    width: 100%;
-    padding-top: 2rem; /* Add padding to avoid vertical overflow */
+    padding: 1.4rem 1rem; 
+    /* Add padding to avoid vertical overflow */
   }
 
   form {
