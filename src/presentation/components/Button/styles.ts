@@ -39,6 +39,7 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+    color: black;
   }
 
   @media screen and (max-width: 768px) {
