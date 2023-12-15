@@ -9,8 +9,7 @@ export const LoginContainer = styled.div`
   height: 100%;
   @media (max-width: 767px) {
 
-    align-items: flex-start;
-    padding: 1rem; 
+    padding: 3rem 1rem; 
     /* Add padding to avoid vertical overflow */
   }
 
@@ -49,7 +48,6 @@ export const LoginContainer = styled.div`
 
     @media (max-width: 767px) {
       width: 100%;
-
       padding: 1rem; /* Adjust padding for smaller screens */
     }
     @media (max-width: 767px) {
