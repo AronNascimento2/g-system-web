@@ -8,9 +8,10 @@ export const LoginContainer = styled.div`
   padding-top: 1rem;
   height: 100%;
   @media (max-width: 767px) {
+    flex: 1;
+
     align-items: flex-start;
-    overflow: hidden;
-    padding: 1.4rem 1rem; 
+    padding: 1rem; 
     /* Add padding to avoid vertical overflow */
   }
 
@@ -134,9 +135,10 @@ export const Container = styled.div`
     align-items: center;
     background-color: #fff;
     padding: 1rem;
+    flex: 1;
     img {
-      width: 20%;
-      align-self: center;
+      max-width: 80%;
+      max-height: 80%;
     }
   }
   @media (max-width: 767px) {
