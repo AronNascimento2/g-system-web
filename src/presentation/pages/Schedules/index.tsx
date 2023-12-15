@@ -15,6 +15,7 @@ import { AppointmentType } from "./types";
 import { ScheduleTable } from "./components/ScheduleTable";
 import { CardMobile } from "./components/CardMobile";
 import { useMediaQuery } from "react-responsive";
+import { HeaderButtonsMobile } from "./components/HeaderButtonsMobile";
 
 export const SchedulesPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -68,14 +69,12 @@ export const SchedulesPage: React.FC = () => {
     { title: "Técnico" },
     { title: "Ordem" },
     { title: "Endereço" },
-
-    
   ];
 
   return (
     <Container>
       <ContainerButtons className="">
-        <HeaderButtons />
+        {isMobile ? <HeaderButtonsMobile update={()=>fetchData()}/> : <HeaderButtons />}
       </ContainerButtons>
       {loading ? (
         <div className="loader-container">
@@ -85,7 +84,7 @@ export const SchedulesPage: React.FC = () => {
       ) : (
         <>
           {isMobile ? (
-            <CardMobile appointments={appointments}/>
+            <CardMobile appointments={appointments} />
           ) : (
             <WrapperTable>
               <ScheduleTable
@@ -100,11 +99,7 @@ export const SchedulesPage: React.FC = () => {
       {modalIsOpen && (
         <ModalBackground onClick={closeModal}>
           <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-            <span
-              className="closeButton"
-              onClick={closeModal}
-              tabIndex={0}
-            >
+            <span className="closeButton" onClick={closeModal} tabIndex={0}>
               &times;
             </span>
             <div>{modalContent}</div>

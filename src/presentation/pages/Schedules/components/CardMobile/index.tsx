@@ -38,7 +38,7 @@ export const CardMobile = ({ appointments }) => {
                   </div>
                   <div>
                     <p className="title">Endereço</p>
-                    <p className="info">{appointment.Endereco}</p>
+                    <p className="info-address">{appointment.Endereco}</p>
                   </div>
                 </div>
               </DetailsContent>

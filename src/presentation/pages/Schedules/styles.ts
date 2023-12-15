@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+height: 100%;
   .loader-container {
     width: 100%;
     height: 100vh;
@@ -15,7 +16,7 @@ export const Container = styled.div`
   }
   @media screen and (max-width: 768px) {
     .loader-container {
-      height: 70%;
+      height:90%;
     }
   }
 `;
@@ -53,10 +54,11 @@ export const WrapperTable = styled.div`
   max-width: 100%;
   padding: 1rem;
   overflow-x: auto;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     justify-content: center;
     padding: 0;
     padding-top: 1rem;
+    background-color: black;
   }
 `;
 export const ModalBackground = styled.div`
