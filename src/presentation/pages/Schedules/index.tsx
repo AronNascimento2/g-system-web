@@ -95,7 +95,7 @@ export const SchedulesPage: React.FC = () => {
         )}
       </ContainerButtons>
 
-      {loading ? (
+      {!loading ? (
         <div className="loader-container">
           <BarLoader width={300} height={10} color="#3498db" />
           <p>Carregando...</p>

@@ -17,13 +17,12 @@ export const Container = styled.div`
     overflow: auto;
   }
   @media screen and (max-width: 768px) {
-
-
     .overflow-items {
       height: 100%;
-padding:0.5rem;    }
+      padding: 0.5rem;
+    }
     .loader-container {
-      height: 90%;
+      height: 80vh;
     }
   }
 `;
@@ -47,7 +46,7 @@ export const ContainerButtons = styled.div`
   @media screen and (max-width: 768px) {
     justify-content: center;
     padding: 0;
-    padding:0.5rem;
+    padding: 0.5rem;
     padding-top: 1rem;
     select {
       width: 120px;
