@@ -5,6 +5,7 @@ body {
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
+  
 }
 * {
   box-sizing: border-box;
@@ -18,4 +19,10 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: #3498db; /* Cor azul para a barra de rolagem */
   border-radius: 4px;
+}
+@media (max-width: 767px) {
+ body{
+  font-size:14px
+};
+
 }

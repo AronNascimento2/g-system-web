@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  overflow: hidden;
   .loader-container {
     width: 100%;
     height: 100vh;
@@ -15,18 +14,14 @@ export const Container = styled.div`
     }
   }
   .overflow-items {
-    padding-top: 1rem;
-    height: 100%;
     overflow: auto;
   }
   @media screen and (max-width: 768px) {
-    overflow: hidden;
-    height: 100%;
+
 
     .overflow-items {
       height: 100%;
-      overflow: auto;
-    }
+padding:0.5rem;    }
     .loader-container {
       height: 90%;
     }
@@ -52,8 +47,8 @@ export const ContainerButtons = styled.div`
   @media screen and (max-width: 768px) {
     justify-content: center;
     padding: 0;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    padding:0.5rem;
+    padding-top: 1rem;
     select {
       width: 120px;
       height: 25px;
