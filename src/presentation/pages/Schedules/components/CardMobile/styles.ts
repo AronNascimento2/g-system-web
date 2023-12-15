@@ -90,6 +90,7 @@ export const WrapperContent = styled.div`
     color: #fff;
     .name {
       font-size: 16px;
+      font-weight: 600;
     }
     .code {
       background-color: rgba(52, 152, 219, 0.4);
