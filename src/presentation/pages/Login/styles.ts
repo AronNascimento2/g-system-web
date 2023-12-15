@@ -5,10 +5,11 @@ export const LoginContainer = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #2980b9;
+
 height: 100%;
   @media (max-width: 767px) {
     align-items: flex-start;
-
+    overflow: hidden;
     width: 100%;
     padding:  1rem; /* Add padding to avoid vertical overflow */
   }
