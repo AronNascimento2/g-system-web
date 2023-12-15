@@ -26,7 +26,8 @@ export const CardMobile = ({
   searchText,
   handleRowClickCard,
 }) => {
-  const [selectedAppointment, setSelectedAppointment] = useState<AppointmentProps | null>(null);
+  const [selectedAppointment, setSelectedAppointment] =
+    useState<AppointmentProps | null>(null);
 
   const openModal = (appointment) => {
     setSelectedAppointment(appointment);
@@ -42,32 +43,44 @@ export const CardMobile = ({
       icon: faCheck,
       text: "Confirmar",
       onClick: () => console.log("Botão Confirmar clicado"),
+      disabled: true,
     },
     {
       icon: faDollar,
       text: "Faturar",
       onClick: () => console.log("Botão Faturar clicado"),
+      disabled: true,
     },
     {
       icon: faEdit,
       text: "Editar",
       onClick: () => console.log("Botão Editar clicado"),
+      disabled: true,
     },
     {
       icon: faTrash,
       text: "Excluir",
       onClick: () => console.log("Botão Excluir clicado"),
+      disabled: true,
     },
 
     {
       icon: faClose,
       text: "Cancelar",
       onClick: () => console.log("Botão Cancelar clicado"),
+      disabled: true,
     },
     {
       icon: faEnvelope,
       text: "Enviar",
       onClick: () => console.log("Botão Mapa de Serviços clicado"),
+      disabled: true,
+    },
+    {
+      icon: faClose,
+      text: "Fechar",
+      onClick: closeAndClearModal,
+      disabled: false,
     },
   ];
 
@@ -78,10 +91,7 @@ export const CardMobile = ({
           appointment.Cliente.toLowerCase().includes(searchText.toLowerCase())
         )
         .map((appointment) => (
-          <Container
-            key={appointment.Codigo}
-            
-          >
+          <Container key={appointment.Codigo}>
             <WrapperContent onClick={() => openModal(appointment)}>
               <div className="name-client">
                 <p className="name">{appointment.Cliente}</p>
@@ -165,7 +175,7 @@ export const CardMobile = ({
                 <strong>Status Faturamento:</strong>{" "}
                 {selectedAppointment.StatusFaturamento}
               </li>
-              
+
               <li>
                 <strong>Km:</strong> {selectedAppointment.Km ?? 0}
               </li>
@@ -218,7 +228,7 @@ export const CardMobile = ({
                   icon={button.icon}
                   text={button.text}
                   onClick={button.onClick}
-                  disabled
+                  disabled={button.disabled}
                 />
               ))}
             </div>
