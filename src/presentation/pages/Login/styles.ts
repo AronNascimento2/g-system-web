@@ -123,7 +123,7 @@ export const TogglePasswordVisibility = styled.span`
 export const Container = styled.div`
   width: 100vw;
   display: flex;
-  height: 100vh;
+  height: 90vh;
   justify-content: center;
   flex-direction: column-reverse;
   .div-logo {
