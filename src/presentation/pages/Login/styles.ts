@@ -72,7 +72,7 @@ export const LoginContainer = styled.div`
       background-color: #ffbaba;
       padding: 0.5rem;
       margin-bottom: 0.5rem;
-      max-width: 400px;
+      width: 100%;
     }
   }
 `;
