@@ -11,7 +11,6 @@ export const LoginContainer = styled.div`
 
   @media (max-width: 767px) {
     width: 100%;
-    height: 100vh;
     z-index: 1;
     overflow: hidden;
   }
