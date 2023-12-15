@@ -49,10 +49,10 @@ export const ModalContent = styled.div`
   }
   .closeButton {
     position: absolute;
-    top: 5px;
-    left: 10px;
+    top: 7px;
+    right: 25px;
     padding: 0.5rem;
-    font-size: 30px;
+    font-size: 34px;
     cursor: pointer;
   }
 `;

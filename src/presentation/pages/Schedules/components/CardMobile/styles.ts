@@ -99,5 +99,4 @@ export const WrapperContent = styled.div`
   }
 `;
 export const StyledHeaderText =styled(HeaderText)`
-margin-bottom: 9px;
 `
