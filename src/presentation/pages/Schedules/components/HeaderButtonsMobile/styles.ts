@@ -5,23 +5,27 @@ export const Container = styled.div`
   width: 100%;
   gap: 0.5rem;
   align-items: center;
-  flex: 1;
+  justify-content: center;
+  
   .open-options-button {
-    width: 30px;
+    width: 40px;
     border-radius: 50%;
-    height: 30px;
+    height: 40px;
     outline: 0;
     border: none;
     background-color: #3498db;
     color: #fff;
   }
+  .button{
+    height: 35px;
+    width: 20%;
+  }
  
 .filter{
-    flex: 1;
 }
   .input-search {
-    flex: 3;
-    height: 30px;
+    flex: 1;
+    height: 40px;
     border-radius: 20px;
     outline: 0;
     border: 1px solid #ccc; /* Adicione uma borda sólida de 2px com cor cinza claro */

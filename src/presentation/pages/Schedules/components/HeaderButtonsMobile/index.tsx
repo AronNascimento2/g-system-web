@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button } from "../../../../components/Button";
 import { ModalOptionsMobile } from "../ModalOptionsMobile";
 import { Container } from "./styles";
-import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
+import { faArrowsRotate, faFilter } from "@fortawesome/free-solid-svg-icons";
+import { DynamicButton } from "../../../../components/DynamicButton";
 
 export const HeaderButtonsMobile = ({update}) => {
   return (
@@ -11,7 +11,7 @@ export const HeaderButtonsMobile = ({update}) => {
         <FontAwesomeIcon className="collapsed-icon" icon={faArrowsRotate} />
       </button>
       <input className="input-search" type="text" placeholder="Buscar" />
-      <Button className="filter" title="Filtrar" />
+      <DynamicButton className='button' icon={faFilter} text={'Filtrar'}/>
       <ModalOptionsMobile />
     </Container>
   );

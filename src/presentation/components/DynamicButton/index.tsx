@@ -1,3 +1,4 @@
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
@@ -15,10 +16,16 @@ const ButtonContainer = styled.button`
   font-weight: 600;
   gap: 0.5rem;
 `;
-
-export const DynamicButton = ({ icon, text, onClick }) => {
+interface DynamicButtonProps {
+    icon: IconDefinition;
+    text: string;
+    onClick?: () => void;
+    className?:string
+  }
+  
+export const DynamicButton = ({ icon, text, onClick, className }:DynamicButtonProps) => {
   return (
-    <ButtonContainer onClick={onClick}>
+    <ButtonContainer className={className} onClick={onClick}>
       <FontAwesomeIcon icon={icon} />
       <p>{text}</p>
     </ButtonContainer>

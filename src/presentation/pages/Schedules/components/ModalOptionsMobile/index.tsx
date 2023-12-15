@@ -12,8 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container, ModalContainer, ModalContent } from "./styles";
-import { DynamicButton } from "../button";
-
+import { DynamicButton } from "../../../../components/DynamicButton";
 export const ModalOptionsMobile = () => {
   const [isOpen, setIsOpen] = useState(false);
 

@@ -74,7 +74,7 @@ export const SchedulesPage: React.FC = () => {
   return (
     <Container>
       <ContainerButtons className="">
-        {isMobile ? <HeaderButtonsMobile update={()=>fetchData()}/> : <HeaderButtons />}
+        {isMobile ? <HeaderButtonsMobile update={fetchData}/> : <HeaderButtons />}
       </ContainerButtons>
       {loading ? (
         <div className="loader-container">
