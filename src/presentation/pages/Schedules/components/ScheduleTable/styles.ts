@@ -15,7 +15,7 @@ export const ScheduleTableContainer = styled.div`
   }
 
   th {
-    background-color: #2980b9;
+    background-color: #3498db;
     color: #fff;
     justify-content: space-between;
     :hover {
@@ -34,7 +34,7 @@ export const ScheduleTableContainer = styled.div`
 
   tr {
     &:hover {
-      background: #3498db;
+      background: #2980b9;
       color: #fff;
     }
   }
