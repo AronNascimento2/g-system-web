@@ -41,7 +41,11 @@ export const LoginContainer = styled.div`
         font-size: 16px;
         margin: 0;
         width: 100%;
-        height: 50px;
+        height: 40px;
+        font-size: 16px;
+        padding: 14px 16px;
+        border-radius: 8px;
+        font-weight: 600;
       }
     }
 
@@ -91,9 +95,9 @@ export const InputGroup = styled.div`
 export const Input = styled.input`
   width: 100%;
   height: 40px;
-    font-size: 16px;
-    padding: 14px 16px;
-    border-radius: 8px;
+  font-size: 16px;
+  padding: 14px 16px;
+  border-radius: 8px;
   border: 1px solid #ccc;
 
   @media (max-width: 767px) {
