@@ -6,14 +6,10 @@ export const LoginContainer = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #2980b9;
-  overflow: hidden;
 
   @media (max-width: 767px) {
     width: 100%;
-    z-index: 1;
-    overflow-x: hidden; /* Prevent horizontal overflow */
     padding: 0 1rem; /* Add padding to avoid vertical overflow */
-    box-sizing: border-box; /* Include padding in the width calculation */
   }
 
   form {
@@ -52,7 +48,6 @@ export const LoginContainer = styled.div`
     @media (max-width: 767px) {
       width: 100%;
      
-      top: 50%; /* Adjust vertical positioning as needed */
       padding: 1rem; /* Adjust padding for smaller screens */
     }
     @media (max-width: 767px) {
@@ -136,15 +131,17 @@ export const Container = styled.div`
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
+    background-color: #fff;
+    padding: 1rem;
     img {
       width: 20%;
       align-self: center;
     }
-    background-color: #fff;
   }
   @media (max-width: 767px) {
     .div-logo img {
       width: 80%;
+      max-width: 200px;
       align-self: auto;
       /* Outros estilos para telas menores, se necessário */
     }
