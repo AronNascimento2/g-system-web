@@ -7,6 +7,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   
+  
   .open-options-button {
     width: 40px;
     border-radius: 50%;
@@ -15,16 +16,21 @@ export const Container = styled.div`
     border: none;
     background-color: #3498db;
     color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra desejada */
+
   }
   .button{
     height: 35px;
     width: 20%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra desejada */
+
   }
  
-.filter{
-}
+
   .input-search {
     flex: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra desejada */
+
     height: 40px;
     border-radius: 20px;
     outline: 0;

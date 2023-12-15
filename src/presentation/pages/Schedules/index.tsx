@@ -82,7 +82,7 @@ export const SchedulesPage: React.FC = () => {
           <p>Carregando...</p>
         </div>
       ) : (
-        <>
+        <div className="overflow-items">
           {isMobile ? (
             <CardMobile appointments={appointments} />
           ) : (
@@ -94,7 +94,7 @@ export const SchedulesPage: React.FC = () => {
               />
             </WrapperTable>
           )}
-        </>
+        </div>
       )}
       {modalIsOpen && (
         <ModalBackground onClick={closeModal}>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-height: 100%;
+overflow: hidden;
   .loader-container {
     width: 100%;
     height: 100vh;
@@ -14,7 +14,17 @@ height: 100%;
       color: #2980b9;
     }
   }
+  .overflow-items{
+      height: 100%;
+      overflow: auto;
+    }
   @media screen and (max-width: 768px) {
+    overflow: hidden;
+
+    .overflow-items{
+      height: 100%;
+      overflow: auto;
+    }
     .loader-container {
       height:90%;
     }

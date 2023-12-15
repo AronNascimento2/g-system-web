@@ -5,6 +5,7 @@ interface ModalContainerProps {
 }
 
 export const Container = styled.div`
+
   .open-options-button {
     width: 30px;
     border-radius: 50%;
@@ -12,6 +13,8 @@ export const Container = styled.div`
     outline: 0;
     border: none;
     background-color: #3498db;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra desejada */
+
     color: #fff;
   }
 `;
