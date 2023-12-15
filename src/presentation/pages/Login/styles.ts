@@ -9,15 +9,7 @@ export const LoginContainer = styled.div`
   background-color: #2980b9;
   overflow: hidden;
 
-  @media (max-width: 767px) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 1;
-    overflow: hidden;
-  }
+ 
 
   form {
     display: flex;
@@ -27,11 +19,12 @@ export const LoginContainer = styled.div`
     background-color: #fff;
     border-radius: 10px;
     width: 40%;
-    max-width: 600px;
+    max-width: 500px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 3rem 1.5rem;
-    margin-top: 3rem;
-
+    h2{
+      color: #2980b9;
+    }
     .icon {
       padding-bottom: 0.5rem;
     }
@@ -53,9 +46,8 @@ export const LoginContainer = styled.div`
     }
 
     @media (max-width: 767px) {
-      width: 80%;
-      position: absolute;
-      top: 10%;
+      width: 60%;
+      
       .buttons {
         width: 100%;
 
@@ -130,11 +122,15 @@ export const Container = styled.div`
   height: 100vh;
   overflow: auto;
   justify-content: center;
+  flex-direction: column-reverse;
   .div-logo {
-    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); /* Sombra desejada */
     flex: 1;
+    height: 80%;
+    justify-content: center;
+    display: flex;
     img {
-      width: 100%;
+      width: auto;
+
       height: auto;
       align-self: center;
       padding-top: 3rem;

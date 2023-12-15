@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import {
   Container,
@@ -22,7 +21,7 @@ export const LoginPage: React.FC = () => {
     const storedCnpj = localStorage.getItem("cnpj");
     return storedCnpj ?? "";
   });
-const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
@@ -73,17 +72,9 @@ const [userName, setUserName] = useState("");
 
   return (
     <Container>
-      <div className="div-logo">
-        <img src="/logo.png" alt="Logo" />
-      </div>
       <LoginContainer>
         <form onSubmit={handleLogin}>
-          <img
-            className="icon"
-            src="/icon.png"
-            alt="Logo"
-            style={{ maxWidth: "100%", height: "auto" }}
-          />
+          <h2>Login</h2>
           <InputGroup>
             <InputMask
               mask="99.999.999/9999-99"
@@ -133,6 +124,9 @@ const [userName, setUserName] = useState("");
           </WrapperButton>
         </form>
       </LoginContainer>
+      <div className="div-logo">
+        <img src="/logo.png" alt="Logo" />
+      </div>
     </Container>
   );
 };
