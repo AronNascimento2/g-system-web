@@ -13,11 +13,12 @@ import { useAuth } from "../../../../../utils/useAuth";
 import { ROUTES_PATHS } from "../../../../../constants/routePaths";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import {  faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 export const SideBar = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { logout, user,logo } = useAuth();
+  const { logout, user, logo } = useAuth();
 
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -85,12 +86,11 @@ export const SideBar = () => {
   return (
     <>
       <Header>
-        
         {isMobile && (
           <>
             <img
-            className="img-mobile"
-              src={logo ?? ''}
+              className="img-mobile"
+              src={logo ?? ""}
               alt="Logo"
               style={{ maxWidth: "100px", height: "auto" }}
             />{" "}
@@ -125,6 +125,7 @@ export const SideBar = () => {
             </MenuItem>
           ))}
           <MenuItem onClick={() => handleMenuItemClick(logoutItem)}>
+            <FontAwesomeIcon icon={faRightFromBracket} />
             {logoutItem.name}
           </MenuItem>
         </Menu>
@@ -133,7 +134,7 @@ export const SideBar = () => {
         <Sidebar>
           <div className="container-logo">
             <img
-              src={logo ?? ''}
+              src={logo ?? ""}
               alt="Logo"
               style={{ maxWidth: "100%", height: "auto" }}
             />{" "}
@@ -156,7 +157,11 @@ export const SideBar = () => {
                 <FontAwesomeIcon icon={item.icon as IconProp} /> {item.name}
               </MenuItem>
             ))}
-            <MenuItem onClick={logoutItem.onClick}>{logoutItem.name}</MenuItem>
+            <MenuItem onClick={logoutItem.onClick}>
+              {" "}
+              <FontAwesomeIcon icon={faRightFromBracket} />
+              {logoutItem.name}
+            </MenuItem>
           </Menu>
         </Sidebar>
       )}
