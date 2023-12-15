@@ -27,7 +27,6 @@ export const LoginContainer = styled.div`
     max-width: 600px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 3rem 1.5rem;
-    margin-top: 3rem;
 
     .icon {
       padding-bottom: 0.5rem;
@@ -134,7 +133,6 @@ export const Container = styled.div`
     flex: 1;
     img {
       align-self: center;
-      padding-top: 3rem;
     }
     background-color: #fff;
   }
