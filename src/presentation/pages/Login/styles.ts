@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 export const LoginContainer = styled.div`
-  flex: 2;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #2980b9;
-
+height: 100%;
   @media (max-width: 767px) {
     width: 100%;
     padding: 0 1rem; /* Add padding to avoid vertical overflow */
@@ -139,7 +138,6 @@ export const Container = styled.div`
     }
   }
   @media (max-width: 767px) {
-    height: 90vh;
     .div-logo img {
       width: 80%;
       max-width: 200px;
