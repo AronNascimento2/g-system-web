@@ -136,6 +136,7 @@ export const LoginPage: React.FC = () => {
           <WrapperButton className="buttons">
             <Button className="button" title={"Entrar"} loading={loading} />
             <Button
+            disabled
               className="button"
               title={"Esqueci a senha"}
               loading={loading}
