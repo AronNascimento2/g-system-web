@@ -135,14 +135,17 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
+    align-items: center;
     flex: 1;
     img {
+      width: 20%;
       align-self: center;
     }
     background-color: #fff;
   }
   @media (max-width: 767px) {
     .div-logo img {
+      width: 80%;
       align-self: auto;
       /* Outros estilos para telas menores, se necessário */
     }
