@@ -98,6 +98,5 @@ export const WrapperContent = styled.div`
   }
 `;
 export const StyledHeaderText =styled(HeaderText)`
-margin-top: 12px;
-margin-bottom: 12px;
+margin-bottom: 9px;
 `
