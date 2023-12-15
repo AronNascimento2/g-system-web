@@ -123,7 +123,7 @@ export const TogglePasswordVisibility = styled.span`
 export const Container = styled.div`
   width: 100vw;
   display: flex;
-  height: 90vh;
+  height: 100vh;
   justify-content: center;
   flex-direction: column-reverse;
   .div-logo {
@@ -139,6 +139,7 @@ export const Container = styled.div`
     }
   }
   @media (max-width: 767px) {
+    height: 90vh;
     .div-logo img {
       width: 80%;
       max-width: 200px;
