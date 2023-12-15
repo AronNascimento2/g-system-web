@@ -24,13 +24,14 @@ export const LoginContainer = styled.div`
     width: 40%;
     max-width: 600px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 3rem 1.5rem;
+    padding: 1rem ;
 
     .icon {
       padding-bottom: 0.5rem;
     }
-    h2 {
+    p {
       color: #2980b9;
+      font-size: 25px;
     }
     .buttons {
       width: 100%;

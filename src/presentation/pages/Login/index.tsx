@@ -74,7 +74,7 @@ export const LoginPage: React.FC = () => {
     <Container>
       <LoginContainer>
         <form onSubmit={handleLogin}>
-          <h2>Login</h2>
+          <p>Login</p>
           <InputGroup>
             <InputMask
               mask="99.999.999/9999-99"
