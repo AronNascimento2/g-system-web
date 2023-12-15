@@ -30,6 +30,11 @@ export const LoginContainer = styled.div`
     p {
       color: #2980b9;
       font-size: 25px;
+      font-weight: 600;
+      @media (max-width: 767px) {
+        font-size: 20px;
+
+      }
     }
     .buttons {
       width: 100%;
