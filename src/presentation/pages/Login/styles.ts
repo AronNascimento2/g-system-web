@@ -8,8 +8,7 @@ export const LoginContainer = styled.div`
   padding-top: 3rem;
   height: 100%;
   @media (max-width: 767px) {
-
-    padding: 3rem 1rem; 
+    padding: 3rem 1rem;
     /* Add padding to avoid vertical overflow */
   }
 
@@ -57,7 +56,6 @@ export const LoginContainer = styled.div`
           width: 100%;
           display: flex;
           flex-direction: column;
-
         }
       }
     }
@@ -78,11 +76,11 @@ export const InputGroup = styled.div`
   width: 100%;
 
   .inputmask {
-    font-size: 20px;
     width: 100%;
-    height: 50px;
-    padding: 8px;
-    border-radius: 3px;
+    height: 40px;
+    font-size: 16px;
+    padding: 14px 16px;
+    border-radius: 8px;
     border: 1px solid #ccc;
     @media (max-width: 767px) {
       width: 100%;
@@ -91,11 +89,11 @@ export const InputGroup = styled.div`
 `;
 
 export const Input = styled.input`
-  font-size: 20px;
   width: 100%;
-  height: 50px;
-  padding: 8px;
-  border-radius: 3px;
+  height: 40px;
+    font-size: 16px;
+    padding: 14px 16px;
+    border-radius: 8px;
   border: 1px solid #ccc;
 
   @media (max-width: 767px) {
@@ -138,7 +136,7 @@ export const Container = styled.div`
     }
   }
   @media (max-width: 767px) {
-    .div-logo{
+    .div-logo {
       height: 142px;
     }
     .div-logo img {
