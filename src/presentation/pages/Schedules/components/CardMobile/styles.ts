@@ -10,12 +10,13 @@ export const Container = styled.div`
 `;
 export const StyledModalMobileDownSide = styled(ModalMobileDownSide)`
   height: auto;
-  padding: 2rem;
   overflow: auto;
   ul {
     list-style: none;
     padding: 0;
     margin:0;
+  }
+  .content{
   }
   .obs {
     width: 100%;
