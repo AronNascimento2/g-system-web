@@ -7,8 +7,10 @@ export const LoginContainer = styled.div`
   background-color: #2980b9;
 height: 100%;
   @media (max-width: 767px) {
+    align-items: flex-start;
+
     width: 100%;
-    padding: 0 1rem; /* Add padding to avoid vertical overflow */
+    padding:  1rem; /* Add padding to avoid vertical overflow */
   }
 
   form {
