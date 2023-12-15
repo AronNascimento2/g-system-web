@@ -18,20 +18,24 @@ export const Container = styled.div`
     margin-top:1rem ;
     padding: 1rem;
     overflow: auto;
+    margin-bottom: 0.5rem;
   }
   .buttons {
     height: 100%;
     .wrapperbuttons {
-      padding-top: 2rem;
       display: flex;
-      gap: 1rem;
       flex-wrap: wrap;
+      gap: 0.5rem;
+
       justify-content: center;
       align-items: center;
     }
   }
   @media screen and (max-width: 768px) {
     font-size: 16px;
+    .wrapperbuttons {
+
+    }
   }
 `;
 

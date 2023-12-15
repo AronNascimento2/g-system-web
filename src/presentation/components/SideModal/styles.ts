@@ -28,11 +28,14 @@ export const ModalContainer = styled.div<ModalProps>`
   border-radius: 50px 0 0 50px;
   z-index: 1000;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  padding: 20px;
 
 
  
 
   z-index: 999;
+  @media (max-width: 767px) {
+  }
 `;
 
 export const ModalContent = styled.div`

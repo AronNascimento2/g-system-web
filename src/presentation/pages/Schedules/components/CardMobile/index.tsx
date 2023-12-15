@@ -210,8 +210,8 @@ export const CardMobile = ({
               <div className="obs">Obs. {selectedAppointment.Observacao}</div>
             </ul>
           </div>
-          <div className="buttons">
-            <div className="wrapperbuttons">
+          <div className="buttons-mobile">
+            <div className="wrapperbuttons-mobile">
               {buttonsData.map((button, index) => (
                 <DynamicButton
                   key={index}

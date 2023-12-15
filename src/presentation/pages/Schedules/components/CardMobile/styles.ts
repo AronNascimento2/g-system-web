@@ -23,11 +23,9 @@ export const StyledModalMobileDownSide = styled(ModalMobileDownSide)`
     padding: 1rem;
     overflow: auto;
   }
-  .buttons {
+  .buttons-mobile {
     height: 100%;
-    width: 100%;
-    flex-wrap:wrap;
-    .wrapperbuttons {
+    .wrapperbuttons-mobile {
       padding-top: 0.5rem;
       display: flex;
       flex-wrap: wrap;
