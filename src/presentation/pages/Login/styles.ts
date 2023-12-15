@@ -135,15 +135,16 @@ export const Container = styled.div`
     align-items: center;
     background-color: #fff;
     padding: 1rem;
-    flex: 1;
     img {
       max-width: 80%;
       max-height: 80%;
     }
   }
   @media (max-width: 767px) {
+    .div-logo{
+      height: 125px;
+    }
     .div-logo img {
-      width: 80%;
       max-width: 200px;
       align-self: auto;
       /* Outros estilos para telas menores, se necessário */
