@@ -34,8 +34,9 @@ export const Container = styled.div`
     height: 40px;
     border-radius: 20px;
     outline: 0;
-    border: 1px solid #ccc; /* Adicione uma borda sólida de 2px com cor cinza claro */
-    padding: 1rem; /* Adicione um preenchimento para afastar o texto da borda */
+    border: 1px solid #ccc;
+    padding-left:4rem; /* Adicione uma borda sólida de 2px com cor cinza claro */
+    padding: 0.5rem; /* Adicione um preenchimento para afastar o texto da borda */
   }
   
 `;
