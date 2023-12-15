@@ -19,7 +19,6 @@ import {
   faEnvelope,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
-import { HeaderText } from "../ContentModalTable/styles";
 import { AppointmentProps } from "../../types";
 
 export const CardMobile = ({
