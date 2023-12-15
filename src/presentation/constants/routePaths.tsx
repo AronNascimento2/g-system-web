@@ -119,7 +119,7 @@ export const ROUTES_PATHS = [
     Permissions: [],
   },
   {
-    path: "/Settings",
+    path: "/Configuracoes",
     element: SettingsPage,
     title: "Configuracoes",
     isPrivate: true,
