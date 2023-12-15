@@ -21,5 +21,5 @@ export type AppointmentType = {
   Custos?: number;
   Periodo?: string;
   ValorAdicional?: number;
-}[];
+};
 

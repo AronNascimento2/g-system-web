@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { fetchAppointments } from "../../../services/Schedule";
-import {
-  Container,
-  ContainerButtons,
-  WrapperTable,
-} from "./styles";
+import { Container, ContainerButtons, WrapperTable } from "./styles";
 
 import { BarLoader } from "react-spinners";
-import { ContentModal } from "./components/ContentModal";
+import { ContentModal } from "./components/ContentModalTable";
 import { getFirstAndLastDayOfMonth } from "../../utils/getFirstAndLastDayofMonth";
 import { HeaderButtons } from "./components/HeaderButtons";
 import { AppointmentType } from "./types";
@@ -19,7 +15,7 @@ import { SideModal } from "../../components/SideModal";
 
 export const SchedulesPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
-  const [appointments, setAppointments] = useState<AppointmentType>([]);
+  const [appointments, setAppointments] = useState<AppointmentType | null>(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalContent, setModalContent] = useState("");
   const { firstDay, lastDay } = getFirstAndLastDayOfMonth();
@@ -59,6 +55,11 @@ export const SchedulesPage: React.FC = () => {
     const details = rowData;
 
     openModal(<ContentModal details={details} />);
+  };
+
+  const handleRowClickCard = (rowData) => {
+    const details = rowData;
+    return details;
   };
 
   const tableColumns = [
@@ -102,7 +103,11 @@ export const SchedulesPage: React.FC = () => {
       ) : (
         <div className="overflow-items">
           {isMobile ? (
-            <CardMobile appointments={appointments} searchText={searchText} />
+            <CardMobile
+              appointments={appointments}
+              searchText={searchText}
+              handleRowClickCard={handleRowClickCard}
+            />
           ) : (
             <WrapperTable>
               <ScheduleTable

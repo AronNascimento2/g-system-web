@@ -1,8 +1,14 @@
 import { useState } from "react";
 import {
   formatDate,
+  formatDateAndHour,
 } from "../../../../utils/formateHourAndDate";
-import { Container, DetailsContent, StyledModalMobileDownSide, WrapperContent } from "./styles";
+import {
+  Container,
+  DetailsContent,
+  StyledModalMobileDownSide,
+  WrapperContent,
+} from "./styles";
 import { DynamicButton } from "../../../../components/DynamicButton";
 import {
   faCheck,
@@ -12,15 +18,23 @@ import {
   faEnvelope,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
-import { HeaderText } from "../ContentModal/styles";
+import { HeaderText } from "../ContentModalTable/styles";
+import { AppointmentType } from "../../types";
 
-export const CardMobile = ({ appointments, searchText }) => {
-  const filteredAppointments = appointments.filter((appointment) =>
-    appointment.Cliente.toLowerCase().includes(searchText.toLowerCase())
-  );
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const openModal = () => {
-    setModalIsOpen(!modalIsOpen);
+export const CardMobile = ({
+  appointments,
+  searchText,
+  handleRowClickCard,
+}) => {
+  const [selectedAppointment, setSelectedAppointment] = useState<AppointmentType | null>(null);
+
+  const openModal = (appointment) => {
+    setSelectedAppointment(appointment);
+    handleRowClickCard(appointment);
+  };
+
+  const closeAndClearModal = () => {
+    setSelectedAppointment(null);
   };
 
   const buttonsData = [
@@ -56,13 +70,20 @@ export const CardMobile = ({ appointments, searchText }) => {
       onClick: () => console.log("Botão Mapa de Serviços clicado"),
     },
   ];
+
   return (
     <>
-      {filteredAppointments.map((appointment) => {
-        return (
-          <Container key={appointment.Codigo}>
-            <WrapperContent>
-              <div className="name-client" onClick={openModal}>
+      {appointments
+        ?.filter((appointment) =>
+          appointment.Cliente.toLowerCase().includes(searchText.toLowerCase())
+        )
+        .map((appointment) => (
+          <Container
+            key={appointment.Codigo}
+            
+          >
+            <WrapperContent onClick={() => openModal(appointment)}>
+              <div className="name-client">
                 <p className="name">{appointment.Cliente}</p>
                 <span className="code">{appointment.Codigo}</span>
               </div>
@@ -98,100 +119,112 @@ export const CardMobile = ({ appointments, searchText }) => {
               </DetailsContent>
             </WrapperContent>
           </Container>
-        );
-      })}
+        ))}
 
-      <StyledModalMobileDownSide className='modal' show={modalIsOpen} handleClose={openModal}>
-        <div className="content">
-          <HeaderText>Detalhes do Agendamento </HeaderText>
-          <ul>
-            <li>
-              <strong>Cliente:</strong>
-            </li>
-            <li>
-              <strong>Codigo:</strong>
-            </li>
-            <li>
-              <strong>Técnico:</strong>
-            </li>
-            <li>
-              <strong>Data:</strong>
-            </li>
-            <li>
-              <strong>Data de criação:</strong>{" "}
-            </li>
+      {selectedAppointment && (
+        <StyledModalMobileDownSide
+          className="modal"
+          show={!!selectedAppointment}
+          handleClose={closeAndClearModal}
+        >
+          <div className="content">
+            <HeaderText>Detalhes do Agendamento </HeaderText>
+            <ul>
+              <li>
+                <strong>Cliente:</strong> {selectedAppointment.Cliente}
+              </li>
+              <li>
+                <strong>Codigo:</strong> {selectedAppointment.Codigo}
+              </li>
+              <li>
+                <strong>Técnico:</strong> {selectedAppointment.Tecnico}
+              </li>
+              <li>
+                <strong>Data:</strong> {formatDate(selectedAppointment.Data)}
+              </li>
+              <li>
+                <strong>Data de criação:</strong>{" "}
+                {formatDateAndHour(selectedAppointment.DataCriacao)}
+              </li>
 
-            <li>
-              <strong>Endereço:</strong>
-            </li>
-            <li>
-              <strong>Período:</strong>
-            </li>
-            <li>
-              <strong>Valor do serviço:</strong> R$
-            </li>
-            <li>
-              <strong>Não Presencial:</strong>
-            </li>
-            <li>
-              <strong>Status Faturamento:</strong>
-            </li>
-            <li>
-              <strong>Veiculos:</strong>
-            </li>
-            <li>
-              <strong>Km:</strong>
-            </li>
-            <li>
-              <strong>Ordem:</strong>
-            </li>
+              <li>
+                <strong>Endereço:</strong> {selectedAppointment.Endereco}
+              </li>
+              <li>
+                <strong>Período:</strong> {selectedAppointment.Periodo}
+              </li>
+              <li>
+                <strong>Valor do serviço:</strong> R${" "}
+                {selectedAppointment.ValorServico}
+              </li>
+              <li>
+                <strong>Não Presencial:</strong>{" "}
+                {selectedAppointment.NãoPresencial}
+              </li>
+              <li>
+                <strong>Status Faturamento:</strong>{" "}
+                {selectedAppointment.StatusFaturamento}
+              </li>
+              
+              <li>
+                <strong>Km:</strong> {selectedAppointment.Km ?? 0}
+              </li>
+              <li>
+                <strong>Ordem:</strong> {selectedAppointment.Ordem}
+              </li>
 
-            <li>
-              <strong>Verificado:</strong>
-            </li>
-            <li>
-              <strong>Visita técnica :</strong>
-            </li>
-            <li>
-              <strong>Cliente antigo:</strong>
-            </li>
-            <li>
-              <strong>Custo do deslocamento:</strong>
-            </li>
-            <li>
-              <strong>Servico:</strong>
-            </li>
+              <li>
+                <strong>Verificado:</strong> {selectedAppointment.Verificado}
+              </li>
+              <li>
+                <strong>Visita técnica :</strong>{" "}
+                {selectedAppointment.VisitaTecnica}
+              </li>
+              <li>
+                <strong>Cliente antigo:</strong>{" "}
+                {selectedAppointment.ClienteAntigo}
+              </li>
+              <li>
+                <strong>Custo do deslocamento:</strong>{" "}
+                {selectedAppointment.CustoDeslocamento}
+              </li>
+              <li>
+                <strong>Servico:</strong> {selectedAppointment.Servico}
+              </li>
 
-            <li>
-              <strong>Tipo:</strong>
-            </li>
-            <li>
-              <strong>Custos:</strong>
-            </li>
+              <li>
+                <strong>Tipo:</strong> {selectedAppointment.Tipo}
+              </li>
+              <li>
+                <strong>Custos:</strong> {selectedAppointment.Custos}
+              </li>
 
-            <li>
-              <strong>Valor adicional:</strong>
-            </li>
-            <li>
-              <strong>Status Faturamento:</strong>
-            </li>
-            <div className="obs">Obs. </div>
-          </ul>
-        </div>
-        <div className="buttons">
-          <div className="wrapperbuttons">
-            {buttonsData.map((button, index) => (
-              <DynamicButton
-                key={index}
-                icon={button.icon}
-                text={button.text}
-                onClick={button.onClick}
-                disabled
-              />
-            ))}
+              <li>
+                <strong>Valor adicional:</strong>{" "}
+                {selectedAppointment.ValorAdicional}
+              </li>
+              <li>
+                <strong>Status Faturamento:</strong>{" "}
+                {selectedAppointment.StatusFaturamento}
+              </li>
+              <div className="obs">Obs. {selectedAppointment.Observacao}</div>
+            </ul>
           </div>
-        </div>
-      </StyledModalMobileDownSide>
+          <div className="buttons">
+            <div className="wrapperbuttons">
+              {buttonsData.map((button, index) => (
+                <DynamicButton
+                  key={index}
+                  icon={button.icon}
+                  text={button.text}
+                  onClick={button.onClick}
+                  disabled
+                />
+              ))}
+            </div>
+          </div>
+        </StyledModalMobileDownSide>
+      )}
     </>
   );
 };

@@ -7,16 +7,34 @@ export const Container = styled.div`
   border-radius: 20px;
   margin-bottom: 1rem;
 `;
-export const StyledModalMobileDownSide =styled(ModalMobileDownSide)`
+export const StyledModalMobileDownSide = styled(ModalMobileDownSide)`
   height: auto;
   padding: 2rem;
-  ul{
+  overflow: auto;
+  ul {
     list-style: none;
     padding: 0;
   }
-.modal{
-}
-`
+  .obs {
+    width: 100%;
+    border: 1px solid lightgray;
+    height: 100px;
+    margin-top: 1rem;
+    padding: 1rem;
+    overflow: auto;
+  }
+  .buttons {
+    height: 100%;
+    .wrapperbuttons {
+      padding-top: 0.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+`;
 export const DetailsContent = styled.div`
   display: flex;
   gap: 2rem;

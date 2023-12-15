@@ -41,7 +41,6 @@ export const ModalContent = styled.div`
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 1); /* Exemplo de sombra */
 
   div {
-    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: auto auto;

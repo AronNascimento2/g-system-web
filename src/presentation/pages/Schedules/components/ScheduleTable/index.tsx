@@ -7,7 +7,7 @@ export const ScheduleTable = ({
   handleRowClick,
   searchText,
 }) => {
-  const filteredAppointments = appointments.filter((appointment) =>
+  const filteredAppointments = appointments?.filter((appointment) =>
     appointment.Cliente.toLowerCase().includes(searchText.toLowerCase())
   );
   return (
@@ -21,7 +21,7 @@ export const ScheduleTable = ({
           </tr>
         </thead>
         <tbody>
-          {filteredAppointments.map((appointment, index) => (
+          {filteredAppointments?.map((appointment, index) => (
             <tr key={index} onClick={() => handleRowClick(appointment)}>
               <td>{appointment.Codigo}</td>
               <td>{appointment.Cliente}</td>
