@@ -25,12 +25,11 @@ export const Header = styled.header`
  
   @media (max-width: 767px) {
     width: 100%;
-    height: 80px;
+    height: 70px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra desejada */
     z-index: 999;
     display: flex;
     align-items: center;
-    padding: 1rem 0 1rem 0;
 
     .img-mobile{
     }
@@ -100,7 +99,7 @@ export const BurgerMenu = styled.div`
     position: fixed;
     color: black;
     z-index: 999;
-    right: 20px; /* Posicionamento no canto direito */
+    right: 16px; /* Posicionamento no canto direito */
   }
 `;
 export const MenuIcon = styled.div`
