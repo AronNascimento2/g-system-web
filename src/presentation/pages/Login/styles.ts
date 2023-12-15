@@ -6,12 +6,26 @@ export const LoginContainer = styled.div`
   align-items: center;
   background-color: #2980b9;
 
-height: 100%;
+  height: 100%;
+  .wrapperform {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding-top: 3rem;
+    width: 100%;
+    @media (max-width: 767px) {
+      padding: 0.5rem;
+    }
+
+  }
   @media (max-width: 767px) {
+
     align-items: flex-start;
     overflow: hidden;
     width: 100%;
-    padding-top:  2rem; /* Add padding to avoid vertical overflow */
+    padding-top: 2rem; /* Add padding to avoid vertical overflow */
   }
 
   form {
@@ -49,11 +63,10 @@ height: 100%;
 
     @media (max-width: 767px) {
       width: 100%;
-     
+
       padding: 1rem; /* Adjust padding for smaller screens */
     }
     @media (max-width: 767px) {
-
       .buttons {
         width: 100%;
 
