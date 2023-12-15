@@ -30,7 +30,7 @@ export const Header = styled.header`
     z-index: 999;
     display: flex;
     align-items: center;
-    padding: 3rem 0 3rem 0;
+    padding: 1rem 0 1rem 0;
 
     .img-mobile{
       margin-left: 10px;
