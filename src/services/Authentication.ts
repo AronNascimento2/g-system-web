@@ -46,7 +46,7 @@ export interface AuthData {
       }
     } catch (error: any) {
       // Aqui, o TypeScript não consegue inferir o tipo do erro, então estamos usando `any`
-      throw new Error("Erro ao autenticar: " + error.message);
+      throw new Error(error.message);
     }
   };
   

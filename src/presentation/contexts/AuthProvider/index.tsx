@@ -67,7 +67,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         throw new Error(response.message ?? "Erro ao autenticar");
       }
     } catch (error:any) {
-      throw new Error("Erro ao autenticar: " + error.message);
+      throw new Error( error.message);
     }
   }, []);
 

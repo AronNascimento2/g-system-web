@@ -15,7 +15,7 @@ import { Container, ModalContainer, ModalContent } from "./styles";
 import { DynamicButton } from "../button";
 
 export const ModalOptionsMobile = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => {
     setIsOpen(!isOpen);
