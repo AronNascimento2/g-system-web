@@ -6,6 +6,7 @@ import {
 import {
   Container,
   DetailsContent,
+  StyledHeaderText,
   StyledModalMobileDownSide,
   WrapperContent,
 } from "./styles";
@@ -138,7 +139,7 @@ export const CardMobile = ({
           handleClose={closeAndClearModal}
         >
           <div className="content">
-            <HeaderText>Detalhes do Agendamento </HeaderText>
+            <StyledHeaderText>Detalhes do Agendamento </StyledHeaderText>
             <ul>
               <li>
                 <strong>Cliente:</strong> {selectedAppointment.Cliente}

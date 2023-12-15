@@ -40,7 +40,7 @@ export const Container = styled.div`
 `;
 
 export const HeaderText = styled.p`
-  font-size: 30px;
+  font-size: 20px;
   align-self: center;
   display: flex;
   @media screen and (max-width: 768px) {

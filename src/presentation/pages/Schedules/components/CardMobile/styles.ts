@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ModalMobileDownSide } from "../../../../components/ModalMobileDownSide";
+import { HeaderText } from "../ContentModalTable/styles";
 
 export const Container = styled.div`
   width: 100%;
@@ -14,6 +15,7 @@ export const StyledModalMobileDownSide = styled(ModalMobileDownSide)`
   ul {
     list-style: none;
     padding: 0;
+    margin:0;
   }
   .obs {
     width: 100%;
@@ -94,3 +96,7 @@ export const WrapperContent = styled.div`
     }
   }
 `;
+export const StyledHeaderText =styled(HeaderText)`
+margin-top: 12px;
+margin-bottom: 12px;
+`
