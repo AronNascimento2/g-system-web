@@ -11,7 +11,9 @@ export const LoginContainer = styled.div`
   @media (max-width: 767px) {
     width: 100%;
     z-index: 1;
-    overflow: hidden;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    padding: 0 1rem; /* Add padding to avoid vertical overflow */
+    box-sizing: border-box; /* Include padding in the width calculation */
   }
 
   form {
@@ -48,9 +50,13 @@ export const LoginContainer = styled.div`
     }
 
     @media (max-width: 767px) {
-      width: 90%;
-      position: absolute;
-      top: 38%;
+      width: 100%;
+     
+      top: 50%; /* Adjust vertical positioning as needed */
+      padding: 1rem; /* Adjust padding for smaller screens */
+    }
+    @media (max-width: 767px) {
+
       .buttons {
         width: 100%;
 
