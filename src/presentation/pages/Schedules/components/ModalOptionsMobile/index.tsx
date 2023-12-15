@@ -6,8 +6,9 @@ import {
   faFile,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Container, ModalContainer, ModalContent } from "./styles";
+import { Container } from "./styles";
 import { DynamicButton } from "../../../../components/DynamicButton";
+import { ModalMobileDownSide } from "../../../../components/ModalMobileDownSide";
 export const ModalOptionsMobile = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -20,23 +21,21 @@ export const ModalOptionsMobile = () => {
       icon: faGlobe,
       text: "Mapa de Serviços",
       onClick: () => console.log("Botão Mapa de Serviços clicado"),
-      disabled:true
+      disabled: true,
     },
 
     {
       icon: faEdit,
       text: "Registrar",
       onClick: () => console.log("Botão Registrar clicado"),
-      disabled:true
-
+      disabled: true,
     },
 
     {
       icon: faFile,
       text: "Documentos",
       onClick: () => console.log("Botão Documentos clicado"),
-      disabled:true
-
+      disabled: true,
     },
   ];
 
@@ -46,24 +45,19 @@ export const ModalOptionsMobile = () => {
         <FontAwesomeIcon className="collapsed-icon" icon={faEllipsisVertical} />
       </button>
 
-      <ModalContainer isOpen={isOpen}>
-        <ModalContent>
-          <span className="closeButton" onClick={toggleModal} tabIndex={0}>
-            &times;
-          </span>
-          <div>
-            {buttonsData.map((button, index) => (
-              <DynamicButton
-                key={index}
-                icon={button.icon}
-                text={button.text}
-                onClick={button.onClick}
-                disabled={button.disabled}
-              />
-            ))}
-          </div>
-        </ModalContent>
-      </ModalContainer>
+      <ModalMobileDownSide show={isOpen} handleClose={toggleModal} >
+        <div className="buttons">
+        {buttonsData.map((button, index) => (
+          <DynamicButton
+            key={index}
+            icon={button.icon}
+            text={button.text}
+            onClick={button.onClick}
+            disabled={button.disabled}
+          />
+        ))}
+        </div>
+      </ModalMobileDownSide>
     </Container>
   );
 };
