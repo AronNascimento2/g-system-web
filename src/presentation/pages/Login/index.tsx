@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react-hooks/exhaustive-deps */
-// ... (importações e estilos)
 
 import React, { useEffect, useRef, useState } from "react";
 import {
@@ -25,7 +22,7 @@ export const LoginPage: React.FC = () => {
     const storedCnpj = localStorage.getItem("cnpj");
     return storedCnpj ?? "";
   });
-  const [username, setUserName] = useState("");
+const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
@@ -49,7 +46,7 @@ export const LoginPage: React.FC = () => {
       const currentDate = new Date().getTime();
 
       if (expirationDate > currentDate) {
-        navigate("/home");
+        navigate("/Sumario");
       }
     }
   }, []); // Executa apenas uma vez no carregamento do componente
@@ -61,12 +58,12 @@ export const LoginPage: React.FC = () => {
     setLoading(true);
 
     try {
-      await login(username, password, cnpj);
+      await login(userName, password, cnpj);
 
       // Salvar CNPJ no localStorage após o login bem-sucedido
       localStorage.setItem("cnpj", cnpj);
 
-      navigate("/home");
+      navigate("/Agenda");
     } catch (error: any) {
       setError(error.message);
     } finally {
@@ -105,7 +102,7 @@ export const LoginPage: React.FC = () => {
               placeholder="Usuário"
               type="text"
               autoComplete="name"
-              value={username}
+              value={userName}
               onChange={(e) => setUserName(e.target.value)}
               required
             />

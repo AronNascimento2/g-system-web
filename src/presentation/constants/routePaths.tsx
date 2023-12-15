@@ -31,7 +31,7 @@ import {
 
 export const ROUTES_PATHS = [
   {
-    path: "/home",
+    path: "/Sumario",
     element: HomePage,
     title: "Sumario",
     isPrivate: true,
