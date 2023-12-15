@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const LoginContainer = styled.div`
-  flex: 3;
+  flex: 2;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -48,8 +48,7 @@ export const LoginContainer = styled.div`
     }
 
     @media (max-width: 767px) {
-      width: 80%;
-      max-width: 300px;
+      width: 90%;
       top: 10%;
       .buttons {
         width: 100%;
@@ -129,6 +128,7 @@ export const Container = styled.div`
   .div-logo {
     display: flex;
     flex-direction: column-reverse;
+    justify-content: center;
     flex: 1;
     img {
       align-self: center;
