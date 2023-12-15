@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const LoginContainer = styled.div`
   flex: 2;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,7 +48,8 @@ export const LoginContainer = styled.div`
 
     @media (max-width: 767px) {
       width: 90%;
-      top: 10%;
+      position: absolute;
+      top: 38%;
       .buttons {
         width: 100%;
 
@@ -122,7 +122,6 @@ export const Container = styled.div`
   width: 100vw;
   display: flex;
   height: 100vh;
-  overflow: auto;
   justify-content: center;
   flex-direction: column-reverse;
   .div-logo {
