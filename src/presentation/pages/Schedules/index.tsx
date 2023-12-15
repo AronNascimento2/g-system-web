@@ -15,7 +15,7 @@ import { SideModal } from "../../components/SideModal";
 
 export const SchedulesPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
-  const [appointments, setAppointments] = useState<AppointmentType | null>(null);
+  const [appointments, setAppointments] = useState<AppointmentType>([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalContent, setModalContent] = useState("");
   const { firstDay, lastDay } = getFirstAndLastDayOfMonth();

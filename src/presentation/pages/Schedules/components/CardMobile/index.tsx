@@ -19,14 +19,14 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { HeaderText } from "../ContentModalTable/styles";
-import { AppointmentType } from "../../types";
+import { AppointmentProps } from "../../types";
 
 export const CardMobile = ({
   appointments,
   searchText,
   handleRowClickCard,
 }) => {
-  const [selectedAppointment, setSelectedAppointment] = useState<AppointmentType | null>(null);
+  const [selectedAppointment, setSelectedAppointment] = useState<AppointmentProps | null>(null);
 
   const openModal = (appointment) => {
     setSelectedAppointment(appointment);
