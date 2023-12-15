@@ -26,7 +26,6 @@ import {
   SettingsPage,
   SinistersPage,
   SupervisionPage,
-  TestesPage,
 } from "../pages";
 
 export const ROUTES_PATHS = [
@@ -126,13 +125,6 @@ export const ROUTES_PATHS = [
     isPrivate: true,
     Permissions: [],
     icon: faScrewdriverWrench,
-  },
-  {
-    path: "/aqui",
-    element: TestesPage,
-    title: "aqui",
-    isPrivate: true,
-    Permissions: [],
   },
   {
     path: "/",
