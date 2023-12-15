@@ -45,6 +45,7 @@ export const Menu = styled.ul`
     background-color: #fff;
     top: 8.3%;
     position: absolute;
+    z-index: 999;
     margin: 0;
   }
 `;
