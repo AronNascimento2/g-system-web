@@ -8,7 +8,6 @@ export const LoginContainer = styled.div`
   padding-top: 1rem;
   height: 100%;
   @media (max-width: 767px) {
-    flex: 1;
 
     align-items: flex-start;
     padding: 1rem; 
@@ -142,7 +141,7 @@ export const Container = styled.div`
   }
   @media (max-width: 767px) {
     .div-logo{
-      height: 125px;
+      height: 142px;
     }
     .div-logo img {
       max-width: 200px;
