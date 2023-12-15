@@ -23,6 +23,8 @@ export const SchedulesPage: React.FC = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalContent, setModalContent] = useState("");
   const { firstDay, lastDay } = getFirstAndLastDayOfMonth();
+  // Adicione este estado ao componente SchedulesPage
+  const [searchText, setSearchText] = useState("");
 
   const isMobile = useMediaQuery({ maxWidth: 767 }); // Define o limite para dispositivos móveis
 
@@ -70,12 +72,28 @@ export const SchedulesPage: React.FC = () => {
     { title: "Ordem" },
     { title: "Endereço" },
   ];
+  // Adicione esta função ao componente SchedulesPage
+  const handleSearch = (text) => {
+    setSearchText(text); // Atualiza o estado com o texto de busca
+    // Execute a lógica de filtragem dos usuários com base no texto
+    // Aqui você pode usar o estado 'text' para filtrar 'appointments'
+    // Exemplo:
+    // const filteredAppointments = appointments.filter((appointment) =>
+    //   appointment.client.toLowerCase().includes(text.toLowerCase())
+    // );
+    // setAppointments(filteredAppointments); // Atualiza a lista de usuários filtrados
+  };
 
   return (
     <Container>
       <ContainerButtons className="">
-        {isMobile ? <HeaderButtonsMobile update={fetchData}/> : <HeaderButtons />}
+        {isMobile ? (
+          <HeaderButtonsMobile update={fetchData} onSearch={handleSearch} searchText={searchText} />
+        ) : (
+          <HeaderButtons />
+        )}
       </ContainerButtons>
+
       {loading ? (
         <div className="loader-container">
           <BarLoader width={300} height={10} color="#3498db" />
@@ -84,7 +102,8 @@ export const SchedulesPage: React.FC = () => {
       ) : (
         <div className="overflow-items">
           {isMobile ? (
-            <CardMobile appointments={appointments} />
+            // Dentro do bloco onde você renderiza o CardMobile
+            <CardMobile appointments={appointments} searchText={searchText} />
           ) : (
             <WrapperTable>
               <ScheduleTable

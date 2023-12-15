@@ -3,13 +3,30 @@ import { ModalOptionsMobile } from "../ModalOptionsMobile";
 import { Container } from "./styles";
 import { faArrowsRotate, faFilter } from "@fortawesome/free-solid-svg-icons";
 
-export const HeaderButtonsMobile = ({ update }) => {
+type HeaderButtonsMobileProps = {
+  update: () => void;
+  onSearch: (text: string) => void;
+  searchText: string; // Definindo searchText como uma string
+};
+
+export const HeaderButtonsMobile: React.FC<HeaderButtonsMobileProps> = ({ update, onSearch, searchText }) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const text = event.target.value;
+    onSearch(text); // Chama a função de busca com o texto atualizado
+  };
+
   return (
     <Container>
       <button className="open-options-button" onClick={update}>
         <FontAwesomeIcon className="collapsed-icon" icon={faArrowsRotate} />
       </button>
-      <input className="input-search" type="text" placeholder="Buscar" />
+      <input
+        className="input-search"
+        type="text"
+        placeholder="Buscar"
+        value={searchText}
+        onChange={handleInputChange}
+      />
       <button className="open-options-button" onClick={update}>
         <FontAwesomeIcon className="collapsed-icon" icon={faFilter} />
       </button>{" "}

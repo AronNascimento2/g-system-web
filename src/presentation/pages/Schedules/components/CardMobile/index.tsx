@@ -1,10 +1,13 @@
 import { formatDate } from "../../../../utils/formateHourAndDate";
 import { Container, DetailsContent, WrapperContent } from "./styles";
 
-export const CardMobile = ({ appointments }) => {
+export const CardMobile = ({ appointments, searchText }) => {
+  const filteredAppointments = appointments.filter((appointment) =>
+    appointment.Cliente.toLowerCase().includes(searchText.toLowerCase())
+  );
   return (
     <>
-      {appointments.map((appointment) => {
+      {filteredAppointments.map((appointment) => {
         return (
           <Container key={appointment.Codigo}>
             <WrapperContent>

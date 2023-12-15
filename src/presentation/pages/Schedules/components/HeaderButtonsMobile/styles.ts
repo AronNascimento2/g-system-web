@@ -30,12 +30,12 @@ export const Container = styled.div`
   .input-search {
     flex: 1;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra desejada */
-
+    font-size: 16px;
     height: 40px;
     border-radius: 20px;
     outline: 0;
     border: 1px solid #ccc; /* Adicione uma borda sólida de 2px com cor cinza claro */
-    padding: 0.5rem; /* Adicione um preenchimento para afastar o texto da borda */
+    padding: 1rem; /* Adicione um preenchimento para afastar o texto da borda */
   }
   
 `;
