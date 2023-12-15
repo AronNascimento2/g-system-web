@@ -42,7 +42,7 @@ export const LoginContainer = styled.div`
         font-size: 16px;
         margin: 0;
         width: 100%;
-        height: 40px;
+        height: 50px;
       }
     }
 
@@ -53,11 +53,11 @@ export const LoginContainer = styled.div`
     @media (max-width: 767px) {
       .buttons {
         width: 100%;
-
         .button {
           width: 100%;
           display: flex;
           flex-direction: column;
+
         }
       }
     }
