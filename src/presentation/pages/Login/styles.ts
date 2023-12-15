@@ -11,7 +11,7 @@ height: 100%;
     align-items: flex-start;
     overflow: hidden;
     width: 100%;
-    padding:  1rem; /* Add padding to avoid vertical overflow */
+    padding-top:  2rem; /* Add padding to avoid vertical overflow */
   }
 
   form {
