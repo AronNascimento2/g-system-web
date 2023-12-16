@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { fetchAppointments } from "../../../services/Schedule";
 import { Container, ContainerButtons, WrapperTable } from "./styles";
-
-import { BarLoader } from "react-spinners";
-import {  ContentModalTable } from "./components/ContentModalTable";
+import { ContentModalTable } from "./components/ContentModalTable";
 import { getFirstAndLastDayOfMonth } from "../../utils/getFirstAndLastDayofMonth";
-import { HeaderButtons } from "./components/HeaderButtons";
 import { AppointmentType } from "./types";
-import { ScheduleTable } from "./components/ScheduleTable";
 import { CardMobile } from "./components/CardMobile";
 import { useMediaQuery } from "react-responsive";
 import { HeaderButtonsMobile } from "./components/HeaderButtonsMobile";
 import { SideModal } from "../../components/SideModal";
+import { ReactTable } from "../../components/Table";
+import { formatDate } from "../../utils/formateHourAndDate";
 
 export const SchedulesPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -53,6 +51,7 @@ export const SchedulesPage: React.FC = () => {
 
   const handleRowClick = (rowData) => {
     const details = rowData;
+    console.log(details);
 
     openModal(<ContentModalTable details={details} />);
   };
@@ -61,16 +60,22 @@ export const SchedulesPage: React.FC = () => {
     const details = rowData;
     return details;
   };
+  const dataWithIds = appointments.map((appointment) => ({
+    ...appointment,
 
-  const tableColumns = [
-    { title: "Código" },
-    { title: "Cliente" },
-    { title: "Data" },
-    { title: "Serviço" },
-    { title: "Periodo" },
-    { title: "Técnico" },
-    { title: "Ordem" },
-    { title: "Endereço" },
+    Data: formatDate(appointment.Data), // Substitua `formatDate` pela sua função de formatação
+    // Mantém os dados originais
+  }));
+
+  const columns = [
+    { Header: "Código", accessor: "Codigo" },
+    { Header: "Cliente", accessor: "Cliente" },
+    { Header: "Data", accessor: "Data" },
+    { Header: "Serviço", accessor: "Servico" },
+    { Header: "Período", accessor: "Periodo" },
+    { Header: "Técnico", accessor: "Tecnico" },
+    { Header: "Ordem", accessor: "Ordem" },
+    { Header: "Endereço", accessor: "Endereco" },
   ];
 
   const handleSearch = (text) => {
@@ -79,47 +84,39 @@ export const SchedulesPage: React.FC = () => {
 
   return (
     <Container>
-      <ContainerButtons className="">
-        {isMobile ? (
+      {isMobile && (
+        <ContainerButtons className="">
           <HeaderButtonsMobile
             update={fetchData}
             onSearch={handleSearch}
             searchText={searchText}
           />
-        ) : (
-          <HeaderButtons
-            update={fetchData}
-            onSearch={handleSearch}
-            searchText={searchText}
-          />
-        )}
-      </ContainerButtons>
-
-      {loading ? (
-        <div className="loader-container">
-          <BarLoader width={300} height={10} color="#3498db" />
-          <p>Carregando...</p>
-        </div>
-      ) : (
-        <div className="overflow-items">
-          {isMobile ? (
-            <CardMobile
-              appointments={appointments}
-              searchText={searchText}
-              handleRowClickCard={handleRowClickCard}
-            />
-          ) : (
-            <WrapperTable>
-              <ScheduleTable
-                searchText={searchText}
-                appointments={appointments}
-                tableColumns={tableColumns}
-                handleRowClick={handleRowClick}
-              />
-            </WrapperTable>
-          )}
-        </div>
+        </ContainerButtons>
       )}
+
+      <div className="overflow-items">
+        {isMobile ? (
+          <CardMobile
+            loading={loading}
+            appointments={appointments}
+            searchText={searchText}
+            handleRowClickCard={handleRowClickCard}
+          />
+        ) : (
+          <WrapperTable>
+            <ReactTable
+              loading={loading}
+              columns={columns}
+              data={dataWithIds}
+              handleRowClick={handleRowClick}
+              fetchData={fetchData}
+              handleSearch={handleSearch}
+              searchText={searchText}
+            />
+          </WrapperTable>
+        )}
+      </div>
+
       <SideModal show={modalIsOpen} handleClose={closeModal}>
         {modalContent}
       </SideModal>

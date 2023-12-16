@@ -1,7 +1,7 @@
 export type AppointmentType = {
   Data: string;
   Cliente: string;
-  Codigo: string;
+  Codigo?: string;
   Tecnico?: string;
   DataCriacao?: string;
   Observacao?: string;

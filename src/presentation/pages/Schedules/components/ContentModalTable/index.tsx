@@ -1,5 +1,4 @@
 import {
-  formatDate,
   formatDateAndHour,
 } from "../../../../utils/formateHourAndDate";
 import { Container, HeaderText } from "./styles";
@@ -47,6 +46,9 @@ export const ContentModalTable = ({ details }) => {
       onClick: () => console.log("Botão Mapa de Serviços clicado"),
     },
   ];
+
+console.log("asasa",details.Data);
+
   return (
     <Container>
       <div className="content">
@@ -62,7 +64,7 @@ export const ContentModalTable = ({ details }) => {
             <strong>Técnico:</strong> {details.Tecnico}
           </li>
           <li>
-            <strong>Data:</strong> {formatDate(details.Data)}
+            <strong>Data:</strong> {details.Data}
           </li>
           <li>
             <strong>Data de criação:</strong>{" "}

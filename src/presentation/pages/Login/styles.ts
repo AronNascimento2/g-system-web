@@ -79,7 +79,6 @@ export const LoginContainer = styled.div`
         }
       } /* Adjust padding for smaller screens */
     }
-    
   }
 `;
 
@@ -153,7 +152,6 @@ export const Container = styled.div`
       height: 200px;
     }
     .div-logo img {
-    
       /* Outros estilos para telas menores, se necessário */
     }
   }
