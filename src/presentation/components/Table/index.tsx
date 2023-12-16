@@ -76,7 +76,7 @@ export const ReactTable = ({
       {loading ? (
         <div className="loader-container">
           <BarLoader width={300} height={10} color="#3498db" />
-          <p>Carregando..</p>
+          <p>Carregando...</p>
         </div>
       ) : (
         <>
