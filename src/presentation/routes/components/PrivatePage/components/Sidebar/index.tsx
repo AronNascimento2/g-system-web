@@ -29,14 +29,14 @@ export const SideBar = () => {
 
   const menuItems = useMemo(() => {
     return ROUTES_PATHS.filter(
-      (route) => route.isPrivate && userPermissions.includes(route.title)
+      (route) => route.isPrivate 
     ).map((route) => ({
       name: route.title,
       path: route.path,
       onClick: () => navigate(route.path),
       icon: route.icon,
     }));
-  }, [userPermissions, navigate]);
+  }, [ navigate]);
 
   const handleLogout = () => {
     logout();

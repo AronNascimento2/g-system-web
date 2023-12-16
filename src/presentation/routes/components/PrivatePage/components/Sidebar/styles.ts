@@ -14,7 +14,7 @@ export const Sidebar = styled.div<SidebarProps>`
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    width:300px;
+    width: 300px;
     height: 178px;
   }
   @media (max-width: 767px) {
@@ -22,7 +22,6 @@ export const Sidebar = styled.div<SidebarProps>`
   }
 `;
 export const Header = styled.header`
- 
   @media (max-width: 767px) {
     width: 100%;
     height: 70px;
@@ -31,7 +30,7 @@ export const Header = styled.header`
     display: flex;
     align-items: center;
 
-    .img-mobile{
+    .img-mobile {
     }
   }
 `;
@@ -54,17 +53,26 @@ export const MenuItem = styled.li<SidebarProps>`
   padding: 15px;
   display: flex;
   gap: 0.5rem;
+  
   &.disabled {
-    opacity: 0.5; /* Estilo para itens desabilitados */
+    color: #ccc;
     pointer-events: none; /* Desabilitar eventos de clique */
-    cursor: not-allowed; /* Cursor não permitido */
+    &:hover {
+      cursor: not-allowed;
+      /* Cursor não permitido */
+    }
   }
-
+  
   &.activated {
     background-color: #0098da;
     color: white;
+    transition: box-shadow 0.3s ease; /* Adiciona uma transição suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
   }
   &:hover {
+    transition: box-shadow 0.3s ease; /* Adiciona uma transição suave */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
     color: #fff;
     background-color: #0098da;
     cursor: pointer;
