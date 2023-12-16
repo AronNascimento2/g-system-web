@@ -27,20 +27,21 @@ export const LoginContainer = styled.div`
     .icon {
       padding-bottom: 0.5rem;
     }
-    p {
+    .title {
       color: #2980b9;
       font-size: 25px;
       font-weight: 600;
       @media (max-width: 767px) {
         font-size: 20px;
-
+        .message {
+          font-size: 9px;
+        }
       }
     }
     .buttons {
       width: 100%;
       gap: 1rem;
       flex-direction: column;
-
       justify-content: center;
       .button {
         font-size: 16px;
@@ -53,10 +54,30 @@ export const LoginContainer = styled.div`
         font-weight: 600;
       }
     }
-
+    .error-message-container {
+      background-color: #ffbaba;
+      height: 40px;
+      font-size: 16px;
+      padding: 14px 16px;
+      border-radius: 8px;
+      width: 100%;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      .message {
+        color: #ff3333;
+        font-size: 14px;
+        margin: 0;
+      }
+    }
     @media (max-width: 767px) {
       width: 100%;
-      padding: 1rem; /* Adjust padding for smaller screens */
+      padding: 1rem;
+      .error-message-container {
+        .message {
+          font-size: 12px;
+        }
+      } /* Adjust padding for smaller screens */
     }
     @media (max-width: 767px) {
       .buttons {
@@ -67,14 +88,6 @@ export const LoginContainer = styled.div`
           flex-direction: column;
         }
       }
-    }
-
-    .error-message {
-      color: #d8000c;
-      background-color: #ffbaba;
-      padding: 0.5rem;
-      margin-bottom: 0.5rem;
-      width: 100%;
     }
   }
 `;

@@ -74,7 +74,7 @@ export const LoginPage: React.FC = () => {
     <Container>
       <LoginContainer>
         <form onSubmit={handleLogin}>
-          <p>Iniciar sessão</p>
+          <p className="title">Iniciar sessão</p>
           <InputGroup>
             <InputMask
               mask="99.999.999/9999-99"
@@ -114,8 +114,8 @@ export const LoginPage: React.FC = () => {
             </InputWrapper>
           </InputGroup>
           {error && (
-            <div className="error-message">
-              <p>{error}</p>
+            <div className="error-message-container">
+              <p className="message">{error}</p>
             </div>
           )}
           <WrapperButton className="buttons">
