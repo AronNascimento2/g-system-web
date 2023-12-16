@@ -79,16 +79,7 @@ export const LoginContainer = styled.div`
         }
       } /* Adjust padding for smaller screens */
     }
-    @media (max-width: 767px) {
-      .buttons {
-        width: 100%;
-        .button {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-        }
-      }
-    }
+    
   }
 `;
 
