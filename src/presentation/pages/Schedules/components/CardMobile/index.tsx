@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   formatDate,
   formatDateAndHour,
@@ -20,12 +20,21 @@ import {
   faEnvelope,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
-import { AppointmentProps } from "../../types";
+import { AppointmentProps, AppointmentType } from "../../types";
 import { BarLoader } from "react-spinners";
 import { ContainerButtons } from "../../styles";
 import { HeaderButtonsMobile } from "../HeaderButtonsMobile";
 
-export const CardMobile = ({
+interface CardMobileProps {
+  appointments: AppointmentType; 
+  searchText: string;
+  handleRowClickCard: (appointment: AppointmentProps) => void;
+  loading: boolean;
+  fetchData: () => void;
+  handleSearch: (text: string) => void;
+}
+
+export const CardMobile: React.FC<CardMobileProps> = ({
   appointments,
   searchText,
   handleRowClickCard,

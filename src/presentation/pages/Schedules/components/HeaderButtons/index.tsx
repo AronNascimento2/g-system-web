@@ -7,18 +7,19 @@ import {
 import { FilterOptions } from "../FilterOptions";
 import { Container } from "./styles";
 import { DynamicButton } from "../../../../components/DynamicButton";
+import React from "react";
 
-type HeaderButtonsProps = {
+interface HeaderButtonsProps {
   update: () => void;
   onSearch: (text: string) => void;
   searchText: string; // Definindo searchText como uma string
-};
+}
 
-export const HeaderButtons = ({
+export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
   update,
   onSearch,
   searchText,
-}: HeaderButtonsProps) => {
+}) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const text = event.target.value;
     onSearch(text); // Chama a função de busca com o texto atualizado
@@ -44,11 +45,7 @@ export const HeaderButtons = ({
 
   return (
     <Container>
-      <DynamicButton
-        onClick={update}
-        icon={faArrowsRotate}
-        text="Atualizar"
-      />
+      <DynamicButton onClick={update} icon={faArrowsRotate} text="Atualizar" />
       <input
         className="input-search"
         type="text"

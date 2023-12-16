@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { fetchAppointments } from "../../../services/Schedule";
-import { Container,  WrapperTable } from "./styles";
+import { Container, WrapperTable } from "./styles";
 import { ContentModalTable } from "./components/ContentModalTable";
 import { getFirstAndLastDayOfMonth } from "../../utils/getFirstAndLastDayofMonth";
 import { AppointmentType } from "./types";
@@ -18,6 +18,9 @@ export const SchedulesPage: React.FC = () => {
   const { firstDay, lastDay } = getFirstAndLastDayOfMonth();
   const [searchText, setSearchText] = useState("");
 
+  const handleSearch = (text) => {
+    setSearchText(text);
+  };
   const isMobile = useMediaQuery({ maxWidth: 767 }); // Define o limite para dispositivos móveis
 
   const fetchData = async () => {
@@ -75,10 +78,6 @@ export const SchedulesPage: React.FC = () => {
     { Header: "Ordem", accessor: "Ordem" },
     { Header: "Endereço", accessor: "Endereco" },
   ];
-
-  const handleSearch = (text) => {
-    setSearchText(text);
-  };
 
   return (
     <Container>

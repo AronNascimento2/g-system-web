@@ -1,11 +1,11 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import { Container } from "./styles";
 import { ModalMobileDownSide } from "../../../../components/ModalMobileDownSide";
 
-export const FilterOptionsMobile = () => {
+export const FilterOptionsMobile: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => {

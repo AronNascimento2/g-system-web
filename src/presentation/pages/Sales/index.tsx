@@ -1,6 +1,7 @@
+import React from "react";
 import { Container } from "../Attendance/styles";
 
-export const SalesPage = () => {
+export const SalesPage: React.FC = () => {
 
     return (
       <Container>

@@ -1,6 +1,4 @@
-import {
-  formatDateAndHour,
-} from "../../../../utils/formateHourAndDate";
+import { formatDateAndHour } from "../../../../utils/formateHourAndDate";
 import { Container, HeaderText } from "./styles";
 import {
   faCheck,
@@ -11,8 +9,14 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { DynamicButton } from "../../../../components/DynamicButton";
-
-export const ContentModalTable = ({ details }) => {
+import React from "react";
+import { AppointmentProps } from "../../types";
+interface ContentModalTableProps {
+  details: AppointmentProps; 
+}
+export const ContentModalTable: React.FC<ContentModalTableProps> = ({
+  details,
+}) => {
   const buttonsData = [
     {
       icon: faCheck,
@@ -46,8 +50,6 @@ export const ContentModalTable = ({ details }) => {
       onClick: () => console.log("Botão Mapa de Serviços clicado"),
     },
   ];
-
-console.log("asasa",details.Data);
 
   return (
     <Container>
@@ -87,10 +89,10 @@ console.log("asasa",details.Data);
             <strong>Status Faturamento:</strong> {details.StatusFaturamento}
           </li>
           <li>
-            <strong>Veiculos:</strong> {details.Veiculos.Status}
+            <strong>Veiculos:</strong> {details?.Veiculos?.Status}
           </li>
           <li>
-            <strong>Km:</strong> {details.Km || 0}
+            <strong>Km:</strong> {details.Km ?? 0}
           </li>
           <li>
             <strong>Ordem:</strong> {details.Ordem}

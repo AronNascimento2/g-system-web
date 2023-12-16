@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   faEllipsisVertical,
   faEdit,
@@ -9,7 +9,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container } from "./styles";
 import { DynamicButton } from "../../../../components/DynamicButton";
 import { ModalMobileDownSide } from "../../../../components/ModalMobileDownSide";
-export const ModalOptionsMobile = () => {
+
+export const ModalOptionsMobile: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => {
@@ -45,17 +46,17 @@ export const ModalOptionsMobile = () => {
         <FontAwesomeIcon className="collapsed-icon" icon={faEllipsisVertical} />
       </button>
 
-      <ModalMobileDownSide show={isOpen} handleClose={toggleModal} >
+      <ModalMobileDownSide show={isOpen} handleClose={toggleModal}>
         <div className="buttons">
-        {buttonsData.map((button, index) => (
-          <DynamicButton
-            key={index}
-            icon={button.icon}
-            text={button.text}
-            onClick={button.onClick}
-            disabled={button.disabled}
-          />
-        ))}
+          {buttonsData.map((button, index) => (
+            <DynamicButton
+              key={index}
+              icon={button.icon}
+              text={button.text}
+              onClick={button.onClick}
+              disabled={button.disabled}
+            />
+          ))}
         </div>
       </ModalMobileDownSide>
     </Container>

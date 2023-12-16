@@ -1,9 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import { Modal } from "../../../../components/Modal";
 import { DynamicButton } from "../../../../components/DynamicButton";
 
-export const FilterOptions = () => {
+export const FilterOptions: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => {

@@ -4,11 +4,11 @@ import { Container } from "./styles";
 import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
 import { FilterOptionsMobile } from "../FilterOptionsMobile";
 
-type HeaderButtonsMobileProps = {
+interface HeaderButtonsMobileProps  {
   update: () => void;
   onSearch: (text: string) => void;
-  searchText: string; // Definindo searchText como uma string
-};
+  searchText: string; 
+}
 
 export const HeaderButtonsMobile: React.FC<HeaderButtonsMobileProps> = ({
   update,

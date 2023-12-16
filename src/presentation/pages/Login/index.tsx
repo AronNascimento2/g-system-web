@@ -35,20 +35,20 @@ export const LoginPage: React.FC = () => {
   };
 
   //useEffect para redirecionar a Página caso esteja autenticado e o usuário feche a janela
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    const expiration = localStorage.getItem("expiration");
+useEffect(() => {
+  const token = localStorage.getItem("token");
+  const expiration = localStorage.getItem("expiration");
 
-    if (token && expiration) {
-      const expirationDate = new Date(expiration).getTime();
+  if (token && expiration) {
+    const expirationDate = new Date(expiration).getTime();
+    const currentDate = new Date().getTime();
 
-      const currentDate = new Date().getTime();
-
-      if (expirationDate > currentDate) {
-        navigate("/Sumario");
-      }
+    if (expirationDate > currentDate) {
+      navigate("/Sumario");
     }
-  }, []); // Executa apenas uma vez no carregamento do componente
+  }
+}, [navigate]);
+
   const cnpjInputRef = useRef<HTMLInputElement>(null); // Ref para o input de CNPJ
 
   //função para fazer o Login
@@ -63,8 +63,12 @@ export const LoginPage: React.FC = () => {
       localStorage.setItem("cnpj", cnpj);
 
       navigate("/Agenda");
-    } catch (error: any) {
-      setError(error.message);
+    } catch (error) {
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError("Ocorreu um erro ao fazer login");
+      }
     } finally {
       setLoading(false);
     }

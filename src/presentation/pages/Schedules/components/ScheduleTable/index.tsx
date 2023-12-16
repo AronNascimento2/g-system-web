@@ -1,7 +1,20 @@
+import React from "react";
 import { formatDate } from "../../../../utils/formateHourAndDate";
 import { ScheduleTableContainer } from "./styles";
+import { AppointmentProps } from "../../types";
 
-export const ScheduleTable = ({
+interface TableColumn {
+  title: string;
+}
+
+interface ScheduleTableProps {
+  tableColumns: TableColumn[];
+  appointments: AppointmentProps[];
+  handleRowClick: (appointment: AppointmentProps) => void;
+  searchText: string;
+}
+
+export const ScheduleTable: React.FC<ScheduleTableProps> = ({
   tableColumns,
   appointments,
   handleRowClick,

@@ -16,10 +16,9 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import {  faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 export const SideBar = () => {
+  const { logout, user, logo } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
-  const { logout, user, logo } = useAuth();
-
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [activeItem, setActiveItem] = useState("");
@@ -48,6 +47,19 @@ export const SideBar = () => {
     name: "Sair",
     onClick: handleLogout,
   };
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleMenuItemClick = (item) => {
+    setActiveItem(item.name);
+    navigate(item.path);
+    item.onClick();
+    if (isMobile) {
+      setIsOpen(false);
+    }
+  };
+
 
   useEffect(() => {
     const pathname = location.pathname;
@@ -70,18 +82,6 @@ export const SideBar = () => {
     return () => window.removeEventListener("resize", checkIfMobile);
   }, []);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleMenuItemClick = (item) => {
-    setActiveItem(item.name);
-    navigate(item.path);
-    item.onClick();
-    if (isMobile) {
-      setIsOpen(false);
-    }
-  };
 
   return (
     <>
