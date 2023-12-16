@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { fetchAppointments } from "../../../services/Schedule";
-import { Container, ContainerButtons, WrapperTable } from "./styles";
+import { Container,  WrapperTable } from "./styles";
 import { ContentModalTable } from "./components/ContentModalTable";
 import { getFirstAndLastDayOfMonth } from "../../utils/getFirstAndLastDayofMonth";
 import { AppointmentType } from "./types";
 import { CardMobile } from "./components/CardMobile";
 import { useMediaQuery } from "react-responsive";
-import { HeaderButtonsMobile } from "./components/HeaderButtonsMobile";
 import { SideModal } from "../../components/SideModal";
 import { ReactTable } from "../../components/Table";
 import { formatDate } from "../../utils/formateHourAndDate";
@@ -63,8 +62,7 @@ export const SchedulesPage: React.FC = () => {
   const dataWithIds = appointments.map((appointment) => ({
     ...appointment,
 
-    Data: formatDate(appointment.Data), // Substitua `formatDate` pela sua função de formatação
-    // Mantém os dados originais
+    Data: formatDate(appointment.Data),
   }));
 
   const columns = [
@@ -84,22 +82,14 @@ export const SchedulesPage: React.FC = () => {
 
   return (
     <Container>
-      {isMobile && (
-        <ContainerButtons className="">
-          <HeaderButtonsMobile
-            update={fetchData}
-            onSearch={handleSearch}
-            searchText={searchText}
-          />
-        </ContainerButtons>
-      )}
-
       <div className="overflow-items">
         {isMobile ? (
           <CardMobile
+            handleSearch={handleSearch}
+            fetchData={fetchData}
+            searchText={searchText}
             loading={loading}
             appointments={appointments}
-            searchText={searchText}
             handleRowClickCard={handleRowClickCard}
           />
         ) : (

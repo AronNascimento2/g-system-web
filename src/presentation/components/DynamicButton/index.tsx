@@ -15,7 +15,7 @@ const ButtonContainer = styled.button<ButtonContainerProps>`
   width: 48%;
   background-color: #3498db;
 
-  border-radius: 4px;
+  border-radius: 8px;
   color: #fff;
   font-weight: 600;
   gap: 0.5rem;

@@ -1,10 +1,7 @@
 import { useState } from "react";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
-import { Container } from "./styles";
-import { Button } from "../../../../components/Button";
 import { Modal } from "../../../../components/Modal";
+import { DynamicButton } from "../../../../components/DynamicButton";
 
 export const FilterOptions = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,18 +11,16 @@ export const FilterOptions = () => {
   };
 
   return (
-    <Container>
-      <Button
-      className="open-options-button"
-        icon={<FontAwesomeIcon icon={faFilter} />}
-        size="small"
-        title="Filtrar"
+    <>
+      <DynamicButton
+        icon={faFilter}
+        text="Filtrar"
         onClick={toggleModal}
       />
 
       <Modal show={isOpen} handleClose={toggleModal} title={"Filtrar"}>
         <p>Conteúdo</p>
       </Modal>
-    </Container>
+    </>
   );
 };

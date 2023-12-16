@@ -5,9 +5,7 @@ interface ModalContainerProps {
 }
 
 export const Container = styled.div`
-.open-options-button {
-    height: 100%;
-  }
+
 `;
 export const ModalContainer = styled.div<ModalContainerProps>`
   position: fixed;

@@ -18,7 +18,7 @@ export const Modal = ({ show, handleClose, children, title }: ModalProps) => {
     <>
       <ModalWrapper onClick={handleClose} show={show} />
       <ModalContent show={show}>
-        <div className="buttons">
+        <div className="buttons-modal">
           <Title>{title}</Title>
           <CloseButton onClick={handleClose}>&times;</CloseButton>
         </div>

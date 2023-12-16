@@ -1,11 +1,9 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowsRotate,
   faEdit,
   faFile,
   faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
-import { Button } from "../../../../components/Button";
 import { FilterOptions } from "../FilterOptions";
 import { Container } from "./styles";
 import { DynamicButton } from "../../../../components/DynamicButton";
@@ -46,11 +44,10 @@ export const HeaderButtons = ({
 
   return (
     <Container>
-      <Button
+      <DynamicButton
         onClick={update}
-        icon={<FontAwesomeIcon icon={faArrowsRotate} />}
-        size="small"
-        title="Atualizar"
+        icon={faArrowsRotate}
+        text="Atualizar"
       />
       <input
         className="input-search"

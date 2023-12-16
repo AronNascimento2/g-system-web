@@ -7,7 +7,7 @@ export const PageContainer = styled.main`
   width: 100vw;
   height: 100vh;
   display: flex;
-  
+
   @media (max-width: 767px) {
     flex-direction: column;
   }
@@ -17,10 +17,7 @@ export const PageRightContainer = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding:0;
-  width: auto;
-  overflow-x: hidden;
+  position: relative;
   @media (max-width: 767px) {
   }
-
 `;

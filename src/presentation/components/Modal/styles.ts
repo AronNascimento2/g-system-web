@@ -19,7 +19,7 @@ export const ModalContent = styled.div<ModalProps>`
   position: absolute;
   display: ${({ show }) => (show ? "block" : "none")};
   top: 50%;
-  left: 50%;
+  left: 40%;
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 20px;
@@ -27,7 +27,7 @@ export const ModalContent = styled.div<ModalProps>`
   max-width: 30%;
   max-height: 80%;
   overflow-y: auto;
-  .buttons {
+  .buttons-modal {
     display: flex;
     align-items: center;
     justify-content: space-between;

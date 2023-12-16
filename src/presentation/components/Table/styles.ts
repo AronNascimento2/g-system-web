@@ -106,6 +106,9 @@ td{
     width: 30px;
     color: #fff;
     background-color: #3498db;
+    &:hover{
+      cursor: pointer;
+    }
   }
   .buttons[disabled] {
     background-color: #ccc;
