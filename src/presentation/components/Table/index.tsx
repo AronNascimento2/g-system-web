@@ -58,25 +58,11 @@ export const ReactTable = ({
     usePagination // Adicionando paginação
   );
 
-  const { pageIndex, globalFilter } = state;
-  console.log(globalFilter);
-  const [debouncedSearchText, setDebouncedSearchText] = useState(searchText);
+  const { pageIndex } = state;
 
   useEffect(() => {
-    // Configurando o debounce para 300 milissegundos
-    const timerId = setTimeout(() => {
-      setDebouncedSearchText(searchText);
-    }, 300);
-
-    // Limpa o timer anterior em cada re-renderização
-    return () => {
-      clearTimeout(timerId);
-    };
-  }, [searchText]);
-
-  useEffect(() => {
-    setGlobalFilter(debouncedSearchText || undefined);
-  }, [debouncedSearchText, setGlobalFilter]);
+    setGlobalFilter(searchText || undefined);
+  }, [searchText, setGlobalFilter]);
   return (
     <ScheduleTableContainer>
       <ContainerButtons>
