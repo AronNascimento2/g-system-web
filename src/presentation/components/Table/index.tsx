@@ -19,7 +19,7 @@ import {
 import { HeaderButtons } from "../../pages/Schedules/components/HeaderButtons";
 import { ContainerButtons } from "../../pages/Schedules/styles";
 import { BarLoader } from "react-spinners";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 // Definição do componente da tabela
 export const ReactTable = ({
