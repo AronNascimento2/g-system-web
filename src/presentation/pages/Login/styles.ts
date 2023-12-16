@@ -150,11 +150,10 @@ export const Container = styled.div`
   }
   @media (max-width: 767px) {
     .div-logo {
-      height: 142px;
+      height: 200px;
     }
     .div-logo img {
-      max-width: 200px;
-      align-self: auto;
+    
       /* Outros estilos para telas menores, se necessário */
     }
   }
