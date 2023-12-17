@@ -3,7 +3,18 @@ import { ModalMobileDownSide } from "../../../../components/ModalMobileDownSide"
 import { HeaderText } from "../ContentModalTable/styles";
 
 export const WrapperCard = styled.div`
-  
+  .loader-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-size: 20px;
+      color: #2980b9;
+    }
+  }
 `;
 
 export const Container = styled.div`
