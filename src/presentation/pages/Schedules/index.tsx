@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { fetchAppointments } from "../../../services/Schedule";
-import { Container, WrapperTable } from "./styles";
+import { Container, ContainerButtons, WrapperTable } from "./styles";
 import { ContentModalTable } from "./components/ContentModalTable";
 import { getFirstAndLastDayOfMonth } from "../../utils/getFirstAndLastDayofMonth";
 import { AppointmentType } from "./types";
@@ -9,6 +9,7 @@ import { useMediaQuery } from "react-responsive";
 import { SideModal } from "../../components/SideModal";
 import { ReactTable } from "../../components/Table";
 import { formatDate } from "../../utils/formateHourAndDate";
+import { HeaderButtonsMobile } from "./components/HeaderButtonsMobile";
 
 export const SchedulesPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -81,6 +82,16 @@ export const SchedulesPage: React.FC = () => {
 
   return (
     <Container>
+      {isMobile && (
+        <ContainerButtons className="">
+          <HeaderButtonsMobile
+            update={fetchData}
+            onSearch={handleSearch}
+            searchText={searchText}
+          />
+        </ContainerButtons>
+      )}
+
       <div className="overflow-items">
         {isMobile ? (
           <CardMobile
