@@ -46,7 +46,6 @@ export const Menu = styled.ul`
     position: absolute;
     z-index: 999;
     margin: 0;
-    font-size: 14px;
   
 }
 
@@ -56,7 +55,6 @@ export const MenuItem = styled.li<SidebarProps>`
   padding: 15px;
   display: flex;
   gap: 0.5rem;
-
   &.disabled {
     color: #ccc;
     pointer-events: none; /* Desabilitar eventos de clique */
