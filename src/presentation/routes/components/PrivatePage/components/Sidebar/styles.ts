@@ -82,7 +82,6 @@ export const MenuItem = styled.li<SidebarProps>`
 
   @media (max-width: 1080px) {
     color: black;
-    padding:  0.5rem 1rem;
   }
   &.activated {
     background-color: #0098da;
