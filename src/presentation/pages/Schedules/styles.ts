@@ -1,7 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-
+.loader-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-size: 20px;
+      color: #2980b9;
+    }
+  }
   
   .overflow-items {
     overflow: auto;

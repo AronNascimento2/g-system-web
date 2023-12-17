@@ -95,8 +95,6 @@ export const SchedulesPage: React.FC = () => {
       <div className="overflow-items">
         {isMobile ? (
           <CardMobile
-            handleSearch={handleSearch}
-            fetchData={fetchData}
             searchText={searchText}
             loading={loading}
             appointments={appointments}
