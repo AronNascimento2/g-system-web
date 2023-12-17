@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  
   .overflow-items {
     overflow: auto;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1080px) {
     .overflow-items {
       height: 100%;
       padding: 0.5rem;
@@ -32,7 +31,7 @@ export const ContainerButtons = styled.div`
     width: 200px;
     height: 40px;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1080px) {
     justify-content: center;
     padding: 0;
     padding: 0.5rem;
@@ -77,7 +76,7 @@ export const ModalBackground = styled.div`
     max-height: 80%;
     overflow-y: auto;
     position: relative;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1080px) {
       max-width: 90%;
     }
   }

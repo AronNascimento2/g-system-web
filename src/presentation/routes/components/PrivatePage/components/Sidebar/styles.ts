@@ -17,12 +17,11 @@ export const Sidebar = styled.div<SidebarProps>`
     width: 300px;
     height: 178px;
   }
-  @media (max-width: 767px) {
-    left: ${({ isopen }) => (isopen ? "0" : "-250px")};
+  @media (max-width: 1080px) {
   }
 `;
 export const Header = styled.header`
-  @media (max-width: 767px) {
+  @media (max-width: 1080px) {
     width: 100%;
     height: 70px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra desejada */
@@ -37,23 +36,27 @@ export const Header = styled.header`
 export const Menu = styled.ul`
   list-style: none;
   padding: 0;
-  @media (max-width: 767px) {
+
+@media (max-width: 1080px) {
+  
     width: 50%;
     height: 100%;
-    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); /* Sombra desejada */
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); 
     background-color: #fff;
-    top: 8.3%;
     position: absolute;
     z-index: 999;
     margin: 0;
-  }
+    font-size: 14px;
+  
+}
+
 `;
 
 export const MenuItem = styled.li<SidebarProps>`
   padding: 15px;
   display: flex;
   gap: 0.5rem;
-  
+
   &.disabled {
     color: #ccc;
     pointer-events: none; /* Desabilitar eventos de clique */
@@ -62,23 +65,22 @@ export const MenuItem = styled.li<SidebarProps>`
       /* Cursor não permitido */
     }
   }
-  
+
   &.activated {
     background-color: #0098da;
     color: white;
     transition: box-shadow 0.3s ease; /* Adiciona uma transição suave */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   &:hover {
     transition: box-shadow 0.3s ease; /* Adiciona uma transição suave */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     color: #fff;
     background-color: #0098da;
     cursor: pointer;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1080px) {
     color: black;
   }
   &.activated {
@@ -101,7 +103,7 @@ export const BurgerMenuContainer = styled.div`
 `;
 export const BurgerMenu = styled.div`
   display: none;
-  @media (max-width: 767px) {
+  @media (max-width: 1080px) {
     display: block;
     cursor: pointer;
     position: fixed;

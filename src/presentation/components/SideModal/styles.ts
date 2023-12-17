@@ -11,8 +11,6 @@ export const ModalWrapper = styled.div<ModalProps>`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
- 
-
 `;
 export const ModalContainer = styled.div<ModalProps>`
   position: fixed;
@@ -30,12 +28,7 @@ export const ModalContainer = styled.div<ModalProps>`
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
   padding: 20px;
 
-
- 
-
   z-index: 999;
-  @media (max-width: 767px) {
-  }
 `;
 
 export const ModalContent = styled.div`

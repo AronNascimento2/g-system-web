@@ -22,7 +22,7 @@ export const SchedulesPage: React.FC = () => {
   const handleSearch = (text) => {
     setSearchText(text);
   };
-  const isMobile = useMediaQuery({ maxWidth: 767 }); // Define o limite para dispositivos móveis
+  const isMobile = useMediaQuery({ maxWidth: 1080 }); // Define o limite para dispositivos móveis
 
   const fetchData = async () => {
     const startDate = firstDay;
@@ -54,7 +54,6 @@ export const SchedulesPage: React.FC = () => {
 
   const handleRowClick = (rowData) => {
     const details = rowData;
-    console.log(details);
 
     openModal(<ContentModalTable details={details} />);
   };

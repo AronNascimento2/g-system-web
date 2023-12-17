@@ -13,7 +13,7 @@ import { useAuth } from "../../../../../utils/useAuth";
 import { ROUTES_PATHS } from "../../../../../constants/routePaths";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import {  faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 export const SideBar = () => {
   const { logout, user, logo } = useAuth();
@@ -28,15 +28,13 @@ export const SideBar = () => {
   }, [user]);
 
   const menuItems = useMemo(() => {
-    return ROUTES_PATHS.filter(
-      (route) => route.isPrivate 
-    ).map((route) => ({
+    return ROUTES_PATHS.filter((route) => route.isPrivate).map((route) => ({
       name: route.title,
       path: route.path,
       onClick: () => navigate(route.path),
       icon: route.icon,
     }));
-  }, [ navigate]);
+  }, [navigate]);
 
   const handleLogout = () => {
     logout();
@@ -60,7 +58,6 @@ export const SideBar = () => {
     }
   };
 
-
   useEffect(() => {
     const pathname = location.pathname;
     const activeRoute = ROUTES_PATHS.find((route) =>
@@ -73,7 +70,7 @@ export const SideBar = () => {
   }, [location.pathname, userPermissions]);
 
   const checkIfMobile = () => {
-    setIsMobile(window.innerWidth <= 767);
+    setIsMobile(window.innerWidth <= 1080);
   };
 
   useEffect(() => {
@@ -81,7 +78,6 @@ export const SideBar = () => {
     window.addEventListener("resize", checkIfMobile);
     return () => window.removeEventListener("resize", checkIfMobile);
   }, []);
-
 
   return (
     <>

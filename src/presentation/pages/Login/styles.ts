@@ -7,7 +7,7 @@ export const LoginContainer = styled.div`
   background-color: #2980b9;
   padding-top: 3rem;
   height: 100%;
-  @media (max-width: 767px) {
+  @media (max-width: 1080px) {
     padding: 3rem 1rem;
     /* Add padding to avoid vertical overflow */
   }
@@ -31,7 +31,7 @@ export const LoginContainer = styled.div`
       color: #2980b9;
       font-size: 25px;
       font-weight: 600;
-      @media (max-width: 767px) {
+      @media (max-width: 1080px) {
         font-size: 20px;
         .message {
           font-size: 9px;
@@ -70,7 +70,7 @@ export const LoginContainer = styled.div`
         margin: 0;
       }
     }
-    @media (max-width: 767px) {
+    @media (max-width: 1080px) {
       width: 100%;
       padding: 1rem;
       .error-message-container {
@@ -94,7 +94,7 @@ export const InputGroup = styled.div`
     padding: 14px 16px;
     border-radius: 8px;
     border: 1px solid #ccc;
-    @media (max-width: 767px) {
+    @media (max-width: 1080px) {
       width: 100%;
     }
   }
@@ -108,7 +108,7 @@ export const Input = styled.input`
   border-radius: 8px;
   border: 1px solid #ccc;
 
-  @media (max-width: 767px) {
+  @media (max-width: 1080px) {
     width: 100%;
   }
 `;
@@ -118,7 +118,7 @@ export const InputWrapper = styled.div`
   width: 100%;
 
   position: relative;
-  @media (max-width: 767px) {
+  @media (max-width: 1080px) {
     width: 100%;
   }
 `;
@@ -147,7 +147,7 @@ export const Container = styled.div`
       max-height: 80%;
     }
   }
-  @media (max-width: 767px) {
+  @media (max-width: 1080px) {
     .div-logo {
       height: 200px;
     }
