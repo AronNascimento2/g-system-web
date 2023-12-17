@@ -42,7 +42,7 @@ export const Menu = styled.ul`
     height: 100%;
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); /* Sombra desejada */
     background-color: #fff;
-    top: 6.5%;
+    top: 8.3%;
     position: absolute;
     z-index: 999;
     margin: 0;
