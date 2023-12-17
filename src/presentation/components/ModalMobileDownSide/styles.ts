@@ -21,7 +21,8 @@ export const ModalContainer = styled.div<ModalContainerProps>`
   display: ${({ show }) => (show ? "block" : "none")};
   background-color: #fff;
   z-index: 999;
-`;
+  height: auto;
+  `;
 
 export const ModalContent = styled.div`
   position: absolute;
@@ -32,7 +33,7 @@ export const ModalContent = styled.div`
   justify-content: center;
   align-items: center;
   left: 50%;
-  height: 350px;
+  height: auto;
   width: 100%;
   border-radius: 40px 40px 0 0;
   transform: translateX(-50%);

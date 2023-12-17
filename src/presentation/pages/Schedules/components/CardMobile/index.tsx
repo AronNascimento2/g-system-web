@@ -242,21 +242,22 @@ export const CardMobile: React.FC<CardMobileProps> = ({
                     Obs. {selectedAppointment.Observacao}
                   </div>
                 </ul>
-              </div>
               <div className="buttons-mobile">
                 <div className="wrapperbuttons-mobile">
                   {buttonsData.map((button, index) => (
                     <DynamicButton
-                      key={index}
-                      icon={button.icon}
-                      text={button.text}
-                      onClick={button.onClick}
-                      disabled={button.disabled}
+                    key={index}
+                    icon={button.icon}
+                    text={button.text}
+                    onClick={button.onClick}
+                    disabled={button.disabled}
                     />
-                  ))}
+                    ))}
                 </div>
               </div>
+          </div>
             </StyledModalMobileDownSide>
+            
           )}
         </>
       )}
