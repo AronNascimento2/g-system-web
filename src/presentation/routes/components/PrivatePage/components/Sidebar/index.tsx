@@ -29,6 +29,7 @@ export const SideBar = () => {
 
   const menuItems = useMemo(() => {
     return ROUTES_PATHS.filter((route) => route.isPrivate).map((route) => ({
+      label:route.label,
       name: route.title,
       path: route.path,
       onClick: () => navigate(route.path),
@@ -117,7 +118,7 @@ export const SideBar = () => {
               }`}
               disabled={!userPermissions.includes(item.name)}
             >
-              <FontAwesomeIcon icon={item.icon as IconProp} /> {item.name}
+              <FontAwesomeIcon icon={item.icon as IconProp} /> {item.label}
             </MenuItem>
           ))}
           <MenuItem onClick={() => handleMenuItemClick(logoutItem)}>
@@ -150,7 +151,7 @@ export const SideBar = () => {
                 }`}
                 disabled={!userPermissions.includes(item.name)}
               >
-                <FontAwesomeIcon icon={item.icon as IconProp} /> {item.name}
+                <FontAwesomeIcon icon={item.icon as IconProp} /> {item.label}
               </MenuItem>
             ))}
             <MenuItem onClick={logoutItem.onClick}>
