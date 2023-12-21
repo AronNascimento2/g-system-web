@@ -33,11 +33,11 @@ export const ModalContent = styled.div`
   justify-content: center;
   align-items: center;
   left: 50%;
-  height: auto;
+  height: 750px;
   width: 100%;
   border-radius: 40px 40px 0 0;
   transform: translateX(-50%);
-  background-color: white; /* Cor de fundo do conteúdo do modal */
+  background-color: #fff; /* Cor de fundo do conteúdo do modal */
   padding: 20px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 1); /* Exemplo de sombra */
 

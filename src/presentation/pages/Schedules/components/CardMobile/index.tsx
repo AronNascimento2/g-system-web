@@ -158,106 +158,120 @@ export const CardMobile: React.FC<CardMobileProps> = ({
             >
               <div className="content">
                 <StyledHeaderText>Detalhes do Agendamento </StyledHeaderText>
-                <ul>
-                  <li>
-                    <strong>Cliente:</strong> {selectedAppointment.Cliente}
-                  </li>
-                  <li>
-                    <strong>Codigo:</strong> {selectedAppointment.Codigo}
-                  </li>
-                  <li>
-                    <strong>Técnico:</strong> {selectedAppointment.Tecnico}
-                  </li>
-                  <li>
-                    <strong>Data:</strong>{" "}
-                    {formatDate(selectedAppointment.Data)}
-                  </li>
-                  <li>
-                    <strong>Data de criação:</strong>{" "}
-                    {formatDateAndHour(selectedAppointment.DataCriacao)}
-                  </li>
+                <div className="list-container">
+                  <ul>
+                    <li>
+                      <strong>Cliente:</strong> {selectedAppointment.Cliente}
+                    </li>
+                    <li>
+                      <strong>Codigo:</strong> {selectedAppointment.Codigo}
+                    </li>
+                    <li>
+                      <strong>Técnico:</strong> {selectedAppointment.Tecnico}
+                    </li>
+                    <li>
+                      <strong>Data:</strong>{" "}
+                      {formatDate(selectedAppointment.Data)}
+                    </li>
+                    <li>
+                      <strong>Data de criação:</strong>{" "}
+                      {formatDateAndHour(selectedAppointment.DataCriacao)}
+                    </li>
 
-                  <li>
-                    <strong>Endereço:</strong> {selectedAppointment.Endereco}
-                  </li>
-                  <li>
-                    <strong>Período:</strong> {selectedAppointment.Periodo}
-                  </li>
-                  <li>
-                    <strong>Valor do serviço:</strong> R${" "}
-                    {selectedAppointment.ValorServico}
-                  </li>
-                  <li>
-                    <strong>Não Presencial:</strong>{" "}
-                    {selectedAppointment.NãoPresencial}
-                  </li>
-                  <li>
-                    <strong>Status Faturamento:</strong>{" "}
-                    {selectedAppointment.StatusFaturamento}
-                  </li>
+                    <li>
+                      <strong>Endereço:</strong> {selectedAppointment.Endereco}
+                    </li>
+                    <li>
+                      <strong>Período:</strong> {selectedAppointment.Periodo}
+                    </li>
+                    <li>
+                      <strong>Valor do serviço:</strong> R${" "}
+                      {selectedAppointment.ValorServico}
+                    </li>
+                    <li>
+                      <strong>Não Presencial:</strong>{" "}
+                      {selectedAppointment.NãoPresencial}
+                    </li>
+                    <li>
+                      <strong>Status Faturamento:</strong>{" "}
+                      {selectedAppointment.StatusFaturamento}
+                    </li>
 
-                  <li>
-                    <strong>Km:</strong> {selectedAppointment.Km ?? 0}
-                  </li>
-                  <li>
-                    <strong>Ordem:</strong> {selectedAppointment.Ordem}
-                  </li>
+                    <li>
+                      <strong>Km:</strong> {selectedAppointment.Km ?? 0}
+                    </li>
+                    <li>
+                      <strong>Ordem:</strong> {selectedAppointment.Ordem}
+                    </li>
+                    <li>
+                      <strong>Veículos :[</strong>
+                      {selectedAppointment?.Veiculos.map((veiculo, index) => (
+                        <div key={index}>
+                          <p>
+                            [ Código do Veículo: {veiculo.CodigoVeiculo},
+                            Status:
+                            {veiculo.Status}, Veiculo: {veiculo.Veiculo} ]
+                          </p>
+                        </div>
+                      ))}{" "}
+                      <strong>]</strong>
+                    </li>
 
-                  <li>
-                    <strong>Verificado:</strong>{" "}
-                    {selectedAppointment.Verificado}
-                  </li>
-                  <li>
-                    <strong>Visita técnica :</strong>{" "}
-                    {selectedAppointment.VisitaTecnica}
-                  </li>
-                  <li>
-                    <strong>Cliente antigo:</strong>{" "}
-                    {selectedAppointment.ClienteAntigo}
-                  </li>
-                  <li>
-                    <strong>Custo do deslocamento:</strong>{" "}
-                    {selectedAppointment.CustoDeslocamento}
-                  </li>
-                  <li>
-                    <strong>Servico:</strong> {selectedAppointment.Servico}
-                  </li>
+                    <li>
+                      <strong>Verificado:</strong>{" "}
+                      {selectedAppointment.Verificado}
+                    </li>
+                    <li>
+                      <strong>Visita técnica :</strong>{" "}
+                      {selectedAppointment.VisitaTecnica}
+                    </li>
+                    <li>
+                      <strong>Cliente antigo:</strong>{" "}
+                      {selectedAppointment.ClienteAntigo}
+                    </li>
+                    <li>
+                      <strong>Custo do deslocamento:</strong>{" "}
+                      {selectedAppointment.CustoDeslocamento}
+                    </li>
+                    <li>
+                      <strong>Servico:</strong> {selectedAppointment.Servico}
+                    </li>
 
-                  <li>
-                    <strong>Tipo:</strong> {selectedAppointment.Tipo}
-                  </li>
-                  <li>
-                    <strong>Custos:</strong> {selectedAppointment.Custos}
-                  </li>
+                    <li>
+                      <strong>Tipo:</strong> {selectedAppointment.Tipo}
+                    </li>
+                    <li>
+                      <strong>Custos:</strong> {selectedAppointment.Custos}
+                    </li>
 
-                  <li>
-                    <strong>Valor adicional:</strong>{" "}
-                    {selectedAppointment.ValorAdicional}
-                  </li>
-                  <li>
-                    <strong>Status Faturamento:</strong>{" "}
-                    {selectedAppointment.StatusFaturamento}
-                  </li>
-                  <div className="obs">
-                    Obs. {selectedAppointment.Observacao}
+                    <li>
+                      <strong>Valor adicional:</strong>{" "}
+                      {selectedAppointment.ValorAdicional}
+                    </li>
+                    <li>
+                      <strong>Status Faturamento:</strong>{" "}
+                      {selectedAppointment.StatusFaturamento}
+                    </li>
+                    <div className="obs">
+                      Obs. {selectedAppointment.Observacao}
+                    </div>
+                  </ul>
+                  <div className="buttons-mobile">
+                    <div className="wrapperbuttons-mobile">
+                      {buttonsData.map((button, index) => (
+                        <DynamicButton
+                          key={index}
+                          icon={button.icon}
+                          text={button.text}
+                          onClick={button.onClick}
+                          disabled={button.disabled}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </ul>
-              <div className="buttons-mobile">
-                <div className="wrapperbuttons-mobile">
-                  {buttonsData.map((button, index) => (
-                    <DynamicButton
-                    key={index}
-                    icon={button.icon}
-                    text={button.text}
-                    onClick={button.onClick}
-                    disabled={button.disabled}
-                    />
-                    ))}
                 </div>
               </div>
-          </div>
             </StyledModalMobileDownSide>
-            
           )}
         </>
       )}

@@ -4,6 +4,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0;
+  height: 100%;
+  .list-container{
+    height: 180px;
+  }
   ul {
     padding: 0;
     list-style: none;

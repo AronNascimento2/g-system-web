@@ -25,19 +25,23 @@ export const Container = styled.div`
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `;
 export const StyledModalMobileDownSide = styled(ModalMobileDownSide)`
- height: 600px;
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
   .content {
+    height: 100%;
+    overflow: auto;
+    .list-container{
+    }
   }
   .obs {
     width: 100%;
     border: 1px solid lightgray;
     height: 70px;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     padding: 1rem;
     overflow: auto;
   }
@@ -52,8 +56,6 @@ export const StyledModalMobileDownSide = styled(ModalMobileDownSide)`
   }
   @media(max-width:1080px){
    
-    height: 100vh;
-    overflow: auto;
     .content {
   }
   }

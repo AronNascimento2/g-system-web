@@ -3,6 +3,7 @@ import { ModalOptionsMobile } from "../ModalOptionsMobile";
 import { Container } from "./styles";
 import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
 import { FilterOptionsMobile } from "../FilterOptionsMobile";
+import { UpdateButton } from "../UpdateButton";
 
 interface HeaderButtonsMobileProps  {
   update: () => void;
@@ -22,9 +23,7 @@ export const HeaderButtonsMobile: React.FC<HeaderButtonsMobileProps> = ({
 
   return (
     <Container>
-      <button className="open-options-button" onClick={update}>
-        <FontAwesomeIcon className="collapsed-icon" icon={faArrowsRotate} />
-      </button>
+      <UpdateButton update={update}/>
       <input
         className="input-search"
         type="text"

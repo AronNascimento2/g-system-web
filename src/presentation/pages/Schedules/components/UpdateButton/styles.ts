@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  width: 100%;
   gap: 0.5rem;
   align-items: center;
   justify-content: center;
@@ -29,7 +28,7 @@ export const Container = styled.div`
  
 
   .input-search {
-    width: 100%;
+    flex: 1;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra desejada */
     font-size: 16px;
     height: 40px;
