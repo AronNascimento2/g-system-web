@@ -1,7 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ModalOptionsMobile } from "../ModalOptionsMobile";
 import { Container } from "./styles";
-import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
 import { FilterOptionsMobile } from "../FilterOptionsMobile";
 import { UpdateButton } from "../UpdateButton";
 
