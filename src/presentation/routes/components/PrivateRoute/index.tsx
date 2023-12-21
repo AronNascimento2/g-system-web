@@ -21,7 +21,7 @@ export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children, redirectTo
     const hasPermission = userPermissions.includes(currentRoute);
 
     if (!hasPermission) {
-      navigate('/Sumario'); // Redireciona para '/Sumario' se não houver permissão para a rota atual
+      navigate('/'); // Redireciona para '/Sumario' se não houver permissão para a rota atual
     }
 
     if (isAuthenticated && tokenExpiration) {
