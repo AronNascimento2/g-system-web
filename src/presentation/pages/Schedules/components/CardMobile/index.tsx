@@ -203,19 +203,23 @@ export const CardMobile: React.FC<CardMobileProps> = ({
                     <li>
                       <strong>Ordem:</strong> {selectedAppointment.Ordem}
                     </li>
-                    <li>
-                      <strong>Veículos :[</strong>
-                      {selectedAppointment?.Veiculos.map((veiculo, index) => (
-                        <div key={index}>
-                          <p>
-                            [ Código do Veículo: {veiculo.CodigoVeiculo},
-                            Status:
-                            {veiculo.Status}, Veiculo: {veiculo.Veiculo} ]
-                          </p>
-                        </div>
-                      ))}{" "}
-                      <strong>]</strong>
-                    </li>
+                    {Array.isArray(selectedAppointment.Veiculos) &&
+                      selectedAppointment.Veiculos.length > 0 && (
+                        <li>
+                          <strong>Veículos :</strong>{" "}
+                          {selectedAppointment.Veiculos.map(
+                            (veiculo, index) => (
+                              <div key={index}>
+                                <p>
+                                  [ Código do Veículo: {veiculo.CodigoVeiculo},
+                                  Status: {veiculo.Status}, Veiculo:{" "}
+                                  {veiculo.Veiculo} ]
+                                </p>
+                              </div>
+                            )
+                          )}
+                        </li>
+                      )}
 
                     <li>
                       <strong>Verificado:</strong>{" "}

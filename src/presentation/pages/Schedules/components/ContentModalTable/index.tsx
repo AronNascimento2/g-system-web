@@ -97,31 +97,20 @@ export const ContentModalTable: React.FC<ContentModalTableProps> = ({
             <li>
               <strong>Ordem:</strong> {details.Ordem}
             </li>
-            <li>
-              <strong>Veículos :[</strong>
-              {details?.Veiculos.map((veiculo, index) => (
-                <div key={index}>
-                  <p>
-                    [ Código do Veículo: {veiculo.CodigoVeiculo}, Status:
-                    {veiculo.Status}, Veiculo: {veiculo.Veiculo} ]
-                  </p>
-                </div>
-              ))}{" "}
-              <strong>]</strong>
-            </li>
-            <li>
-              <strong>Veículos :[</strong>
-              {details?.Veiculos.map((veiculo, index) => (
-                <div key={index}>
-                  <p>
-                    [ Código do Veículo: {veiculo.CodigoVeiculo}, Status:
-                    {veiculo.Status}, Veiculo: {veiculo.Veiculo} ]
-                  </p>
-                </div>
-              ))}{" "}
-              <strong>]</strong>
-            </li>
-            
+            {Array.isArray(details.Veiculos) && details.Veiculos.length > 0 && (
+              <li>
+                <strong>Veículos :</strong>{" "}
+                {details.Veiculos.map((veiculo: any, index: number) => (
+                  <div key={index}>
+                    <p>
+                      [ Código do Veículo: {veiculo.CodigoVeiculo}, Status:{" "}
+                      {veiculo.Status}, Veiculo: {veiculo.Veiculo} ]
+                    </p>
+                  </div>
+                ))}
+              </li>
+            )}
+
             <li>
               <strong>Verificado:</strong> {details.Verificado}
             </li>
