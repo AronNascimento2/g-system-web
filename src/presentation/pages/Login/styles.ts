@@ -20,8 +20,7 @@ export const LoginContainer = styled.div`
     background-color: #fff;
     border-radius: 10px;
     width: 40%;
-    max-width: 400px;
-
+    max-width: 350px;
     .icon {
       padding-bottom: 0.5rem;
     }
@@ -30,6 +29,7 @@ export const LoginContainer = styled.div`
       font-size: 25px;
       font-weight: 600;
       @media (max-width: 1080px) {
+
         font-size: 20px;
         .message {
           font-size: 9px;
@@ -108,6 +108,7 @@ export const Input = styled.input`
 
   @media (max-width: 1080px) {
     width: 100%;
+    
   }
 `;
 
@@ -132,20 +133,23 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column-reverse;
+  padding-bottom: 5rem;
   .div-logo {
     display: flex;
     justify-content: center;
     padding-bottom: 1rem;
     img {
-      max-width: 90%;
+      max-width: 70%;
       max-height: 90%;
     }
   }
   @media (max-width: 1080px) {
+    padding-bottom: 2rem;
+
     .div-logo {
+      
     }
     .div-logo img {
-      /* Outros estilos para telas menores, se necessário */
-    }
+      max-width: 70%;    }
   }
 `;
