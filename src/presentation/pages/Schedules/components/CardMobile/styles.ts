@@ -76,7 +76,7 @@ export const DetailsContent = styled.div`
     }
     .title {
       margin: 0;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 600;
       color: #2980b9;
     }
@@ -84,9 +84,12 @@ export const DetailsContent = styled.div`
       display: flex;
       align-items: center;
       margin: 0;
+      font-size: 14px;
+
     }
     .info-address {
       margin: 0;
+      font-size: 14px;
 
       white-space: nowrap;
       width: 150px;
@@ -94,7 +97,6 @@ export const DetailsContent = styled.div`
       text-overflow: ellipsis;
     }
     .info-address:hover {
-      /* Quando o mouse passa por cima, o texto completo é exibido */
       overflow: visible;
       white-space: normal;
       word-wrap: break-word; /* Permite que o texto quebre em várias linhas se necessário */
@@ -107,7 +109,7 @@ export const WrapperContent = styled.div`
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: #2980b9;
+    background-color: #3498db;
     border-radius: 20px 20px 0 0;
     padding: 0 1rem;
     color: #fff;
