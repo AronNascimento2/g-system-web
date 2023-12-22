@@ -18,7 +18,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { HeaderButtons } from "../../pages/Schedules/components/HeaderButtons";
 import { ContainerButtons } from "../../pages/Schedules/styles";
-import { BarLoader, ClipLoader, RingLoader } from "react-spinners";
+import {  ClipLoader } from "react-spinners";
 import { useEffect } from "react";
 
 // Definição do componente da tabela
