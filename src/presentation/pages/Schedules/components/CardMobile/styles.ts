@@ -30,10 +30,10 @@ export const StyledModalMobileDownSide = styled(ModalMobileDownSide)`
     padding: 0;
     margin: 0;
     font-size: 14px;
+    height: 450px;
+    overflow: auto;
   }
   .content {
-    height: 100%;
-    overflow: auto;
     .list-container{
     }
   }
