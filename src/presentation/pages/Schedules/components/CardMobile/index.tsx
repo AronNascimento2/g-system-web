@@ -21,7 +21,7 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { AppointmentProps, AppointmentType } from "../../types";
-import { BarLoader, ClipLoader } from "react-spinners";
+import {  ClipLoader } from "react-spinners";
 
 interface CardMobileProps {
   appointments: AppointmentType;
