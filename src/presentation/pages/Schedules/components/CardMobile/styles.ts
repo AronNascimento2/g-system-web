@@ -122,6 +122,8 @@ export const WrapperContent = styled.div`
       background-color: rgba(52, 152, 219, 0.4);
       color: #fff;
       padding: 0.3rem;
+      font-size: 14px;
+
     }
   }
 `;

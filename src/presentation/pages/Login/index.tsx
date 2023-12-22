@@ -34,7 +34,6 @@ export const LoginPage: React.FC = () => {
     setShowPassword(!showPassword);
   };
 
-  //useEffect para redirecionar a Página caso esteja autenticado e o usuário feche a janela
 useEffect(() => {
   const token = localStorage.getItem("token");
   const expiration = localStorage.getItem("expiration");
@@ -44,7 +43,7 @@ useEffect(() => {
     const currentDate = new Date().getTime();
 
     if (expirationDate > currentDate) {
-      navigate("/Sumario");
+      navigate("/");
     }
   }
 }, [navigate]);
