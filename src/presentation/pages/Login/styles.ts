@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const LoginContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  background-color: #2980b9;
-  padding-top: 3rem;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   height: 100%;
   @media (max-width: 1080px) {
     padding: 3rem 1rem;
@@ -21,8 +21,6 @@ export const LoginContainer = styled.div`
     border-radius: 10px;
     width: 40%;
     max-width: 400px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 1rem;
 
     .icon {
       padding-bottom: 0.5rem;
@@ -132,24 +130,19 @@ export const TogglePasswordVisibility = styled.span`
 export const Container = styled.div`
   width: 100vw;
   display: flex;
-  height: 100vh;
   justify-content: center;
   flex-direction: column-reverse;
   .div-logo {
     display: flex;
-    flex-direction: column-reverse;
     justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    padding: 1rem;
+    padding-bottom: 1rem;
     img {
-      max-width: 80%;
-      max-height: 80%;
+      max-width: 90%;
+      max-height: 90%;
     }
   }
   @media (max-width: 1080px) {
     .div-logo {
-      height: 200px;
     }
     .div-logo img {
       /* Outros estilos para telas menores, se necessário */

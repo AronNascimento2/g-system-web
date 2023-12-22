@@ -77,8 +77,10 @@ useEffect(() => {
   return (
     <Container>
       <LoginContainer>
+      <div className="div-logo">
+        <img src="/logo.png" alt="Logo" />
+      </div>
         <form onSubmit={handleLogin}>
-          <p className="title">Iniciar sessão</p>
           <InputGroup>
             <InputMask
               mask="99.999.999/9999-99"
@@ -128,9 +130,7 @@ useEffect(() => {
           </WrapperButton>
         </form>
       </LoginContainer>
-      <div className="div-logo">
-        <img src="/logo.png" alt="Logo" />
-      </div>
+     
     </Container>
   );
 };
