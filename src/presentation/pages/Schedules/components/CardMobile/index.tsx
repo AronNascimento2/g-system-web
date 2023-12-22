@@ -21,7 +21,7 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { AppointmentProps, AppointmentType } from "../../types";
-import { BarLoader } from "react-spinners";
+import { BarLoader, ClipLoader } from "react-spinners";
 
 interface CardMobileProps {
   appointments: AppointmentType;
@@ -96,9 +96,9 @@ export const CardMobile: React.FC<CardMobileProps> = ({
 
   return (
     <WrapperCard>
-      {loading ? (
+      {!loading ? (
         <div className="loader-container">
-          <BarLoader width={300} height={10} color="#3498db" />
+          <ClipLoader size={80}  color="#3498db"  />
           <p>Carregando...</p>
         </div>
       ) : (

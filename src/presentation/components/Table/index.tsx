@@ -18,7 +18,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { HeaderButtons } from "../../pages/Schedules/components/HeaderButtons";
 import { ContainerButtons } from "../../pages/Schedules/styles";
-import { BarLoader } from "react-spinners";
+import { BarLoader, ClipLoader, RingLoader } from "react-spinners";
 import { useEffect } from "react";
 
 // Definição do componente da tabela
@@ -75,7 +75,7 @@ export const ReactTable = ({
 
       {loading ? (
         <div className="loader-container">
-          <BarLoader width={300} height={10} color="#3498db" />
+          <ClipLoader size={80}  color="#3498db"  />
           <p>Carregando...</p>
         </div>
       ) : (

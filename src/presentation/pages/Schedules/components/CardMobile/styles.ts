@@ -5,7 +5,7 @@ import { HeaderText } from "../ContentModalTable/styles";
 export const WrapperCard = styled.div`
   .loader-container {
     width: 100%;
-    height: 100vh;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
