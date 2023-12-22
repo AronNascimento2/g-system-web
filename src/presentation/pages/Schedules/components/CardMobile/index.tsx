@@ -96,7 +96,7 @@ export const CardMobile: React.FC<CardMobileProps> = ({
 
   return (
     <WrapperCard>
-      {!loading ? (
+      {loading ? (
         <div className="loader-container">
           <ClipLoader size={80}  color="#3498db"  />
           <p>Carregando...</p>
