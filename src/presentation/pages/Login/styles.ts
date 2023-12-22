@@ -42,10 +42,12 @@ export const LoginContainer = styled.div`
       flex-direction: column;
       justify-content: center;
       .button {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
         font-size: 16px;
         margin: 0;
         width: 100%;
-        height: 40px;
+        height: 45px;
         font-size: 16px;
         padding: 14px 16px;
         border-radius: 8px;
@@ -87,7 +89,7 @@ export const InputGroup = styled.div`
 
   .inputmask {
     width: 100%;
-    height: 40px;
+    height: 45px;
     font-size: 16px;
     padding: 14px 16px;
     border-radius: 8px;
@@ -100,7 +102,7 @@ export const InputGroup = styled.div`
 
 export const Input = styled.input`
   width: 100%;
-  height: 40px;
+  height: 45px;
   font-size: 16px;
   padding: 14px 16px;
   border-radius: 8px;
