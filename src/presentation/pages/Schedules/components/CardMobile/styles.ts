@@ -29,6 +29,7 @@ export const StyledModalMobileDownSide = styled(ModalMobileDownSide)`
     list-style: none;
     padding: 0;
     margin: 0;
+    font-size: 14px;
   }
   .content {
     height: 100%;
