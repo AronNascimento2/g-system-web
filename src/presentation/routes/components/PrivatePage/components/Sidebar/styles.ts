@@ -2,12 +2,11 @@ import styled from "styled-components";
 import { SidebarProps } from "./types";
 
 export const Sidebar = styled.div<SidebarProps>`
-  width: 300px;
   background-color: #fff;
   top: 0;
   left: 0;
   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); /* Sombra desejada */
-
+  overflow-y: auto;
   transition: left 0.3s ease-in-out;
   .container-logo {
     display: flex;
@@ -37,18 +36,16 @@ export const Menu = styled.ul`
   list-style: none;
   padding: 0;
 
-@media (max-width: 1080px) {
-  overflow: auto;
+  @media (max-width: 1080px) {
+    overflow: auto;
     width: 50%;
     height: 100%;
-    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); 
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
     background-color: #fff;
     position: absolute;
     z-index: 999;
     margin: 0;
-  
-}
-
+  }
 `;
 
 export const MenuItem = styled.li<SidebarProps>`
