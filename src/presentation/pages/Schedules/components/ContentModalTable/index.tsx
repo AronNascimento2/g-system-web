@@ -2,14 +2,14 @@ import { formatDateAndHour } from "../../../../utils/formateHourAndDate";
 import { Container, HeaderText } from "./styles";
 import {
   faCheck,
-  faClose,
   faEdit,
   faEnvelope,
-  } from "@fortawesome/free-solid-svg-icons";
+} from "@fortawesome/free-solid-svg-icons";
 import { DynamicButton } from "../../../../components/DynamicButton";
 import React from "react";
 import { AppointmentProps } from "../../types";
 import { ExcludeModal } from "../ExcludeModal";
+import { CancelScheduleModal } from "../CancelScheduleModal";
 interface ContentModalTableProps {
   details: AppointmentProps;
 }
@@ -21,25 +21,25 @@ export const ContentModalTable: React.FC<ContentModalTableProps> = ({
       icon: faCheck,
       text: "Confirmar",
       onClick: () => console.log("Botão Confirmar clicado"),
+      disabled:true
     },
-   
+
     {
       icon: faEdit,
       text: "Editar",
       onClick: () => console.log("Botão Editar clicado"),
+      disabled:true
+
     },
-    {
-      icon: faClose,
-      text: "Cancelar",
-      onClick: () => console.log("Botão Cancelar clicado"),
-    },
+
     {
       icon: faEnvelope,
       text: "Enviar",
       onClick: () => console.log("Botão Mapa de Serviços clicado"),
+      disabled:true
+
     },
   ];
-  console.log();
 
   return (
     <Container>
@@ -141,10 +141,12 @@ export const ContentModalTable: React.FC<ContentModalTableProps> = ({
                   icon={button.icon}
                   text={button.text}
                   onClick={button.onClick}
-                  
+                  disabled={button.disabled}
                 />
               ))}
-              <ExcludeModal/>
+              <CancelScheduleModal />
+
+              <ExcludeModal />
             </div>
           </div>
         </div>

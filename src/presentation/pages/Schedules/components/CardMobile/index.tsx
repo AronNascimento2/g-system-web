@@ -21,6 +21,7 @@ import {
 import { AppointmentProps, AppointmentType } from "../../types";
 import {  ClipLoader } from "react-spinners";
 import { ExcludeModal } from "../ExcludeModal";
+import { CancelScheduleModal } from "../CancelScheduleModal";
 
 interface CardMobileProps {
   appointments: AppointmentType;
@@ -62,12 +63,7 @@ export const CardMobile: React.FC<CardMobileProps> = ({
       disabled: true,
     },
 
-    {
-      icon: faClose,
-      text: "Cancelar",
-      onClick: () => console.log("Botão Cancelar clicado"),
-      disabled: true,
-    },
+    
     {
       icon: faEnvelope,
       text: "Enviar",
@@ -251,6 +247,7 @@ export const CardMobile: React.FC<CardMobileProps> = ({
                   <div className="buttons-mobile">
                     <div className="wrapperbuttons-mobile">
                       <ExcludeModal/>
+                      <CancelScheduleModal/>
                       {buttonsData.map((button, index) => (
                         <DynamicButton
                           key={index}

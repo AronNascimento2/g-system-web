@@ -18,7 +18,7 @@ export const RegisterModal: React.FC = () => {
           <Modal show={isOpen} handleClose={toggleModal} title={"Registrar"}>
               <div style={{ paddingBottom: "10px" }}>
                   <p>Observação da ligação:</p>
-                  <textarea name="" id="" cols="42" rows="5"></textarea>
+                  <textarea name="" id=""></textarea>
               </div>
 
               <WrapperButton>

@@ -15,7 +15,7 @@ export const InvoiceModal: React.FC = () => {
     <>
       <DynamicButton icon={faDollar} text="Faturar" onClick={toggleModal} />
 
-      <Modal show={isOpen} handleClose={toggleModal} title={"Registrar"}>
+      <Modal show={isOpen} handleClose={toggleModal} title={"Faturar"}>
         <div style={{ paddingBottom: "10px" }}>
           <p>
             Alguns agendamentos selecionados possuem veículos que já foram
