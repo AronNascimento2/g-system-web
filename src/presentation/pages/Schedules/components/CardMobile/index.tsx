@@ -15,10 +15,8 @@ import { DynamicButton } from "../../../../components/DynamicButton";
 import {
   faCheck,
   faClose,
-  faDollar,
   faEdit,
   faEnvelope,
-  faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { AppointmentProps, AppointmentType } from "../../types";
 import {  ClipLoader } from "react-spinners";

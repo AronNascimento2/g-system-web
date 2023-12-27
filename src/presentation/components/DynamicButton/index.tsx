@@ -1,3 +1,4 @@
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
@@ -47,7 +48,7 @@ export const DynamicButton = ({
 }: DynamicButtonProps) => {
   return (
     <ButtonContainer disabled={disabled} className={className} onClick={onClick}>
-      <FontAwesomeIcon icon={icon} />
+      <FontAwesomeIcon icon={icon as IconProp} />
       <p>{text}</p>
     </ButtonContainer>
   );

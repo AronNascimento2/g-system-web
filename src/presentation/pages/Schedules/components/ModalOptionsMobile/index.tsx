@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   faEllipsisVertical,
-  faEdit,
   faGlobe,
   faFile,
 } from "@fortawesome/free-solid-svg-icons";

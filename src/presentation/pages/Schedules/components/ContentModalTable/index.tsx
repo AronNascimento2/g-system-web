@@ -3,7 +3,6 @@ import { Container, HeaderText } from "./styles";
 import {
   faCheck,
   faClose,
-  faDollar,
   faEdit,
   faEnvelope,
   } from "@fortawesome/free-solid-svg-icons";
@@ -11,7 +10,6 @@ import { DynamicButton } from "../../../../components/DynamicButton";
 import React from "react";
 import { AppointmentProps } from "../../types";
 import { ExcludeModal } from "../ExcludeModal";
-import { InvoiceModal } from "../InvoiceModal";
 interface ContentModalTableProps {
   details: AppointmentProps;
 }
