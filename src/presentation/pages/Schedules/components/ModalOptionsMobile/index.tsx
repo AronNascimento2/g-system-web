@@ -9,6 +9,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container } from "./styles";
 import { DynamicButton } from "../../../../components/DynamicButton";
 import { ModalMobileDownSide } from "../../../../components/ModalMobileDownSide";
+import { RegisterModal } from "../RegisterModal";
+import { InvoiceModal } from "../InvoiceModal";
 
 export const ModalOptionsMobile: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,13 +24,6 @@ export const ModalOptionsMobile: React.FC = () => {
       icon: faGlobe,
       text: "Mapa de Serviços",
       onClick: () => console.log("Botão Mapa de Serviços clicado"),
-      disabled: true,
-    },
-
-    {
-      icon: faEdit,
-      text: "Registrar",
-      onClick: () => console.log("Botão Registrar clicado"),
       disabled: true,
     },
 
@@ -57,6 +52,9 @@ export const ModalOptionsMobile: React.FC = () => {
               disabled={button.disabled}
             />
           ))}
+          <InvoiceModal />
+
+          <RegisterModal />
         </div>
       </ModalMobileDownSide>
     </Container>

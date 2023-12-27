@@ -22,6 +22,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { AppointmentProps, AppointmentType } from "../../types";
 import {  ClipLoader } from "react-spinners";
+import { ExcludeModal } from "../ExcludeModal";
 
 interface CardMobileProps {
   appointments: AppointmentType;
@@ -55,22 +56,11 @@ export const CardMobile: React.FC<CardMobileProps> = ({
       onClick: () => console.log("Botão Confirmar clicado"),
       disabled: true,
     },
-    {
-      icon: faDollar,
-      text: "Faturar",
-      onClick: () => console.log("Botão Faturar clicado"),
-      disabled: true,
-    },
+    
     {
       icon: faEdit,
       text: "Editar",
       onClick: () => console.log("Botão Editar clicado"),
-      disabled: true,
-    },
-    {
-      icon: faTrash,
-      text: "Excluir",
-      onClick: () => console.log("Botão Excluir clicado"),
       disabled: true,
     },
 
@@ -262,6 +252,7 @@ export const CardMobile: React.FC<CardMobileProps> = ({
                   </ul>
                   <div className="buttons-mobile">
                     <div className="wrapperbuttons-mobile">
+                      <ExcludeModal/>
                       {buttonsData.map((button, index) => (
                         <DynamicButton
                           key={index}

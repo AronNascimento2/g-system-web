@@ -6,11 +6,12 @@ import {
   faDollar,
   faEdit,
   faEnvelope,
-  faTrash,
-} from "@fortawesome/free-solid-svg-icons";
+  } from "@fortawesome/free-solid-svg-icons";
 import { DynamicButton } from "../../../../components/DynamicButton";
 import React from "react";
 import { AppointmentProps } from "../../types";
+import { ExcludeModal } from "../ExcludeModal";
+import { InvoiceModal } from "../InvoiceModal";
 interface ContentModalTableProps {
   details: AppointmentProps;
 }
@@ -23,22 +24,12 @@ export const ContentModalTable: React.FC<ContentModalTableProps> = ({
       text: "Confirmar",
       onClick: () => console.log("Botão Confirmar clicado"),
     },
-    {
-      icon: faDollar,
-      text: "Faturar",
-      onClick: () => console.log("Botão Faturar clicado"),
-    },
+   
     {
       icon: faEdit,
       text: "Editar",
       onClick: () => console.log("Botão Editar clicado"),
     },
-    {
-      icon: faTrash,
-      text: "Excluir",
-      onClick: () => console.log("Botão Excluir clicado"),
-    },
-
     {
       icon: faClose,
       text: "Cancelar",
@@ -152,9 +143,10 @@ export const ContentModalTable: React.FC<ContentModalTableProps> = ({
                   icon={button.icon}
                   text={button.text}
                   onClick={button.onClick}
-                  disabled
+                  
                 />
               ))}
+              <ExcludeModal/>
             </div>
           </div>
         </div>

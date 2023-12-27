@@ -1,6 +1,5 @@
 import {
   faArrowsRotate,
-  faEdit,
   faFile,
   faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
@@ -8,6 +7,8 @@ import { FilterOptions } from "../FilterOptions";
 import { Container } from "./styles";
 import { DynamicButton } from "../../../../components/DynamicButton";
 import React from "react";
+import { RegisterModal } from "../RegisterModal";
+import { InvoiceModal } from "../InvoiceModal";
 
 interface HeaderButtonsProps {
   update: () => void;
@@ -36,11 +37,6 @@ export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
       text: "Mapa de Serviços",
       onClick: () => console.log("Botão Faturar clicado"),
     },
-    {
-      icon: faEdit,
-      text: "Registrar",
-      onClick: () => console.log("Botão Editar clicado"),
-    },
   ];
 
   return (
@@ -63,6 +59,8 @@ export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
           disabled
         />
       ))}
+      <InvoiceModal />
+      <RegisterModal />
       <FilterOptions />
     </Container>
   );

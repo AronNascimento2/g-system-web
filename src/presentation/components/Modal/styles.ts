@@ -14,12 +14,12 @@ export const ModalWrapper = styled.div<ModalProps>`
 `;
 
 export const ModalContent = styled.div<ModalProps>`
-  width: 400px;
+  min-width: 400px;
   min-height: 200px;
   position: absolute;
   display: ${({ show }) => (show ? "block" : "none")};
   top: 50%;
-  left: 40%;
+  left: 55%;
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 20px;
@@ -34,6 +34,7 @@ export const ModalContent = styled.div<ModalProps>`
   }
   @media screen and (max-width: 1080px) {
     max-width: 90%;
+    left: 50%;
   }
 `;
 

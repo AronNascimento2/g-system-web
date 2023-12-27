@@ -30,8 +30,8 @@ const ButtonContainer = styled.button<ButtonContainerProps>`
 `;
 
 interface DynamicButtonProps {
-  icon: IconDefinition;
-  text: string;
+  icon?: IconDefinition;
+  text?: string;
   onClick?: () => void;
   className?: string;
   disabled?: boolean;
