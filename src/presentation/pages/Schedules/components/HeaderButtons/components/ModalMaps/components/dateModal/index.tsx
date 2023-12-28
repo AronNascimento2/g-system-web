@@ -8,7 +8,7 @@ import { Container } from "./styles";
 interface DateModalProps {
   show: boolean;
   handleDateSelected: (date: Date) => void;
-  handleClosSelecteDate?: (() => void) | undefined;
+  handleClosSelecteDate: (() => void) | undefined;
 }
 
 const DateModal: React.FC<DateModalProps> = ({

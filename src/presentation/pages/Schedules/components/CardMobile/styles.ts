@@ -34,7 +34,7 @@ export const StyledModalMobileDownSide = styled(ModalMobileDownSide)`
     overflow: auto;
   }
   .content {
-    .list-container{
+    .list-container {
     }
   }
   .obs {
@@ -47,25 +47,28 @@ export const StyledModalMobileDownSide = styled(ModalMobileDownSide)`
     overflow: auto;
   }
   .buttons-mobile {
-    height: 150px;
-    width: 410px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .wrapperbuttons-mobile {
-      gap: 5px;
-      height: auto;
-     
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    }
-  }
-  @media(max-width:1080px){
-   
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.wrapperbuttons-mobile {
+  width: 100%; /* Ajuste a largura conforme necessário */
+  max-width: 400px; /* Largura máxima para o contêiner */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Estilo dos botões (ajustados para dois em cada linha) */
+.wrapperbuttons-mobile button {
+  width: calc(50% - 10px); /* Ajustar a largura do botão para ocupar metade do espaço, considerando o espaçamento */
+}
+
+  @media (max-width: 1080px) {
     .content {
-  }
+    }
   }
 `;
 export const DetailsContent = styled.div`
@@ -93,7 +96,6 @@ export const DetailsContent = styled.div`
       align-items: center;
       margin: 0;
       font-size: 14px;
-
     }
     .info-address {
       margin: 0;
@@ -130,7 +132,6 @@ export const WrapperContent = styled.div`
       color: #fff;
       padding: 0.3rem;
       font-size: 14px;
-
     }
   }
 `;

@@ -9,14 +9,7 @@ interface ContentModalTableProps {
 export const ContentModalTable: React.FC<ContentModalTableProps> = ({
   details,
 }) => {
-  // const buttonsData = [
-  //   {
-  //     icon: faEnvelope,
-  //     text: "Enviar",
-  //     onClick: () => console.log("Botão Mapa de Serviços clicado"),
-  //     disabled: true,
-  //   },
-  // ];
+
 
   return (
     <Container>

@@ -25,14 +25,12 @@ import { ExcludeModal } from "../HeaderButtons/components/ExcludeModal";
 interface CardMobileProps {
   appointments: AppointmentType;
   searchText: string;
-  handleRowClickCard?: (appointment: AppointmentProps) => void;
   loading: boolean;
 }
 
 export const CardMobile: React.FC<CardMobileProps> = ({
   appointments,
   searchText,
-  // handleRowClickCard,
   loading,
 }) => {
   const [selectedAppointment, setSelectedAppointment] =
@@ -40,7 +38,6 @@ export const CardMobile: React.FC<CardMobileProps> = ({
 
   const openModal = (appointment) => {
     setSelectedAppointment(appointment);
-    // handleRowClickCard(appointment);
   };
 
   const closeAndClearModal = () => {
@@ -48,15 +45,6 @@ export const CardMobile: React.FC<CardMobileProps> = ({
   };
 
   const buttonsData = [
-   
-   
-    
-    // {
-    //   icon: faEnvelope,
-    //   text: "Enviar",
-    //   onClick: () => console.log("Botão Mapa de Serviços clicado"),
-    //   disabled: true,
-    // },
     {
       icon: faClose,
       text: "Fechar",

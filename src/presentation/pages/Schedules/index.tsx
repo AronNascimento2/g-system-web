@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { fetchAppointments } from "../../../services/Schedule";
 import { Container, ContainerButtons, WrapperTable } from "./styles";
-// import { ContentModalTable } from "./components/ContentModalTable";
 import { getFirstAndLastDayOfMonth } from "../../utils/getFirstAndLastDayofMonth";
 import { AppointmentType } from "./types";
 import { CardMobile } from "./components/CardMobile";
 import { useMediaQuery } from "react-responsive";
-// import { SideModal } from "../../components/SideModal";
 import { ReactTable } from "../../components/Table";
 import { formatDate } from "../../utils/formateHourAndDate";
 import { HeaderButtonsMobile } from "./components/HeaderButtonsMobile";
@@ -14,8 +12,6 @@ import { HeaderButtonsMobile } from "./components/HeaderButtonsMobile";
 export const SchedulesPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [appointments, setAppointments] = useState<AppointmentType>([]);
-  // const [modalIsOpen, setModalIsOpen] = useState(false);
-  // const [modalContent, setModalContent] = useState("");
   const { firstDay, lastDay } = getFirstAndLastDayOfMonth();
   const [searchText, setSearchText] = useState("");
   const [details, setDetails] = useState(null);
@@ -43,30 +39,10 @@ export const SchedulesPage: React.FC = () => {
     fetchData();
   }, []);
 
-  // const openModal = (content) => {
-  //   setModalContent(content);
-  //   setModalIsOpen(true);
-  // };
-
-  // const closeModal = () => {
-  //   setModalIsOpen(false);
-  // };
-
   const handleRowClick = (rowData) => {
     setDetails(rowData);
   };
-  console.log("sddsafsdgfwes", details);
 
-  // const handleRowClick = (rowData) => {
-  //   const details = rowData;
-
-  //   openModal(<ContentModalTable details={details} />);
-  // };
-
-  // const handleRowClickCard = (rowData) => {
-  //   const details = rowData;
-  //   return details;
-  // };
   const dataWithIds = appointments.map((appointment) => ({
     ...appointment,
 
@@ -102,7 +78,6 @@ export const SchedulesPage: React.FC = () => {
             searchText={searchText}
             loading={loading}
             appointments={appointments}
-            // handleRowClickCard={handleRowClickCard}
           />
         ) : (
           <WrapperTable>
@@ -119,10 +94,6 @@ export const SchedulesPage: React.FC = () => {
           </WrapperTable>
         )}
       </div>
-
-      {/* <SideModal show={modalIsOpen} handleClose={closeModal}>
-        {modalContent}
-      </SideModal> */}
     </Container>
   );
 };
