@@ -13,7 +13,7 @@ interface DateModalProps {
 const DateModal: React.FC<DateModalProps> = ({
   show,
   handleDateSelected,
-  handleClosSelecteDate,
+  handleClosSelecteDate = () => {}, // Provide a default empty function
 }) => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
@@ -29,17 +29,17 @@ const DateModal: React.FC<DateModalProps> = ({
 
   return (
     <Modal show={show} handleClose={handleClosSelecteDate} height="450px">
-     <div style={{display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column'}}>
-     <h2>Selecione uma data</h2>
-      <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-        <DatePicker
-          selected={selectedDate}
-          onChange={handleDateChange}
-          dateFormat="dd/MM/yyyy"
-        />
-        <DynamicButton text="Confirmar" onClick={handleConfirmDate} />
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+        <h2>Selecione uma data</h2>
+        <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+          <DatePicker
+            selected={selectedDate}
+            onChange={handleDateChange}
+            dateFormat="dd/MM/yyyy"
+          />
+          <DynamicButton text="Confirmar" onClick={handleConfirmDate} />
+        </div>
       </div>
-     </div>
     </Modal>
   );
 };
