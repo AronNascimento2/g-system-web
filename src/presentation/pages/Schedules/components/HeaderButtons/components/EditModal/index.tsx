@@ -19,23 +19,24 @@ export const EditModal: React.FC<Props> = ({ details }) => {
   };
 
   return (
-    <Container>
+    <>
       <DynamicButton
         icon={faEdit}
         text="Editar"
         onClick={toggleModal}
         disabled={!details?.Codigo}
       />
-
-      <Modal show={isOpen} handleClose={toggleModal} title={"Editar"}>
-        <div className="container-map">
-          <Maps />
-        </div>
-        <WrapperButton>
-          <DynamicButton text="Cancelar" onClick={toggleModal} />
-          <DynamicButton text="Confirmar" onClick={toggleModal} />
-        </WrapperButton>
-      </Modal>
-    </Container>
+      <Container>
+        <Modal show={isOpen} handleClose={toggleModal} title={"Editar"}>
+          <div className="container-map">
+            <Maps />
+          </div>
+          <WrapperButton>
+            <DynamicButton text="Cancelar" onClick={toggleModal} />
+            <DynamicButton text="Confirmar" onClick={toggleModal} />
+          </WrapperButton>
+        </Modal>
+      </Container>
+    </>
   );
 };
