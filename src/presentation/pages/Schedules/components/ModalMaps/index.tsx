@@ -28,7 +28,7 @@ console.log(usuarios);
             return <><p>{user.nome}</p></>
            })}
           </div>
-       <div style={{height:'500px', }}>
+       <div style={{height:'300px', }}>
        <Maps usuarios={usuarios} />
        </div>
         </Modal>
