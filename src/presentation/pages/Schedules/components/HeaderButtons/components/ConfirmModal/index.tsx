@@ -8,12 +8,12 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import { Modal } from "../../../../../../components/Modal";
 import { AppointmentProps } from "../../../../types";
-import ptBR from 'date-fns/locale/pt-BR';
+import ptBR from "date-fns/locale/pt-BR";
 
 // Registra o idioma português brasileiro
-registerLocale('pt-BR', ptBR);
+registerLocale("pt-BR", ptBR);
 // Define o idioma padrão como português brasileiro
-setDefaultLocale('pt-BR');
+setDefaultLocale("pt-BR");
 
 interface Props {
   details: AppointmentProps;
@@ -55,6 +55,7 @@ export const ConfirmModal: React.FC<Props> = ({ details }) => {
               <p>THX3H42 - Fiat Palio Prata</p>
             </div>
             <DatePicker
+              className="datepicker"
               selected={startDate}
               onChange={(date) => setStartDate(date)}
               timeInputLabel="Time:"
@@ -93,15 +94,18 @@ export const ConfirmModal: React.FC<Props> = ({ details }) => {
                 </div>
               </div>
             </div>
-            <div className="car-details">
-              <p>a</p>
-            </div>
+            <div className="car-details"></div>
           </div>
           <div className="details"></div>
 
           <WrapperButton>
-            <DynamicButton text="Cancelar" onClick={toggleModal} />
             <DynamicButton
+              width="100px"
+              text="Cancelar"
+              onClick={toggleModal}
+            />
+            <DynamicButton
+              width="120px"
               text="Concluir Serviço realizado"
               onClick={toggleModal}
             />

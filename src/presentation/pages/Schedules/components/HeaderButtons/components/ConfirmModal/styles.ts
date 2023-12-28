@@ -1,20 +1,29 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  font-size: 14px;
-  background-color: red;
   .client-container {
     display: flex;
     gap: 10px;
+    padding-top: 1rem;
     align-items: center;
+    font-size: 14px;
+    .datepicker {
+      width: 150px;
+      align-items: center;
+      text-align: center; /* Centraliza o texto dentro do input */
+    }
+    @media (max-width: 1080px) {
+      padding-bottom: 10px;
+    }
   }
   .client-data {
     display: flex;
     align-items: center;
     gap: 5px;
+
+    padding-top: 10px;
   }
   .client-details {
-    gap: 10px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -27,9 +36,11 @@ export const Container = styled.div`
   }
   select {
     height: 25px;
+    width: 100%;
   }
   textarea {
     height: 25px;
+    width: 100%;
 
     resize: none;
   }
@@ -67,7 +78,6 @@ export const Container = styled.div`
       align-items: flex-start;
       flex-direction: column;
       gap: 1px;
-     
     }
   }
 `;
