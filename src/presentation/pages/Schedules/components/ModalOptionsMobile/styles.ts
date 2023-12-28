@@ -16,7 +16,7 @@ export const Container = styled.div`
     gap: 20px;
   }
   .modal{
-    height: 300px;
+    height: 750px;
   }
   .open-options-button {
     width: 30px;
