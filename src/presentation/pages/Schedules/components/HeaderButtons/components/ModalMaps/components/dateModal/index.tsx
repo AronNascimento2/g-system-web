@@ -63,7 +63,12 @@ const DateModal: React.FC<DateModalProps> = ({
               showPopperArrow={false} // Hide the arrow indicating the date picker
               inline // Set the DatePicker to be always visible
             />
-            <DynamicButton text="Buscar" onClick={handleConfirmDate} disabled={!selectedDate} />
+            <DynamicButton
+              text="Buscar"
+              onClick={handleConfirmDate}
+              disabled={!selectedDate}
+              width="200px"
+            />
           </div>
         </div>
       </Modal>
