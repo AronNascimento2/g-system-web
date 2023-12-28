@@ -12,7 +12,6 @@ const ButtonContainer = styled.button<ButtonContainerProps>`
   justify-content: center;
   border: none;
   background: none;
-  width: 48%;
   background-color: #3498db;
 
   border-radius: 8px;
