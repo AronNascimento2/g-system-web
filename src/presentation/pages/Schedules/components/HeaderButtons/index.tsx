@@ -1,7 +1,6 @@
 import {
   faArrowsRotate,
   faFile,
-  faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 import { FilterOptions } from "../FilterOptions";
 import { Container } from "./styles";
@@ -14,6 +13,7 @@ import { ExcludeModal } from "../ExcludeModal";
 import { CancelScheduleModal } from "../CancelScheduleModal";
 import { EditModal } from "../EditModal";
 import { AppointmentProps } from "../../types";
+import { ModalMaps } from "../ModalMaps";
 
 interface HeaderButtonsProps {
   update: () => void;
@@ -39,11 +39,7 @@ export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
       text: "Documentos",
       onClick: () => console.log("Botão Confirmar clicado"),
     },
-    {
-      icon: faGlobe,
-      text: "Mapa de Serviços",
-      onClick: () => console.log("Botão Faturar clicado"),
-    },
+   
   ];
 
   return (
@@ -72,6 +68,7 @@ export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
       <ConfirmModal details={details}/>
       <InvoiceModal details={details}/>
       <RegisterModal details={details}/>
+      <ModalMaps/>
       <FilterOptions />
     </Container>
   );

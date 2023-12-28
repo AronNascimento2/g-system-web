@@ -10,6 +10,7 @@ import { DynamicButton } from "../../../../components/DynamicButton";
 import { ModalMobileDownSide } from "../../../../components/ModalMobileDownSide";
 import { RegisterModal } from "../RegisterModal";
 import { InvoiceModal } from "../InvoiceModal";
+import { ModalMaps } from "../ModalMaps";
 
 export const ModalOptionsMobile: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,21 +19,7 @@ export const ModalOptionsMobile: React.FC = () => {
     setIsOpen(!isOpen);
   };
 
-  const buttonsData = [
-    {
-      icon: faGlobe,
-      text: "Mapa de Serviços",
-      onClick: () => console.log("Botão Mapa de Serviços clicado"),
-      disabled: true,
-    },
-
-    {
-      icon: faFile,
-      text: "Documentos",
-      onClick: () => console.log("Botão Documentos clicado"),
-      disabled: true,
-    },
-  ];
+ 
 
   return (
     <Container>
@@ -42,17 +29,9 @@ export const ModalOptionsMobile: React.FC = () => {
 
       <ModalMobileDownSide show={isOpen} handleClose={toggleModal}>
         <div className="buttons">
-          {buttonsData.map((button, index) => (
-            <DynamicButton
-              key={index}
-              icon={button.icon}
-              text={button.text}
-              onClick={button.onClick}
-              disabled={button.disabled}
-            />
-          ))}
+         
           <InvoiceModal />
-
+          <ModalMaps />
           <RegisterModal />
         </div>
       </ModalMobileDownSide>

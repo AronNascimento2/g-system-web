@@ -43,6 +43,7 @@ export const ModalContent = styled.div<ModalProps>`
   max-width: 30%;
   max-height: 80%;
   overflow-y: auto;
+  z-index:999;
   .buttons-modal {
     display: flex;
     align-items: center;
@@ -53,7 +54,7 @@ export const ModalContent = styled.div<ModalProps>`
     min-width: 90%;
     max-width: 90%;
     min-height: 20%;
-    max-height: 70%;
+    max-height: 80%;
     ${({ position }) => (position ? "" : "top: 50%; left: 50%;")}
   }
  
