@@ -17,10 +17,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { AppointmentProps, AppointmentType } from "../../types";
 import {  ClipLoader } from "react-spinners";
-import { ExcludeModal } from "../ExcludeModal";
-import { CancelScheduleModal } from "../CancelScheduleModal";
-import { ConfirmModal } from "../ConfirmModal";
-import { EditModal } from "../EditModal";
+import { CancelScheduleModal } from "../HeaderButtons/components/CancelScheduleModal";
+import { ConfirmModal } from "../HeaderButtons/components/ConfirmModal";
+import { EditModal } from "../HeaderButtons/components/EditModal";
+import { ExcludeModal } from "../HeaderButtons/components/ExcludeModal";
 
 interface CardMobileProps {
   appointments: AppointmentType;

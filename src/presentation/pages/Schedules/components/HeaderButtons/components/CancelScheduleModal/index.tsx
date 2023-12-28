@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
-import { Modal } from "../../../../components/Modal";
-import { DynamicButton } from "../../../../components/DynamicButton";
-import { WrapperButton } from "../../../../components/WrapperButton/styles";
+import { Modal } from "../../../../../../components/Modal";
+import { DynamicButton } from "../../../../../../components/DynamicButton";
+import { WrapperButton } from "../../../../../../components/WrapperButton/styles";
 import { Container } from "./styles";
-import { AppointmentProps } from "../../types";
+import { AppointmentProps } from "../../../../types";
 
 interface Props {
   details: AppointmentProps;
@@ -28,13 +28,13 @@ export const CancelScheduleModal: React.FC<Props> = ({ details }) => {
 
       <Container>
         <Modal show={isOpen} handleClose={toggleModal} title={"Cancelar"}>
-          <div style={{ paddingBottom: "10px" }}>
-            <p>Confirmar cancelamento</p>
+          <div style={{ paddingBottom: "10px"}}>
+            <p>Confirmar cancelamento do agendamento de <strong>{details?.Cliente}</strong>?</p>
           </div>
 
           <WrapperButton>
-            <DynamicButton text="Cancelar" onClick={toggleModal} />
-            <DynamicButton text="Confirmar cancelamento" onClick={toggleModal} />
+            <DynamicButton text="Cancelar" onClick={toggleModal} width="100px" />
+            <DynamicButton text="Confirmar cancelamento" onClick={toggleModal} width="100px"/>
           </WrapperButton>
         </Modal>
       </Container>

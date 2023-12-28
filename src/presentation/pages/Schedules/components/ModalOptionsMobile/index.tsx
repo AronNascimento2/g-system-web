@@ -5,9 +5,9 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container } from "./styles";
 import { ModalMobileDownSide } from "../../../../components/ModalMobileDownSide";
-import { RegisterModal } from "../RegisterModal";
+import { RegisterModal } from "../HeaderButtons/components/RegisterModal";
 import { InvoiceModal } from "../InvoiceModal";
-import { ModalMaps } from "../ModalMaps";
+import { ModalMaps } from "../HeaderButtons/components/ModalMaps";
 
 export const ModalOptionsMobile: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

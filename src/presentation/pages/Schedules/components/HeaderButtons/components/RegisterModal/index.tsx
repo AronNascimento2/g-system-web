@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
-import { Modal } from "../../../../components/Modal";
-import { DynamicButton } from "../../../../components/DynamicButton";
-import { WrapperButton } from "../../../../components/WrapperButton/styles";
+import { Modal } from "../../../../../../components/Modal";
+import { DynamicButton } from "../../../../../../components/DynamicButton";
+import { WrapperButton } from "../../../../../../components/WrapperButton/styles";
 import { Container } from "./styles";
-import { AppointmentProps } from "../../types";
+import { AppointmentProps } from "../../../../types";
 
 
 
@@ -29,8 +29,8 @@ export const RegisterModal: React.FC<Props> = ({details}) => {
               </div>
 
               <WrapperButton>
-                  <DynamicButton text="Cancelar" onClick={toggleModal} />
-                  <DynamicButton text="Salvar" onClick={toggleModal} />
+                  <DynamicButton text="Cancelar" onClick={toggleModal} width="100px"/>
+                  <DynamicButton text="Salvar" onClick={toggleModal} width="100px" />
               </WrapperButton>
           </Modal>
       </Container></>

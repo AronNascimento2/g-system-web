@@ -7,11 +7,9 @@ const containerStyle = {
 };
 
 const center = {
-  lat: -23.497949106475172,
-  lng: -46.50588362402262,
+  lat: -23.574257076268832,
+  lng: -46.55420580479616,
 };
-
-
 
 const Maps = ({ usuarios }) => {
   const { isLoaded } = useJsApiLoader({
@@ -20,7 +18,16 @@ const Maps = ({ usuarios }) => {
   });
 
   return isLoaded ? (
-    <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
+    <GoogleMap
+      mapContainerStyle={containerStyle}
+      center={center}
+      zoom={10}
+      options={{
+        streetViewControl: false, // Remove a opção de visualização de street view
+        mapTypeControl: false, // Remove a opção de trocar o tipo de mapa (ex: satélite)
+        zoomControl: true, // Mantém o controle de zoom
+      }}
+    >
       {usuarios?.map((usuario, index) => (
         <Marker
           key={index}

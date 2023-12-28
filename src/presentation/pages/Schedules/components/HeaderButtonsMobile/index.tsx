@@ -1,7 +1,7 @@
 import { ModalOptionsMobile } from "../ModalOptionsMobile";
 import { Container } from "./styles";
 import { FilterOptionsMobile } from "../FilterOptionsMobile";
-import { UpdateButton } from "../UpdateButton";
+import { UpdateButton } from "../HeaderButtons/components/UpdateButton";
 
 interface HeaderButtonsMobileProps  {
   update: () => void;

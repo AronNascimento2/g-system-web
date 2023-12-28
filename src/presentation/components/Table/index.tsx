@@ -196,7 +196,7 @@ export const ReactTable = ({
         {details && (
             <><ul>
               <li>
-                <strong>Codigo:</strong> {details?.Cliente}
+                <strong>Cliente:</strong> {details?.Cliente}
               </li>
               <li>
                 <strong>Codigo:</strong> {details.Codigo}

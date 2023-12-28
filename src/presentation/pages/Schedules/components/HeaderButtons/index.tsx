@@ -1,25 +1,22 @@
-import {
-  faArrowsRotate,
-  faFile,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowsRotate, faFile } from "@fortawesome/free-solid-svg-icons";
 import { FilterOptions } from "../FilterOptions";
 import { Container } from "./styles";
 import { DynamicButton } from "../../../../components/DynamicButton";
 import React from "react";
-import { RegisterModal } from "../RegisterModal";
+import { RegisterModal } from "./components/RegisterModal";
 import { InvoiceModal } from "../InvoiceModal";
-import { ConfirmModal } from "../ConfirmModal";
-import { ExcludeModal } from "../ExcludeModal";
-import { CancelScheduleModal } from "../CancelScheduleModal";
-import { EditModal } from "../EditModal";
+import { ConfirmModal } from "./components/ConfirmModal";
+import { CancelScheduleModal } from "./components/CancelScheduleModal";
+import { EditModal } from "./components/EditModal";
 import { AppointmentProps } from "../../types";
-import { ModalMaps } from "../ModalMaps";
+import { ModalMaps } from "./components/ModalMaps";
+import { ExcludeModal } from "./components/ExcludeModal";
 
 interface HeaderButtonsProps {
   update: () => void;
   onSearch: (text: string) => void;
   searchText: string; // Definindo searchText como uma string
-  details:AppointmentProps
+  details: AppointmentProps;
 }
 
 export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
@@ -39,18 +36,37 @@ export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
       text: "Documentos",
       onClick: () => console.log("Botão Confirmar clicado"),
     },
-   
   ];
 
   const usuarios = [
-    {label:'1', nome: "Cliente 1", latitude: -23.55675234096567, longitude: -46.40948836105995 },
-    {label:'2',  nome: "Cliente 2", latitude: -23.527632661978437, longitude: -46.7758956168826 },
-    {label:'3',  nome: "Cliente 3", latitude: -23.521082688335113, longitude: -46.19686731075785 },
+    {
+      label: "1",
+      nome: "Cliente 1",
+      latitude: -23.55675234096567,
+      longitude: -46.40948836105995,
+    },
+    {
+      label: "2",
+      nome: "Cliente 2",
+      latitude: -23.527632661978437,
+      longitude: -46.7758956168826,
+    },
+    {
+      label: "3",
+      nome: "Cliente 3",
+      latitude: -23.521082688335113,
+      longitude: -46.19686731075785,
+    },
   ];
 
   return (
     <Container>
-      <DynamicButton onClick={update} icon={faArrowsRotate} text="Atualizar" />
+      <DynamicButton
+        onClick={update}
+        icon={faArrowsRotate}
+        text="Atualizar"
+        width="100px"
+      />
       <input
         className="input-search"
         type="text"
@@ -68,13 +84,13 @@ export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
           disabled
         />
       ))}
-      <ExcludeModal details={details}/>
-      <CancelScheduleModal details={details}/>
-      <EditModal details={details}/>
-      <ConfirmModal details={details}/>
-      <InvoiceModal details={details}/>
-      <RegisterModal details={details}/>
-      <ModalMaps usuarios={usuarios}/>
+      <ExcludeModal details={details} />
+      <CancelScheduleModal details={details} />
+      <EditModal details={details} />
+      <ConfirmModal details={details} />
+      <InvoiceModal details={details} />
+      <RegisterModal details={details} />
+      <ModalMaps usuarios={usuarios} />
       <FilterOptions />
     </Container>
   );

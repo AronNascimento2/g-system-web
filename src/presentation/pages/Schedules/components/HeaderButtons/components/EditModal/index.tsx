@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import {  faEdit } from "@fortawesome/free-solid-svg-icons";
-import { Modal } from "../../../../components/Modal";
-import { DynamicButton } from "../../../../components/DynamicButton";
-import { WrapperButton } from "../../../../components/WrapperButton/styles";
-import { AppointmentProps } from "../../types";
+import { Modal } from "../../../../../../components/Modal";
+import { DynamicButton } from "../../../../../../components/DynamicButton";
+import { WrapperButton } from "../../../../../../components/WrapperButton/styles";
+import { AppointmentProps } from "../../../../types";
 
 interface Props {
   details: AppointmentProps;

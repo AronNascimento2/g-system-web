@@ -123,7 +123,6 @@ export const ScheduleTableContainer = styled.div<Props>`
       border: 1px solid lightgray;
       border-radius: 20px;
       height: 100%;
-      padding: 10px;
       font-size: 14px;
       overflow: auto;
       display: flex;

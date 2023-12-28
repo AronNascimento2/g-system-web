@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
-import { Modal } from "../../../../components/Modal";
-import { DynamicButton } from "../../../../components/DynamicButton";
-import Maps from "../../../../components/Maps";
+import { Modal } from "../../../../../../components/Modal";
+import { DynamicButton } from "../../../../../../components/DynamicButton";
+import Maps from "../../../../../../components/Maps";
 import DateModal from "./components/dateModal";
 
 interface Props {
@@ -30,22 +30,29 @@ export const ModalMaps: React.FC<Props> = ({ usuarios }) => {
     setIsDateModalOpen(false);
     setIsOpen(true);
   };
-const handleClosSelecteDate = ()=>{
-  setIsDateModalOpen(false);
-
-}
+  const handleClosSelecteDate = () => {
+    setIsDateModalOpen(false);
+  };
   return (
     <>
-      <DynamicButton icon={faGlobe} text="Mapa de serviços" onClick={toggleDateModal} />
-      <DateModal show={isDateModalOpen} handleDateSelected={handleDateSelected} handleClosSelecteDate={handleClosSelecteDate} /> {/* Modal de data */}
-      <Modal show={isOpen} handleClose={toggleModal} width={'700px'}>
+      <DynamicButton
+        icon={faGlobe}
+        text="Mapa de serviços"
+        onClick={toggleDateModal}
+      />
+      <DateModal
+        show={isDateModalOpen}
+        handleDateSelected={handleDateSelected}
+        handleClosSelecteDate={handleClosSelecteDate}
+      />{" "}
+      {/* Modal de data */}
+      <Modal show={isOpen} handleClose={toggleModal} width={"700px"} height="">
         <div>
-          
           {usuarios?.map((user) => {
             return <p key={user.id}>{user.nome}</p>;
           })}
         </div>
-        <div style={{ height: '300px' }}>
+        <div style={{ height: "400px" }}>
           <Maps usuarios={usuarios} />
         </div>
       </Modal>

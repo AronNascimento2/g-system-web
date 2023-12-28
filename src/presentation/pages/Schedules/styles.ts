@@ -20,7 +20,7 @@ export const ContainerButtons = styled.div`
   gap: 0.4rem;
   padding: 1rem;
   flex-wrap: wrap;
-
+  
   .input-label {
     display: flex;
     align-items: center;

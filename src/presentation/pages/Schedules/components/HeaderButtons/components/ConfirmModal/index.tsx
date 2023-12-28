@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import { DynamicButton } from "../../../../components/DynamicButton";
-import { WrapperButton } from "../../../../components/WrapperButton/styles";
+import { DynamicButton } from "../../../../../../components/DynamicButton";
+import { WrapperButton } from "../../../../../../components/WrapperButton/styles";
 import { Container } from "./styles";
-import DatePicker, { registerLocale } from "react-datepicker";
+import DatePicker, { registerLocale, setDefaultLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-import es from "date-fns/locale/es";
-import { Modal } from "../../../../components/Modal";
-import { AppointmentProps } from "../../types";
-registerLocale("es", es);
+import { Modal } from "../../../../../../components/Modal";
+import { AppointmentProps } from "../../../../types";
+import ptBR from 'date-fns/locale/pt-BR';
+
+// Registra o idioma português brasileiro
+registerLocale('pt-BR', ptBR);
+// Define o idioma padrão como português brasileiro
+setDefaultLocale('pt-BR');
 
 interface Props {
   details: AppointmentProps;
@@ -54,7 +58,7 @@ export const ConfirmModal: React.FC<Props> = ({ details }) => {
               selected={startDate}
               onChange={(date) => setStartDate(date)}
               timeInputLabel="Time:"
-              dateFormat="MM/dd/yyyy h:mm aa"
+              dateFormat="dd/MM/yyyy HH:mm"
               showTimeInput
             />
           </div>
