@@ -10,8 +10,10 @@ const center = {
   lat: -23.574257076268832,
   lng: -46.55420580479616,
 };
-
-const Maps = ({ usuarios }) => {
+interface MapProps {
+  usuarios?;
+}
+const Maps = ({ usuarios }: MapProps) => {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: "AIzaSyDZ2Pc6z4je-boooUqFiyFaAFM_8UXdtEE",
