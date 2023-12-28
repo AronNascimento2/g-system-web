@@ -10,6 +10,7 @@ import Maps from "../../../../../../components/Maps";
 import { Container } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { users } from "./usertest";
+import DateModal from "./components/dateModal";
 
 interface Usuario {
   nome: string;
@@ -30,6 +31,26 @@ export const ModalMaps: React.FC<Props> = () => {
     null
   );
 
+  const [isDateModalOpen, setIsDateModalOpen] = useState(false); // Estado para o modal de data
+
+  const toggleDateModal = () => {
+    setIsDateModalOpen(!isDateModalOpen);
+  };
+
+  const handleDateSelected = (selectedDate) => {
+    // Aqui você pode manipular a data selecionada, como fazer a busca com base nela
+    // Por exemplo, chamar uma função que busca os usuários com a data selecionada
+    // e, em seguida, abrir o modal do mapa com os resultados
+    console.log("Data selecionada:", selectedDate);
+
+    // Por enquanto, vou apenas abrir o modal do mapa após selecionar a data
+    setIsDateModalOpen(false);
+    setIsOpen(true);
+  };
+  const handleClosSelecteDate = () => {
+    setIsDateModalOpen(false);
+  };
+
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
@@ -39,37 +60,30 @@ export const ModalMaps: React.FC<Props> = () => {
       const updatedUsuarios = [...usuarios];
       const newIndex =
         direction === "up" ? selectedUserIndex - 1 : selectedUserIndex + 1;
-
-      if (direction === "up" && selectedUserIndex > 0) {
-        const usuarioToMove = updatedUsuarios[selectedUserIndex];
-        updatedUsuarios[selectedUserIndex] = updatedUsuarios[newIndex];
-        updatedUsuarios[newIndex] = usuarioToMove;
-
-        // Atualiza as labels conforme a nova ordem
-        updatedUsuarios.forEach((usuario, index) => {
-          usuario.label = `${index + 1}`;
-        });
-
-        setUsuarios(updatedUsuarios);
-        setSelectedUserIndex(newIndex);
-      } else if (
-        direction === "down" &&
-        selectedUserIndex < updatedUsuarios.length - 1
+  
+      if (
+        (direction === "up" && selectedUserIndex > 0) ||
+        (direction === "down" && selectedUserIndex < updatedUsuarios.length - 1)
       ) {
         const usuarioToMove = updatedUsuarios[selectedUserIndex];
         updatedUsuarios[selectedUserIndex] = updatedUsuarios[newIndex];
         updatedUsuarios[newIndex] = usuarioToMove;
-
-        // Atualiza as labels conforme a nova ordem
-        updatedUsuarios.forEach((usuario, index) => {
-          usuario.label = `${index + 1}`;
-        });
-
+  
+        // Function to update labels
+        const updateLabels = (users) => {
+          users.forEach((usuario, index) => {
+            usuario.label = `${index + 1}`;
+          });
+        };
+  
+        updateLabels(updatedUsuarios);
+  
         setUsuarios(updatedUsuarios);
         setSelectedUserIndex(newIndex);
       }
     }
   };
+  
 
   const canMoveUp = selectedUserIndex !== null && selectedUserIndex > 0;
   const canMoveDown =
@@ -80,8 +94,14 @@ export const ModalMaps: React.FC<Props> = () => {
       <DynamicButton
         icon={faGlobe}
         text="Mapa de serviços"
-        onClick={toggleModal}
+        onClick={toggleDateModal}
+        width="100px"
       />
+      <DateModal
+        show={isDateModalOpen}
+        handleDateSelected={handleDateSelected}
+        handleClosSelecteDate={handleClosSelecteDate}
+      />{" "}
       <Modal show={isOpen} handleClose={toggleModal} width={"700px"}>
         <div className="client-names">
           <ol>
