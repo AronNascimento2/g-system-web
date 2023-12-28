@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import {
   faEllipsisVertical,
-  faGlobe,
-  faFile,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container } from "./styles";
-import { DynamicButton } from "../../../../components/DynamicButton";
 import { ModalMobileDownSide } from "../../../../components/ModalMobileDownSide";
 import { RegisterModal } from "../RegisterModal";
 import { InvoiceModal } from "../InvoiceModal";
