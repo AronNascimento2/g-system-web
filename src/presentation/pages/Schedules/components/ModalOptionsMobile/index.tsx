@@ -24,7 +24,7 @@ export const ModalOptionsMobile: React.FC = () => {
         <FontAwesomeIcon className="collapsed-icon" icon={faEllipsisVertical} />
       </button>
 
-      <ModalMobileDownSide show={isOpen} handleClose={toggleModal}>
+      <ModalMobileDownSide show={isOpen} handleClose={toggleModal} className="modal">
         <div className="buttons-wrapper">
          
           <InvoiceModal />

@@ -29,6 +29,9 @@ const ButtonContainer = styled.button<ButtonContainerProps>`
     cursor: not-allowed;
     color: black;
   }
+  @media(max-width:1080px){
+    width: 200px;
+  }
 `;
 
 interface DynamicButtonProps {
