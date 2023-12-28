@@ -8,7 +8,7 @@ export const ScheduleTableContainer = styled.div<Props>`
 
   .loader-container {
     width: 100%;
-    height: 87vh;
+    height: 64vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -117,7 +117,7 @@ export const ScheduleTableContainer = styled.div<Props>`
     cursor: not-allowed; /* Exemplo: mudar o cursor */
   }
   .obs-container {
-    height: 210px;
+    height: 218px;
     padding: 0.5rem;
     .obs {
       border: 1px solid lightgray;

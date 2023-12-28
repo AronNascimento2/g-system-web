@@ -13,7 +13,6 @@ import { ConfirmModal } from "../ConfirmModal";
 import { ExcludeModal } from "../ExcludeModal";
 import { CancelScheduleModal } from "../CancelScheduleModal";
 import { EditModal } from "../EditModal";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { AppointmentType } from "../../types";
 
 interface HeaderButtonsProps {
@@ -61,7 +60,7 @@ export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
       {buttonsData.map((button, index) => (
         <DynamicButton
           key={index}
-          icon={button?.icon as IconProp}
+          icon={button?.icon}
           text={button.text}
           onClick={button.onClick}
           disabled

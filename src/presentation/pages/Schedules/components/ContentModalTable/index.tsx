@@ -1,27 +1,22 @@
 import { formatDateAndHour } from "../../../../utils/formateHourAndDate";
 import { Container, HeaderText } from "./styles";
-import { faCheck, faEdit, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { DynamicButton } from "../../../../components/DynamicButton";
 import React from "react";
 import { AppointmentProps } from "../../types";
-import { ExcludeModal } from "../ExcludeModal";
-import { CancelScheduleModal } from "../CancelScheduleModal";
-import { ConfirmModal } from "../ConfirmModal";
-import { EditModal } from "../EditModal";
+
 interface ContentModalTableProps {
   details: AppointmentProps;
 }
 export const ContentModalTable: React.FC<ContentModalTableProps> = ({
   details,
 }) => {
-  const buttonsData = [
-    {
-      icon: faEnvelope,
-      text: "Enviar",
-      onClick: () => console.log("Botão Mapa de Serviços clicado"),
-      disabled: true,
-    },
-  ];
+  // const buttonsData = [
+  //   {
+  //     icon: faEnvelope,
+  //     text: "Enviar",
+  //     onClick: () => console.log("Botão Mapa de Serviços clicado"),
+  //     disabled: true,
+  //   },
+  // ];
 
   return (
     <Container>

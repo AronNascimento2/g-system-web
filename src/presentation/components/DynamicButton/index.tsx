@@ -50,7 +50,7 @@ export const DynamicButton = ({
       className={className}
       onClick={onClick}
     >
-      {icon && <FontAwesomeIcon icon={icon as IconDefinition} />} <p>{text}</p>
+      {icon && <FontAwesomeIcon icon={icon as IconProp} />} <p>{text}</p>
     </ButtonContainer>
   );
 };

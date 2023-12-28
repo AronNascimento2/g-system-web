@@ -4,8 +4,14 @@ import { Modal } from "../../../../components/Modal";
 import { DynamicButton } from "../../../../components/DynamicButton";
 import { WrapperButton } from "../../../../components/WrapperButton/styles";
 import { Container } from "./styles";
+import { AppointmentProps } from "../../types";
 
-export const RegisterModal: React.FC = ({details}) => {
+
+
+interface Props {
+    details: AppointmentProps;
+  }
+export const RegisterModal: React.FC<Props> = ({details}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => {

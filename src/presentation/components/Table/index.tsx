@@ -192,9 +192,9 @@ export const ReactTable = ({
         </>
       )}
       <div className="obs-container">
-        {details && (
           <div className="obs">
-            <ul>
+        {details && (
+            <><ul>
               <li>
                 <strong>Codigo:</strong> {details?.Cliente}
               </li>
@@ -227,67 +227,64 @@ export const ReactTable = ({
               <li>
                 <strong>Status Faturamento:</strong> {details.StatusFaturamento}
               </li>
-            </ul>
+            </ul><ul>
+                {Array.isArray(details.Veiculos) &&
+                  details.Veiculos.length > 0 && (
+                    <li>
+                      <strong>Veículos :</strong>{" "}
+                      {details.Veiculos.map((veiculo: any, index: number) => (
+                        <div key={index}>
+                          <p>
+                            [ Código do Veículo: {veiculo.CodigoVeiculo}, Status:{" "}
+                            {veiculo.Status}, Veiculo: {veiculo.Veiculo} ]
+                          </p>
+                        </div>
+                      ))}
+                    </li>
+                  )}
 
-            <ul>
-              {Array.isArray(details.Veiculos) &&
-                details.Veiculos.length > 0 && (
-                  <li>
-                    <strong>Veículos :</strong>{" "}
-                    {details.Veiculos.map((veiculo: any, index: number) => (
-                      <div key={index}>
-                        <p>
-                          [ Código do Veículo: {veiculo.CodigoVeiculo}, Status:{" "}
-                          {veiculo.Status}, Veiculo: {veiculo.Veiculo} ]
-                        </p>
-                      </div>
-                    ))}
-                  </li>
-                )}
+                <li>
+                  <strong>Verificado:</strong> {details.Verificado}
+                </li>
+                <li>
+                  <strong>Visita técnica :</strong> {details.VisitaTecnica}
+                </li>
+                <li>
+                  <strong>Cliente antigo:</strong> {details.ClienteAntigo}
+                </li>
+              </ul><ul>
+                <li>
+                  <strong>Custo do deslocamento:</strong>{" "}
+                  {details.CustoDeslocamento}
+                </li>
+                <li>
+                  <strong>Servico:</strong> {details.Servico}
+                </li>
+                <li>
+                  <strong>Km:</strong> {details.Km ?? 0}
+                </li>
+                <li>
+                  <strong>Ordem:</strong> {details.Ordem}
+                </li>
+                <li>
+                  <strong>Tipo:</strong> {details.Tipo}
+                </li>
+                <li>
+                  <strong>Custos:</strong> {details.Custos}
+                </li>
 
-              <li>
-                <strong>Verificado:</strong> {details.Verificado}
-              </li>
-              <li>
-                <strong>Visita técnica :</strong> {details.VisitaTecnica}
-              </li>
-              <li>
-                <strong>Cliente antigo:</strong> {details.ClienteAntigo}
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <strong>Custo do deslocamento:</strong>{" "}
-                {details.CustoDeslocamento}
-              </li>
-              <li>
-                <strong>Servico:</strong> {details.Servico}
-              </li>
-              <li>
-                <strong>Km:</strong> {details.Km ?? 0}
-              </li>
-              <li>
-                <strong>Ordem:</strong> {details.Ordem}
-              </li>
-              <li>
-                <strong>Tipo:</strong> {details.Tipo}
-              </li>
-              <li>
-                <strong>Custos:</strong> {details.Custos}
-              </li>
-
-              <li>
-                <strong>Valor adicional:</strong> {details.ValorAdicional}
-              </li>
-              <li>
-                <strong>Status Faturamento:</strong> {details.StatusFaturamento}
-              </li>
-              <li>
-                <strong>Obs.</strong> {details.Observacao}
-              </li>
-            </ul>
-          </div>
+                <li>
+                  <strong>Valor adicional:</strong> {details.ValorAdicional}
+                </li>
+                <li>
+                  <strong>Status Faturamento:</strong> {details.StatusFaturamento}
+                </li>
+                <li>
+                  <strong>Obs.</strong> {details.Observacao}
+                </li>
+              </ul></>
         )}
+          </div>
       </div>
     </ScheduleTableContainer>
   );
