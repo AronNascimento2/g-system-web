@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { fetchAppointments } from "../../../services/Schedule";
 import { Container, ContainerButtons, WrapperTable } from "./styles";
-import { ContentModalTable } from "./components/ContentModalTable";
+// import { ContentModalTable } from "./components/ContentModalTable";
 import { getFirstAndLastDayOfMonth } from "../../utils/getFirstAndLastDayofMonth";
 import { AppointmentType } from "./types";
 import { CardMobile } from "./components/CardMobile";
 import { useMediaQuery } from "react-responsive";
-import { SideModal } from "../../components/SideModal";
+// import { SideModal } from "../../components/SideModal";
 import { ReactTable } from "../../components/Table";
 import { formatDate } from "../../utils/formateHourAndDate";
 import { HeaderButtonsMobile } from "./components/HeaderButtonsMobile";
@@ -14,11 +14,11 @@ import { HeaderButtonsMobile } from "./components/HeaderButtonsMobile";
 export const SchedulesPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [appointments, setAppointments] = useState<AppointmentType>([]);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [modalContent, setModalContent] = useState("");
+  // const [modalIsOpen, setModalIsOpen] = useState(false);
+  // const [modalContent, setModalContent] = useState("");
   const { firstDay, lastDay } = getFirstAndLastDayOfMonth();
   const [searchText, setSearchText] = useState("");
-
+  const [details, setDetails] =useState(null)
   const handleSearch = (text) => {
     setSearchText(text);
   };
@@ -43,25 +43,31 @@ export const SchedulesPage: React.FC = () => {
     fetchData();
   }, []);
 
-  const openModal = (content) => {
-    setModalContent(content);
-    setModalIsOpen(true);
-  };
+  // const openModal = (content) => {
+  //   setModalContent(content);
+  //   setModalIsOpen(true);
+  // };
 
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
+  // const closeModal = () => {
+  //   setModalIsOpen(false);
+  // };
 
   const handleRowClick = (rowData) => {
-    const details = rowData;
-
-    openModal(<ContentModalTable details={details} />);
+    setDetails(rowData);
+    
   };
+  console.log("sddsafsdgfwes",details);
+  
+  // const handleRowClick = (rowData) => {
+  //   const details = rowData;
 
-  const handleRowClickCard = (rowData) => {
-    const details = rowData;
-    return details;
-  };
+  //   openModal(<ContentModalTable details={details} />);
+  // };
+
+  // const handleRowClickCard = (rowData) => {
+  //   const details = rowData;
+  //   return details;
+  // };
   const dataWithIds = appointments.map((appointment) => ({
     ...appointment,
 
@@ -96,8 +102,8 @@ export const SchedulesPage: React.FC = () => {
           <CardMobile
             searchText={searchText}
             loading={loading}
-            appointments={appointments}
-            handleRowClickCard={handleRowClickCard}
+             appointments={appointments}
+            // handleRowClickCard={handleRowClickCard}
           />
         ) : (
           <WrapperTable>
@@ -109,14 +115,15 @@ export const SchedulesPage: React.FC = () => {
               fetchData={fetchData}
               handleSearch={handleSearch}
               searchText={searchText}
+              details={details}
             />
           </WrapperTable>
         )}
       </div>
 
-      <SideModal show={modalIsOpen} handleClose={closeModal}>
+      {/* <SideModal show={modalIsOpen} handleClose={closeModal}>
         {modalContent}
-      </SideModal>
+      </SideModal> */}
     </Container>
   );
 };

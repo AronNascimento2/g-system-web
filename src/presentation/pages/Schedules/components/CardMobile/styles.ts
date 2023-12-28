@@ -47,12 +47,19 @@ export const StyledModalMobileDownSide = styled(ModalMobileDownSide)`
     overflow: auto;
   }
   .buttons-mobile {
-    height: 100%;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .wrapperbuttons-mobile {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
+      gap: 5px;
+      height: auto;
+      width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     }
   }
   @media(max-width:1080px){

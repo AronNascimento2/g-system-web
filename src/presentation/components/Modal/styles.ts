@@ -1,10 +1,20 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 interface ModalProps {
   show: boolean;
+  width?: string; // Prop para a largura do modal
+  height?: string; // Prop para a altura do modal
+  position?: string; // Prop para a posição do modal
 }
 
 export const ModalWrapper = styled.div<ModalProps>`
-  display: ${({ show }) => (show ? "block" : "none")};
+  ${({ show }) =>
+    show
+      ? css`
+          display: block;
+        `
+      : css`
+          display: none;
+        `}
   position: fixed;
   top: 0;
   left: 0;
@@ -14,12 +24,18 @@ export const ModalWrapper = styled.div<ModalProps>`
 `;
 
 export const ModalContent = styled.div<ModalProps>`
-  min-width: 400px;
-  min-height: 200px;
+  ${({ show }) =>
+    show
+      ? css`
+          display: block;
+        `
+      : css`
+          display: none;
+        `}
+  min-width: ${({ width }) => width ?? "400px"}; // Largura do modal
+  min-height: ${({ height }) => height ?? "200px"}; // Altura do modal
   position: absolute;
-  display: ${({ show }) => (show ? "block" : "none")};
-  top: 50%;
-  left: 55%;
+  ${({ position }) => position ?? "top: 50%; left: 50%;"}
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 20px;
@@ -32,10 +48,15 @@ export const ModalContent = styled.div<ModalProps>`
     align-items: center;
     justify-content: space-between;
   }
+
   @media screen and (max-width: 1080px) {
+    min-width: 90%;
     max-width: 90%;
-    left: 50%;
+    min-height: 20%;
+    max-height: 70%;
+    ${({ position }) => (position ? "" : "top: 50%; left: 50%;")}
   }
+ 
 `;
 
 export const CloseButton = styled.span`

@@ -41,13 +41,7 @@ export const ModalContent = styled.div`
   padding: 20px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 1); /* Exemplo de sombra */
 
-  div {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: auto auto;
-    width: 100%;
-    gap: 0.5rem;
-  }
+
   .closeButton {
     position: absolute;
     top: 7px;

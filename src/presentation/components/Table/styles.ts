@@ -5,7 +5,8 @@ export const ScheduleTableContainer = styled.div<Props>`
   border: 1px solid lightgray;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-.loader-container {
+
+  .loader-container {
     width: 100%;
     height: 87vh;
     display: flex;
@@ -23,11 +24,11 @@ export const ScheduleTableContainer = styled.div<Props>`
     width: 100%;
     cursor: pointer;
   }
-  
+
   thead {
     border-bottom: 1px solid lightgrey;
   }
-  
+
   th {
     height: 40px;
     background-color: #3498db;
@@ -37,7 +38,7 @@ export const ScheduleTableContainer = styled.div<Props>`
       cursor: default;
     }
   }
-  
+
   th,
   td {
     width: 80px;
@@ -49,17 +50,18 @@ export const ScheduleTableContainer = styled.div<Props>`
     align-items: center;
     border-bottom: 1px solid lightgrey;
   }
-td{
-   white-space: nowrap; 
-  width: 50px; 
-  overflow: hidden;
-  text-overflow: ellipsis; 
-}
+  td {
+    white-space: nowrap;
+    width: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   tr {
     &:hover {
       background: #2980b9;
       color: #fff;
     }
+    
   }
   .container-th {
     gap: 0.5rem;
@@ -77,18 +79,18 @@ td{
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    .page-text{
+    .page-text {
       font-size: 12px;
     }
   }
-  .input-page-text{
+  .input-page-text {
     font-size: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
 
-    .input-page{
+    .input-page {
       border-radius: 20px;
       outline: 0;
       border: 1px solid lightgray;
@@ -106,12 +108,28 @@ td{
     width: 30px;
     color: #fff;
     background-color: #3498db;
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
   }
   .buttons[disabled] {
     background-color: #ccc;
     cursor: not-allowed; /* Exemplo: mudar o cursor */
+  }
+  .obs-container {
+    height: 210px;
+    padding: 0.5rem;
+    .obs {
+      border: 1px solid lightgray;
+      border-radius: 20px;
+      height: 100%;
+      padding: 10px;
+      font-size: 14px;
+      overflow: auto;
+      display: flex;
+      ul{
+        list-style-type: none;
+      }
+    }
   }
 `;

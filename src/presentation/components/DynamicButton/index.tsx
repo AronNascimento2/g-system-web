@@ -5,7 +5,6 @@ import styled from "styled-components";
 interface ButtonContainerProps {
   disabled?: boolean;
   loading?: boolean;
-  
 }
 const ButtonContainer = styled.button<ButtonContainerProps>`
   display: flex;
@@ -36,7 +35,6 @@ interface DynamicButtonProps {
   onClick?: () => void;
   className?: string;
   disabled?: boolean;
- 
 }
 
 export const DynamicButton = ({
@@ -44,12 +42,15 @@ export const DynamicButton = ({
   text,
   onClick,
   className,
-  disabled
+  disabled,
 }: DynamicButtonProps) => {
   return (
-    <ButtonContainer disabled={disabled} className={className} onClick={onClick}>
-      <FontAwesomeIcon icon={icon as IconProp} />
-      <p>{text}</p>
+    <ButtonContainer
+      disabled={disabled}
+      className={className}
+      onClick={onClick}
+    >
+      {icon && <FontAwesomeIcon icon={icon as IconDefinition} />} <p>{text}</p>
     </ButtonContainer>
   );
 };

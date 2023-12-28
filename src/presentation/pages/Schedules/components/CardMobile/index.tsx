@@ -13,27 +13,26 @@ import {
 } from "./styles";
 import { DynamicButton } from "../../../../components/DynamicButton";
 import {
-  faCheck,
   faClose,
-  faEdit,
-  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import { AppointmentProps, AppointmentType } from "../../types";
 import {  ClipLoader } from "react-spinners";
 import { ExcludeModal } from "../ExcludeModal";
 import { CancelScheduleModal } from "../CancelScheduleModal";
+import { ConfirmModal } from "../ConfirmModal";
+import { EditModal } from "../EditModal";
 
 interface CardMobileProps {
   appointments: AppointmentType;
   searchText: string;
-  handleRowClickCard: (appointment: AppointmentProps) => void;
+  handleRowClickCard?: (appointment: AppointmentProps) => void;
   loading: boolean;
 }
 
 export const CardMobile: React.FC<CardMobileProps> = ({
   appointments,
   searchText,
-  handleRowClickCard,
+  // handleRowClickCard,
   loading,
 }) => {
   const [selectedAppointment, setSelectedAppointment] =
@@ -41,7 +40,7 @@ export const CardMobile: React.FC<CardMobileProps> = ({
 
   const openModal = (appointment) => {
     setSelectedAppointment(appointment);
-    handleRowClickCard(appointment);
+    // handleRowClickCard(appointment);
   };
 
   const closeAndClearModal = () => {
@@ -49,27 +48,15 @@ export const CardMobile: React.FC<CardMobileProps> = ({
   };
 
   const buttonsData = [
-    {
-      icon: faCheck,
-      text: "Confirmar",
-      onClick: () => console.log("Botão Confirmar clicado"),
-      disabled: true,
-    },
+   
+   
     
-    {
-      icon: faEdit,
-      text: "Editar",
-      onClick: () => console.log("Botão Editar clicado"),
-      disabled: true,
-    },
-
-    
-    {
-      icon: faEnvelope,
-      text: "Enviar",
-      onClick: () => console.log("Botão Mapa de Serviços clicado"),
-      disabled: true,
-    },
+    // {
+    //   icon: faEnvelope,
+    //   text: "Enviar",
+    //   onClick: () => console.log("Botão Mapa de Serviços clicado"),
+    //   disabled: true,
+    // },
     {
       icon: faClose,
       text: "Fechar",
@@ -246,8 +233,10 @@ export const CardMobile: React.FC<CardMobileProps> = ({
                   </ul>
                   <div className="buttons-mobile">
                     <div className="wrapperbuttons-mobile">
-                      <ExcludeModal/>
-                      <CancelScheduleModal/>
+                      <ConfirmModal details={selectedAppointment}/>
+                      <EditModal details={selectedAppointment}/>
+                      <ExcludeModal details={selectedAppointment}/>
+                      <CancelScheduleModal details={selectedAppointment}/>
                       {buttonsData.map((button, index) => (
                         <DynamicButton
                           key={index}

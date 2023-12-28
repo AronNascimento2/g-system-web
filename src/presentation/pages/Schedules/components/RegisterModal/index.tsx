@@ -5,7 +5,7 @@ import { DynamicButton } from "../../../../components/DynamicButton";
 import { WrapperButton } from "../../../../components/WrapperButton/styles";
 import { Container } from "./styles";
 
-export const RegisterModal: React.FC = () => {
+export const RegisterModal: React.FC = ({details}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => {
@@ -13,7 +13,8 @@ export const RegisterModal: React.FC = () => {
   };
 
   return (
-      <><DynamicButton icon={faEdit} text="Registrar" onClick={toggleModal} /><Container>
+      <><DynamicButton icon={faEdit} text="Registrar" onClick={toggleModal}         disabled={!details?.Codigo}
+      /><Container>
 
           <Modal show={isOpen} handleClose={toggleModal} title={"Registrar"}>
               <div style={{ paddingBottom: "10px" }}>

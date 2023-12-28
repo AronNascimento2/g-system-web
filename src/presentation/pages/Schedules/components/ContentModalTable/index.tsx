@@ -1,15 +1,13 @@
 import { formatDateAndHour } from "../../../../utils/formateHourAndDate";
 import { Container, HeaderText } from "./styles";
-import {
-  faCheck,
-  faEdit,
-  faEnvelope,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faEdit, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { DynamicButton } from "../../../../components/DynamicButton";
 import React from "react";
 import { AppointmentProps } from "../../types";
 import { ExcludeModal } from "../ExcludeModal";
 import { CancelScheduleModal } from "../CancelScheduleModal";
+import { ConfirmModal } from "../ConfirmModal";
+import { EditModal } from "../EditModal";
 interface ContentModalTableProps {
   details: AppointmentProps;
 }
@@ -18,26 +16,10 @@ export const ContentModalTable: React.FC<ContentModalTableProps> = ({
 }) => {
   const buttonsData = [
     {
-      icon: faCheck,
-      text: "Confirmar",
-      onClick: () => console.log("Botão Confirmar clicado"),
-      disabled:true
-    },
-
-    {
-      icon: faEdit,
-      text: "Editar",
-      onClick: () => console.log("Botão Editar clicado"),
-      disabled:true
-
-    },
-
-    {
       icon: faEnvelope,
       text: "Enviar",
       onClick: () => console.log("Botão Mapa de Serviços clicado"),
-      disabled:true
-
+      disabled: true,
     },
   ];
 
@@ -135,7 +117,7 @@ export const ContentModalTable: React.FC<ContentModalTableProps> = ({
 
           <div className="buttons">
             <div className="wrapperbuttons">
-              {buttonsData.map((button, index) => (
+              {/* {buttonsData.map((button, index) => (
                 <DynamicButton
                   key={index}
                   icon={button.icon}
@@ -144,9 +126,11 @@ export const ContentModalTable: React.FC<ContentModalTableProps> = ({
                   disabled={button.disabled}
                 />
               ))}
+              <ConfirmModal />
+              <EditModal />
               <CancelScheduleModal />
 
-              <ExcludeModal />
+              <ExcludeModal /> */}
             </div>
           </div>
         </div>

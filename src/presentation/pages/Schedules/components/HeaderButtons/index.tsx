@@ -9,17 +9,25 @@ import { DynamicButton } from "../../../../components/DynamicButton";
 import React from "react";
 import { RegisterModal } from "../RegisterModal";
 import { InvoiceModal } from "../InvoiceModal";
+import { ConfirmModal } from "../ConfirmModal";
+import { ExcludeModal } from "../ExcludeModal";
+import { CancelScheduleModal } from "../CancelScheduleModal";
+import { EditModal } from "../EditModal";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { AppointmentType } from "../../types";
 
 interface HeaderButtonsProps {
   update: () => void;
   onSearch: (text: string) => void;
   searchText: string; // Definindo searchText como uma string
+  details:AppointmentType
 }
 
 export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
   update,
   onSearch,
   searchText,
+  details,
 }) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const text = event.target.value;
@@ -53,14 +61,18 @@ export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
       {buttonsData.map((button, index) => (
         <DynamicButton
           key={index}
-          icon={button.icon}
+          icon={button?.icon as IconProp}
           text={button.text}
           onClick={button.onClick}
           disabled
         />
       ))}
-      <InvoiceModal />
-      <RegisterModal />
+      <ExcludeModal details={details}/>
+      <CancelScheduleModal details={details}/>
+      <EditModal details={details}/>
+      <ConfirmModal details={details}/>
+      <InvoiceModal details={details}/>
+      <RegisterModal details={details}/>
       <FilterOptions />
     </Container>
   );

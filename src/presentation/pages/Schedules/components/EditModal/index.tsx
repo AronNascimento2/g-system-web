@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {  faTrash } from "@fortawesome/free-solid-svg-icons";
+import {  faEdit } from "@fortawesome/free-solid-svg-icons";
 import { Modal } from "../../../../components/Modal";
 import { DynamicButton } from "../../../../components/DynamicButton";
 import { WrapperButton } from "../../../../components/WrapperButton/styles";
@@ -8,7 +8,8 @@ import { AppointmentProps } from "../../types";
 interface Props {
   details: AppointmentProps;
 }
-export const ExcludeModal: React.FC <Props> = ({details}) => {
+
+export const EditModal: React.FC<Props> = ({details}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => {
@@ -17,20 +18,19 @@ export const ExcludeModal: React.FC <Props> = ({details}) => {
 
   return (
     <>
-      <DynamicButton
-        icon={faTrash}
-        text="Excluir"
-        onClick={toggleModal}
-        disabled={!details?.Codigo}
-      />
+      <DynamicButton icon={faEdit} text="Editar" onClick={toggleModal}         disabled={!details?.Codigo}
+/>
 
-      <Modal show={isOpen} handleClose={toggleModal} title={"Excluir"}>
-        <p>Gostaria de excluir permanentemente o agendamento selecionado ?</p>
+      <Modal show={isOpen} handleClose={toggleModal} title={"Editar"}>
+        <div style={{ paddingBottom: "10px" }}>
+          <p>
+           
+          </p>
+        </div>
 
         <WrapperButton>
-            <DynamicButton text="Não" onClick={toggleModal}/>
-            <DynamicButton text="Sim" onClick={toggleModal}/>
-
+          <DynamicButton text="Cancelar" onClick={toggleModal} />
+          <DynamicButton text="Confirmar" onClick={toggleModal} />
         </WrapperButton>
       </Modal>
     </>

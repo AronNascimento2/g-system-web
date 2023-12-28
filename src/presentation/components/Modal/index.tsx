@@ -10,14 +10,17 @@ interface ModalProps {
   show: boolean;
   handleClose: () => void;
   children: React.ReactNode;
+  position?: string; // Prop para a posição do modal
+  height?: string; // Prop para a altura do modal
+  width?: string; // Prop para a largura do modal
   title?: string;
 }
 
-export const Modal = ({ show, handleClose, children, title }: ModalProps) => {
+export const Modal = ({ show,position, handleClose,width,height,children, title }: ModalProps) => {
   return (
     <>
-      <ModalWrapper onClick={handleClose} show={show} />
-      <ModalContent show={show}>
+      <ModalWrapper position={position} onClick={handleClose} show={show} />
+      <ModalContent show={show} width={width} height={height}>
         <div className="buttons-modal">
           <Title>{title}</Title>
           <CloseButton onClick={handleClose}>&times;</CloseButton>

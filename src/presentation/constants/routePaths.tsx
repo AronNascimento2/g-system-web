@@ -27,6 +27,7 @@ import {
   SinistersPage,
   SupervisionPage,
 } from "../pages";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 
 
@@ -39,7 +40,7 @@ export const ROUTES_PATHS = [
     label: 'Atendimento',
     isPrivate: true,
     Permissions: [],
-    icon: faHeadset,
+    icon: faHeadset as IconProp,
   },
   {
     path: '/Sinistros',
