@@ -33,7 +33,7 @@ export const ModalContent = styled.div`
   justify-content: center;
   align-items: center;
   left: 50%;
-  height: 300px;
+  height: 750px;
   width: 100%;
   border-radius: 40px 40px 0 0;
   transform: translateX(-50%);

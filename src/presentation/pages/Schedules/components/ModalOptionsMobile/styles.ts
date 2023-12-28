@@ -15,6 +15,9 @@ export const Container = styled.div`
     align-items: center;
     gap: 20px;
   }
+  .modal{
+    height: 300px;
+  }
   .open-options-button {
     width: 30px;
     border-radius: 50%;

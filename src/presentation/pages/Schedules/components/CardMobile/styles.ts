@@ -48,14 +48,14 @@ export const StyledModalMobileDownSide = styled(ModalMobileDownSide)`
   }
   .buttons-mobile {
     height: 150px;
-    width: 100%;
+    width: 410px;
     display: flex;
     justify-content: center;
     align-items: center;
     .wrapperbuttons-mobile {
       gap: 5px;
       height: auto;
-      width: 100%;
+     
     display: flex;
     align-items: center;
     justify-content: center;
