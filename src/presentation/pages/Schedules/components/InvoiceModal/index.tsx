@@ -3,8 +3,13 @@ import { faDollar } from "@fortawesome/free-solid-svg-icons";
 import { Modal } from "../../../../components/Modal";
 import { DynamicButton } from "../../../../components/DynamicButton";
 import { WrapperButton } from "../../../../components/WrapperButton/styles";
+import { AppointmentProps } from "../../types";
 
-export const InvoiceModal: React.FC = () => {
+interface Props {
+  details?: AppointmentProps;
+}
+
+export const InvoiceModal: React.FC<Props> = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => {

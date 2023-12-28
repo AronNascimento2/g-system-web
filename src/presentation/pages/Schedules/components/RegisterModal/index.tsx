@@ -9,7 +9,7 @@ import { AppointmentProps } from "../../types";
 
 
 interface Props {
-    details: AppointmentProps;
+    details?: AppointmentProps;
   }
 export const RegisterModal: React.FC<Props> = ({details}) => {
   const [isOpen, setIsOpen] = useState(false);

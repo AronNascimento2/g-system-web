@@ -13,13 +13,13 @@ import { ConfirmModal } from "../ConfirmModal";
 import { ExcludeModal } from "../ExcludeModal";
 import { CancelScheduleModal } from "../CancelScheduleModal";
 import { EditModal } from "../EditModal";
-import { AppointmentType } from "../../types";
+import { AppointmentProps } from "../../types";
 
 interface HeaderButtonsProps {
   update: () => void;
   onSearch: (text: string) => void;
   searchText: string; // Definindo searchText como uma string
-  details:AppointmentType
+  details:AppointmentProps
 }
 
 export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
