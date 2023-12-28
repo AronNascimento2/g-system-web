@@ -42,6 +42,12 @@ export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
    
   ];
 
+  const usuarios = [
+    {label:'1', nome: "Cliente 1", latitude: -23.55675234096567, longitude: -46.40948836105995 },
+    {label:'2',  nome: "Cliente 2", latitude: -23.527632661978437, longitude: -46.7758956168826 },
+    {label:'3',  nome: "Cliente 3", latitude: -23.521082688335113, longitude: -46.19686731075785 },
+  ];
+
   return (
     <Container>
       <DynamicButton onClick={update} icon={faArrowsRotate} text="Atualizar" />
@@ -68,7 +74,7 @@ export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
       <ConfirmModal details={details}/>
       <InvoiceModal details={details}/>
       <RegisterModal details={details}/>
-      <ModalMaps/>
+      <ModalMaps usuarios={usuarios}/>
       <FilterOptions />
     </Container>
   );

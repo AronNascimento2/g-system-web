@@ -11,21 +11,9 @@ const center = {
   lng: -46.50588362402262,
 };
 
-const position1 = {
-  lat: -23.55675234096567,
-  lng: -46.40948836105995,
-};
-const position2 = {
-  lat: -23.527632661978437,
-  lng: -46.7758956168826,
-};
 
-const position3 = {
-  lat: -23.521082688335113,
-  lng: -46.19686731075785,
-};
 
-function Maps() {
+const Maps = ({ usuarios }) => {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: "AIzaSyDZ2Pc6z4je-boooUqFiyFaAFM_8UXdtEE",
@@ -33,13 +21,17 @@ function Maps() {
 
   return isLoaded ? (
     <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
-      <Marker position={position1} options={{ label: "1" }} />
-      <Marker position={position2} options={{ label: "2" }} />
-      <Marker position={position3} options={{ label: "3" }} />
+      {usuarios?.map((usuario, index) => (
+        <Marker
+          key={index}
+          position={{ lat: usuario.latitude, lng: usuario.longitude }}
+          options={{ label: usuario.label }}
+        />
+      ))}
     </GoogleMap>
   ) : (
     <></>
   );
-}
+};
 
 export default React.memo(Maps);

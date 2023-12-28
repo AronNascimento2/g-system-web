@@ -5,11 +5,20 @@ interface ModalContainerProps {
 }
 
 export const Container = styled.div`
-.buttons{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
+  .buttons {
+    width: 100%;
+    display: flex;
+
+    justify-content: center;
+  }
+  .buttons-wrapper {
+    display: flex;
+    width: 100%;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
   .open-options-button {
     width: 30px;
     border-radius: 50%;

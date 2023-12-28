@@ -18,7 +18,7 @@ export const SchedulesPage: React.FC = () => {
   // const [modalContent, setModalContent] = useState("");
   const { firstDay, lastDay } = getFirstAndLastDayOfMonth();
   const [searchText, setSearchText] = useState("");
-  const [details, setDetails] =useState(null)
+  const [details, setDetails] = useState(null);
   const handleSearch = (text) => {
     setSearchText(text);
   };
@@ -54,10 +54,9 @@ export const SchedulesPage: React.FC = () => {
 
   const handleRowClick = (rowData) => {
     setDetails(rowData);
-    
   };
-  console.log("sddsafsdgfwes",details);
-  
+  console.log("sddsafsdgfwes", details);
+
   // const handleRowClick = (rowData) => {
   //   const details = rowData;
 
@@ -102,7 +101,7 @@ export const SchedulesPage: React.FC = () => {
           <CardMobile
             searchText={searchText}
             loading={loading}
-             appointments={appointments}
+            appointments={appointments}
             // handleRowClickCard={handleRowClickCard}
           />
         ) : (

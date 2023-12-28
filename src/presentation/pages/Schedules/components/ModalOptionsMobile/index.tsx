@@ -16,7 +16,11 @@ export const ModalOptionsMobile: React.FC = () => {
     setIsOpen(!isOpen);
   };
 
- 
+  const usuarios = [
+    {label:'1', nome: "Cliente 1", latitude: -23.55675234096567, longitude: -46.40948836105995 },
+    {label:'2',  nome: "Cliente 2", latitude: -23.527632661978437, longitude: -46.7758956168826 },
+    {label:'3',  nome: "Cliente 3", latitude: -23.521082688335113, longitude: -46.19686731075785 },
+  ];
 
   return (
     <Container>
@@ -25,10 +29,10 @@ export const ModalOptionsMobile: React.FC = () => {
       </button>
 
       <ModalMobileDownSide show={isOpen} handleClose={toggleModal}>
-        <div className="buttons">
+        <div className="buttons-wrapper">
          
           <InvoiceModal />
-          <ModalMaps />
+          <ModalMaps usuarios={usuarios}/>
           <RegisterModal />
         </div>
       </ModalMobileDownSide>
