@@ -97,7 +97,7 @@ export const CardMobile: React.FC<CardMobileProps> = ({
           </ContainerButtons>
         )}
         <button className="menubutton" onClick={toggleTabItems}>
-          {showTabItems ? <FontAwesomeIcon icon={faChevronUp} size="xl"/> : <FontAwesomeIcon icon={faChevronDown} size="xl"/>}
+          {showTabItems ? <FontAwesomeIcon icon={faChevronUp} size="xl"/> : <FontAwesomeIcon icon={faChevronDown} size="2x"/>}
         </button>
       </WrapperButtons>
 
