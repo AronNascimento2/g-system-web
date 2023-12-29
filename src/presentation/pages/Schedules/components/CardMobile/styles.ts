@@ -56,6 +56,7 @@ export const StyledModalMobileDownSide = styled(ModalMobileDownSide)`
     display: flex;
     justify-content: center;
     width: 100%;
+    padding-top: 15px;
   }
 
   .wrapperbuttons-mobile {
@@ -154,7 +155,7 @@ export const WrapperButtons = styled.div`
   top: 0;
  z-index: 999;
   .menubutton {
-
+   
     height: 40px;
     width: 100px;
     background-color: #fff;

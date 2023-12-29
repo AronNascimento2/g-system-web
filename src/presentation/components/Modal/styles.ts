@@ -51,6 +51,7 @@ export const ModalContent = styled.div<ModalProps>`
   }
 
   @media screen and (max-width: 1080px) {
+    min-width: 90%;
     max-width: 95%;
     min-height: 20%;
     left: ${({ left }) => left ?? "50%"};

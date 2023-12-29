@@ -30,7 +30,7 @@ const ButtonContainer = styled.button<ButtonContainerProps>`
     color: black;
   }
   @media(max-width:1080px){
-    width: 200px;
+    max-width: 200px;
   }
 `;
 

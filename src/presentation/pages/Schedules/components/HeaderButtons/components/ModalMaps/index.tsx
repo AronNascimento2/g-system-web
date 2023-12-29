@@ -107,7 +107,7 @@ export const ModalMaps: React.FC<Props> = () => {
           show={isOpen}
           handleClose={toggleModal}
           className="map-services-modal"
-          top="120%"
+          top="150%"
 
         >
           <div className="client-names">

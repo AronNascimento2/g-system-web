@@ -1,3 +1,5 @@
+import { faClose } from "@fortawesome/free-solid-svg-icons";
+import { DynamicButton } from "../DynamicButton";
 import { ModalContainer, ModalContent, ModalWrapper } from "./styles";
 
 interface ModalProps {
@@ -21,6 +23,7 @@ export const ModalMobileDownSide = ({
             &times;
           </span>
           {children}
+        <DynamicButton text="Fechar" icon={faClose} onClick={handleClose} width="120px"/>
         </ModalContent>
       </ModalContainer>
     </>

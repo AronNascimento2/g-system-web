@@ -34,7 +34,7 @@ const DateModal: React.FC<DateModalProps> = ({
         show={show}
         handleClose={handleClosSelecteDate}
         className="select-date-modal"
-        top="120%"
+        top="150%"
       >
         <div
           style={{

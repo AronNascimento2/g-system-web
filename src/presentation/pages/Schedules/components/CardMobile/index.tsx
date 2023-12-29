@@ -70,21 +70,12 @@ export const CardMobile: React.FC<CardMobileProps> = ({
     setSelectedAppointment(null);
   };
 
-  const buttonsData = [
-    {
-      icon: faClose,
-      text: "Fechar",
-      onClick: closeAndClearModal,
-      disabled: false,
-    },
-  ];
-
   return (
     <>
       <WrapperButtons>
         {showTabItems && (
           <ContainerButtons className={showTabItems ? "slideDown" : ""}>
-          <HeaderButtonsMobile
+            <HeaderButtonsMobile
               update={() => fetchData(startDate, endDate)}
               onSearch={handleSearch}
               searchText={searchText}
@@ -288,16 +279,7 @@ export const CardMobile: React.FC<CardMobileProps> = ({
                         <EditModal details={selectedAppointment} />
                         <ExcludeModal details={selectedAppointment} />
                         <CancelScheduleModal details={selectedAppointment} />
-                        <RegisterModal details={selectedAppointment}/>
-                        {buttonsData.map((button, index) => (
-                          <DynamicButton
-                            key={index}
-                            icon={button.icon}
-                            text={button.text}
-                            onClick={button.onClick}
-                            disabled={button.disabled}
-                          />
-                        ))}
+                        <RegisterModal details={selectedAppointment} />
                       </div>
                     </div>
                   </div>
