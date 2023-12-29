@@ -78,6 +78,8 @@ export const CardMobile: React.FC<CardMobileProps> = ({
             <div className="container">
               <InvoiceModal />
               <DatePicker
+                            readOnly // Tente adicionar a propriedade readOnly diretamente
+
                 className="datepicker"
                 dateFormat="dd/MM/yyyy"
                 selectsRange={true}
