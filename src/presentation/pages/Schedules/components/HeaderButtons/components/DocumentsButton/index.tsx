@@ -22,8 +22,8 @@ export const DocumentsButton: React.FC = () => {
       <Modal
         show={isOpen}
         handleClose={toggleModal}
-        title={"Excluir"}
-        className="exclude-modal"
+        title={"Docuemtos"}
+        className="documents-modal"
       >
         <WrapperButton>
           <DynamicButton text="Não" onClick={toggleModal} width="100px" />
