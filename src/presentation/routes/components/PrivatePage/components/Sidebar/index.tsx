@@ -7,6 +7,7 @@ import {
   MenuIcon,
   MenuItem,
   Sidebar,
+  SidebarWrapper,
 } from "./styles";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../../../utils/useAuth";
@@ -29,7 +30,7 @@ export const SideBar = () => {
 
   const menuItems = useMemo(() => {
     return ROUTES_PATHS.filter((route) => route.isPrivate).map((route) => ({
-      label:route.label,
+      label: route.label,
       name: route.title,
       path: route.path,
       onClick: () => navigate(route.path),
@@ -102,30 +103,32 @@ export const SideBar = () => {
         )}
       </Header>
       {isMobile && isOpen && (
-        <Menu>
-          {menuItems.map((item) => (
-            <MenuItem
-              onClick={() => {
-                if (userPermissions.includes(item.name)) {
-                  handleMenuItemClick(item);
+        <SidebarWrapper onClick={toggleMenu}>
+          <Menu>
+            {menuItems.map((item) => (
+              <MenuItem
+                onClick={() => {
+                  if (userPermissions.includes(item.name)) {
+                    handleMenuItemClick(item);
 
-                  setIsOpen(false); // Fechar o menu após clicar em um item
-                }
-              }}
-              key={item.name}
-              className={`${activeItem === item.name ? "activated" : ""} ${
-                !userPermissions.includes(item.name) ? "disabled" : ""
-              }`}
-              disabled={!userPermissions.includes(item.name)}
-            >
-              <FontAwesomeIcon icon={item.icon as IconProp} /> {item.label}
+                    setIsOpen(false); // Fechar o menu após clicar em um item
+                  }
+                }}
+                key={item.name}
+                className={`${activeItem === item.name ? "activated" : ""} ${
+                  !userPermissions.includes(item.name) ? "disabled" : ""
+                }`}
+                disabled={!userPermissions.includes(item.name)}
+              >
+                <FontAwesomeIcon icon={item.icon as IconProp} /> {item.label}
+              </MenuItem>
+            ))}
+            <MenuItem onClick={() => handleMenuItemClick(logoutItem)}>
+              <FontAwesomeIcon icon={faRightFromBracket} />
+              {logoutItem.name}
             </MenuItem>
-          ))}
-          <MenuItem onClick={() => handleMenuItemClick(logoutItem)}>
-            <FontAwesomeIcon icon={faRightFromBracket} />
-            {logoutItem.name}
-          </MenuItem>
-        </Menu>
+          </Menu>
+        </SidebarWrapper>
       )}
       {!isMobile && (
         <Sidebar>

@@ -45,6 +45,7 @@ export const Menu = styled.ul`
     position: absolute;
     z-index: 999;
     margin: 0;
+    z-index: 9999;
   }
 `;
 
@@ -113,4 +114,14 @@ export const MenuIcon = styled.div`
   background-color: #555;
   margin: 4px 0;
   border-radius: 1px;
+`;
+
+export const SidebarWrapper = styled.div`
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 `;
