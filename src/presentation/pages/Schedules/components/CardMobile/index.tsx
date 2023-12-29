@@ -102,7 +102,6 @@ export const CardMobile: React.FC<CardMobileProps> = ({
             />
             <InvoiceModal />
             <ModalMaps />
-            <RegisterModal />
           </ContainerButtons>
         )}
         <button
@@ -289,6 +288,7 @@ export const CardMobile: React.FC<CardMobileProps> = ({
                         <EditModal details={selectedAppointment} />
                         <ExcludeModal details={selectedAppointment} />
                         <CancelScheduleModal details={selectedAppointment} />
+                        <RegisterModal details={selectedAppointment}/>
                         {buttonsData.map((button, index) => (
                           <DynamicButton
                             key={index}
