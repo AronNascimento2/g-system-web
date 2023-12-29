@@ -29,7 +29,8 @@ export const CancelScheduleModal: React.FC<Props> = ({ details }) => {
       />
 
       <Container>
-        <Modal show={isOpen} handleClose={toggleModal} title={"Cancelar"} className="cancel-modal">
+        <Modal show={isOpen} handleClose={toggleModal} title={"Cancelar"} className="cancel-modal"           top="45%"
+>
           <div style={{ paddingBottom: "10px"}}>
             <p>Confirmar cancelamento do agendamento de <strong>{details?.Cliente}</strong>?</p>
           </div>

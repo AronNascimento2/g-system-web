@@ -31,7 +31,6 @@ export const HeaderButtonsMobile: React.FC<HeaderButtonsMobileProps> = ({
       />
       
       <FilterOptionsMobile />
-      <ModalOptionsMobile />
     </Container>
   );
 };

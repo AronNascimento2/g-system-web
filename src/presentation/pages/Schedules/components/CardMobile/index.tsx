@@ -28,6 +28,9 @@ import { ExcludeModal } from "../HeaderButtons/components/ExcludeModal";
 import { HeaderButtonsMobile } from "../HeaderButtonsMobile";
 import DatePicker from "react-datepicker";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { InvoiceModal } from "../InvoiceModal";
+import { ModalMaps } from "../HeaderButtons/components/ModalMaps";
+import { RegisterModal } from "../HeaderButtons/components/RegisterModal";
 
 interface CardMobileProps {
   appointments: AppointmentType;
@@ -81,7 +84,7 @@ export const CardMobile: React.FC<CardMobileProps> = ({
       <WrapperButtons>
         {showTabItems && (
           <ContainerButtons className={showTabItems ? "slideDown" : ""}>
-            <HeaderButtonsMobile
+          <HeaderButtonsMobile
               update={() => fetchData(startDate, endDate)}
               onSearch={handleSearch}
               searchText={searchText}
@@ -97,6 +100,9 @@ export const CardMobile: React.FC<CardMobileProps> = ({
               }}
               isClearable={true}
             />
+            <InvoiceModal />
+            <ModalMaps />
+            <RegisterModal />
           </ContainerButtons>
         )}
         <button

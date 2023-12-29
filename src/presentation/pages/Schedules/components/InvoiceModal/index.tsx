@@ -25,7 +25,12 @@ export const InvoiceModal: React.FC<Props> = () => {
         onClick={toggleModal}
       />
 
-      <Modal show={isOpen} handleClose={toggleModal} title={"Faturar"}>
+      <Modal
+        show={isOpen}
+        handleClose={toggleModal}
+        title={"Faturar"}
+        top="110%"
+      >
         <div style={{ paddingBottom: "10px" }}>
           <p>
             Alguns agendamentos selecionados possuem veículos que já foram

@@ -24,10 +24,15 @@ export const ExcludeModal: React.FC<Props> = ({ details }) => {
         onClick={toggleModal}
         disabled={!details?.Codigo}
         width="120px"
-
       />
       <Container>
-        <Modal show={isOpen} handleClose={toggleModal} title={"Excluir"} className="exclude-modal">
+        <Modal
+          show={isOpen}
+          handleClose={toggleModal}
+          title={"Excluir"}
+          className="exclude-modal"
+          top="45%"
+        >
           <p>
             Gostaria de excluir permanentemente o agendamento de{" "}
             <strong>{details?.Cliente}</strong>?
