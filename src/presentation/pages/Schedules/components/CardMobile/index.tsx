@@ -13,11 +13,9 @@ import {
   WrapperCard,
   WrapperContent,
 } from "./styles";
-import { DynamicButton } from "../../../../components/DynamicButton";
 import {
   faChevronDown,
   faChevronUp,
-  faClose,
 } from "@fortawesome/free-solid-svg-icons";
 import { AppointmentProps, AppointmentType } from "../../types";
 import { ClipLoader } from "react-spinners";
