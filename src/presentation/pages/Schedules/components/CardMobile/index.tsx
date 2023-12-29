@@ -12,10 +12,9 @@ import {
   WrapperButtons,
   WrapperCard,
   WrapperContent,
-  Wrapperbuttons,
 } from "./styles";
 import { DynamicButton } from "../../../../components/DynamicButton";
-import { faAngleDoubleUp, faAngleDown, faAngleUp, faChevronDown, faChevronUp, faClose } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faChevronUp, faClose } from "@fortawesome/free-solid-svg-icons";
 import { AppointmentProps, AppointmentType } from "../../types";
 import { ClipLoader } from "react-spinners";
 import { CancelScheduleModal } from "../HeaderButtons/components/CancelScheduleModal";
@@ -97,7 +96,7 @@ export const CardMobile: React.FC<CardMobileProps> = ({
           </ContainerButtons>
         )}
         <button className="menubutton" onClick={toggleTabItems}>
-          {showTabItems ? <FontAwesomeIcon icon={faChevronUp} size="xl"/> : <FontAwesomeIcon icon={faChevronDown} size="2x"/>}
+          {showTabItems ? <FontAwesomeIcon icon={faChevronUp} size="xl"/> : <FontAwesomeIcon icon={faChevronDown} size="xl"/>}
         </button>
       </WrapperButtons>
 
