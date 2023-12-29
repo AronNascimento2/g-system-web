@@ -35,7 +35,8 @@ export const ModalContent = styled.div<ModalProps>`
         `}
 
   position: absolute;
-  ${({ position }) => position ?? "top: 50%; left: 50%;"}
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 20px;
