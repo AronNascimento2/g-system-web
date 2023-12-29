@@ -22,7 +22,7 @@ export const DocumentsButton: React.FC = () => {
       <Modal
         show={isOpen}
         handleClose={toggleModal}
-        title={"Docuemtos"}
+        title={"Documentos"}
         className="documents-modal"
       >
         <WrapperButton>
