@@ -1,4 +1,4 @@
-import { faArrowsRotate, faFile } from "@fortawesome/free-solid-svg-icons";
+import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
 import { FilterOptions } from "../FilterOptions";
 import { Container } from "./styles";
 import { DynamicButton } from "../../../../components/DynamicButton";
