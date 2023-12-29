@@ -14,7 +14,11 @@ import {
   WrapperContent,
 } from "./styles";
 import { DynamicButton } from "../../../../components/DynamicButton";
-import { faChevronDown, faChevronUp, faClose } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronDown,
+  faChevronUp,
+  faClose,
+} from "@fortawesome/free-solid-svg-icons";
 import { AppointmentProps, AppointmentType } from "../../types";
 import { ClipLoader } from "react-spinners";
 import { CancelScheduleModal } from "../HeaderButtons/components/CancelScheduleModal";
@@ -76,7 +80,7 @@ export const CardMobile: React.FC<CardMobileProps> = ({
     <>
       <WrapperButtons>
         {showTabItems && (
-          <ContainerButtons className="">
+          <ContainerButtons className={showTabItems ? "slideDown" : ""}>
             <HeaderButtonsMobile
               update={() => fetchData(startDate, endDate)}
               onSearch={handleSearch}
@@ -95,8 +99,15 @@ export const CardMobile: React.FC<CardMobileProps> = ({
             />
           </ContainerButtons>
         )}
-        <button className="menubutton" onClick={toggleTabItems}>
-          {showTabItems ? <FontAwesomeIcon icon={faChevronUp} size="xl"/> : <FontAwesomeIcon icon={faChevronDown} size="xl"/>}
+        <button
+          className={`menubutton ${showTabItems ? "slideDown" : ""} `}
+          onClick={toggleTabItems}
+        >
+          {showTabItems ? (
+            <FontAwesomeIcon icon={faChevronUp} size="xl" />
+          ) : (
+            <FontAwesomeIcon icon={faChevronDown} size="xl" />
+          )}
         </button>
       </WrapperButtons>
 

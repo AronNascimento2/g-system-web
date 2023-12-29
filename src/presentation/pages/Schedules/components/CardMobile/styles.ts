@@ -152,14 +152,36 @@ export const WrapperButtons = styled.div`
   align-items: center;
   position: sticky;
   top: 0;
-  z-index: 1;
+  @keyframes slideDownAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(-10px); /* Comece a animação 20px acima */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Termina na posição original */
+    }
+  }
+
+  .slideDown {
+    transform: translateY(
+      -10px
+    ); /* Inicialmente, mantenha o elemento 20px acima */
+    animation: slideDownAnimation 0.3s ease forwards; /* Duração e função de transição */
+  }
+.slideUp{}
   .menubutton {
+   
     height: 40px;
-    width: 100%;
+    width: 100px;
     background-color: #fff;
     outline: none;
-    border: 0 solid #fff;
-
+    border-color: lightgray;
+    border-width: 0 1px 1px 1px; /* Especificando a largura das bordas */
+    border-style: hidden solid solid solid;
+    border-radius: 0 0 20px 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   }
 `;
 
@@ -169,9 +191,10 @@ export const ContainerButtons = styled.div`
   gap: 0.4rem;
   padding: 1rem;
   background-color: #fff;
-
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   flex-wrap: wrap;
-
+  z-index: -999;
   .datepicker {
     width: 220px;
     height: 40px;
