@@ -31,6 +31,7 @@ export const RegisterModal: React.FC<Props> = ({ details }) => {
           handleClose={toggleModal}
           title={"Registrar"}
           className="register-modal"
+          top="50%"
         >
           <div style={{ paddingBottom: "10px" }}>
             <p>Observação da ligação:</p>
