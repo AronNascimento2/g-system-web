@@ -1,6 +1,11 @@
 import React from "react";
-import { Container } from "../Attendance/styles";
+import { TablePendencies } from "./components/TablePendencies";
+import { Container } from "./styles";
 
 export const PendenciesPage: React.FC = () => {
-  return <Container>Página Pendencias em Construção !!!</Container>;
+  return (
+    <Container>
+      <TablePendencies />
+    </Container>
+  );
 };
