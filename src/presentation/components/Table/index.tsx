@@ -18,7 +18,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { HeaderButtons } from "../../pages/Schedules/components/HeaderButtons";
 import { ClipLoader } from "react-spinners";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { formatDateAndHour } from "../../utils/formateHourAndDate";
 
@@ -62,8 +62,15 @@ export const ReactTable = ({
     useSortBy, // Habilitando a ordenação
     usePagination // Adicionando paginação
   );
-
+  type props = {
+    Codigo: string;
+  };
   const { pageIndex } = state;
+  const [clickedRows, setClickedRows] = useState<props[]>([]);
+
+  const isRowClicked = (row) => {
+    return clickedRows.some((clickedRow) => clickedRow.Codigo === row.Codigo);
+  };
 
   useEffect(() => {
     setGlobalFilter(searchText || undefined);
@@ -128,10 +135,16 @@ export const ReactTable = ({
               <tbody {...getTableBodyProps()}>
                 {page.map((row) => {
                   prepareRow(row);
+                  const rowIsClicked = isRowClicked(row.original);
+
                   return (
                     <tr
+                      className={rowIsClicked ? "clicked" : ""}
                       {...row.getRowProps()}
-                      onClick={() => handleRowClick(row.original)}
+                      onClick={() => {
+                        handleRowClick(row.original);
+                        setClickedRows([row.original]);
+                      }}
                     >
                       {row.cells.map((cell) => (
                         <td {...cell.getCellProps()}>{cell.render("Cell")}</td>

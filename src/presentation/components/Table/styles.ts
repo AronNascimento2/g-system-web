@@ -58,9 +58,13 @@ export const ScheduleTableContainer = styled.div<Props>`
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  tr.clicked {
+  background-color: #2980b9;
+  color: white; /* Adicione essa linha para garantir contraste */
+}
   tr {
     &:hover {
-      background: #2980b9;
+      background: #3498db;
       color: #fff;
     }
   }
