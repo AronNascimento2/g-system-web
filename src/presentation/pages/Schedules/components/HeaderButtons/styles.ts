@@ -10,6 +10,7 @@ export const Container = styled.div`
   .datepicker {
     width: 220px;
     height: 40px;
+    padding-right: 1rem;
     font-size: 14px;
     align-items: center;
     text-align: center;

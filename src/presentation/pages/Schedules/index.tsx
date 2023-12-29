@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { fetchAppointments } from "../../../services/Schedule";
-import { Container, ContainerButtons, WrapperTable } from "./styles";
+import { Container,  WrapperTable } from "./styles";
 import { AppointmentType } from "./types";
 import { CardMobile } from "./components/CardMobile";
 import { useMediaQuery } from "react-responsive";
 import { ReactTable } from "../../components/Table";
 import { formatDate } from "../../utils/formateHourAndDate";
-import { HeaderButtonsMobile } from "./components/HeaderButtonsMobile";
-import DatePicker from "react-datepicker";
+
 
 const parseDateString = (dateString) => {
   return dateString ? new Date(dateString) : null;
@@ -90,52 +89,34 @@ export const SchedulesPage: React.FC = () => {
 
   return (
     <Container>
-      {isMobile && (
-        <ContainerButtons className="">
-          <HeaderButtonsMobile
-            update={() => fetchData(startDate, endDate)}
-            onSearch={handleSearch}
-            searchText={searchText}
-          />
-          <DatePicker
-            className="datepicker"
-            dateFormat="dd/MM/yyyy"
-            selectsRange={true}
+      {isMobile ? (
+          <CardMobile
             startDate={startDate}
             endDate={endDate}
-            onChange={(update) => {
-              setDateRange(update as [Date | null, Date | null]);
-            }}
-            isClearable={true}
-          />
-        </ContainerButtons>
-      )}
-
-      <div className="overflow-items">
-        {isMobile ? (
-          <CardMobile
+            setDateRange={setDateRange}
+            fetchData={() => fetchData(startDate, endDate)}
+            handleSearch={handleSearch}
             searchText={searchText}
             loading={loading}
             appointments={appointments}
           />
-        ) : (
-          <WrapperTable>
-            <ReactTable
-              startDate={startDate}
-              endDate={endDate}
-              setDateRange={setDateRange}
-              loading={loading}
-              columns={columns}
-              data={dataWithIds}
-              handleRowClick={handleRowClick}
-              fetchData={() => fetchData(startDate, endDate)}
-              handleSearch={handleSearch}
-              searchText={searchText}
-              details={details}
-            />
-          </WrapperTable>
-        )}
-      </div>
+      ) : (
+        <WrapperTable>
+          <ReactTable
+            startDate={startDate}
+            endDate={endDate}
+            setDateRange={setDateRange}
+            loading={loading}
+            columns={columns}
+            data={dataWithIds}
+            handleRowClick={handleRowClick}
+            fetchData={() => fetchData(startDate, endDate)}
+            handleSearch={handleSearch}
+            searchText={searchText}
+            details={details}
+          />
+        </WrapperTable>
+      )}
     </Container>
   );
 };

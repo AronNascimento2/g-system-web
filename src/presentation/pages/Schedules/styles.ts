@@ -14,46 +14,7 @@ export const Container = styled.div`
     }
   }
 `;
-export const ContainerButtons = styled.div`
-  display: flex;
-  width: 100%;
-  gap: 0.4rem;
-  padding: 1rem;
-  flex-wrap: wrap;
-  .datepicker {
-    width: 220px;
-    height: 40px;
-    font-size: 14px;
-    align-items: center;
-    text-align: center;
-    border-radius: 20px;
-    border: 1px solid lightgray;
-  }
-  @media (max-width: 1080px) {
-    padding-bottom: 10px;
-  }
-  .input-label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-  select {
-    width: 200px;
-    height: 40px;
-  }
-  @media screen and (max-width: 1080px) {
-    justify-content: center;
-    padding: 0;
-    padding: 0.5rem;
-    padding-top: 1rem;
-    select {
-      width: 120px;
-      height: 25px;
-      font-size: 12px;
-    }
-  }
-`;
+
 
 export const WrapperTable = styled.div`
   padding: 1rem;
