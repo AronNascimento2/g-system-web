@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import { Modal } from "../../../../components/Modal";
 import { DynamicButton } from "../../../../components/DynamicButton";
+import { Container } from "./styles";
 
 export const FilterOptions: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,15 +13,13 @@ export const FilterOptions: React.FC = () => {
 
   return (
     <>
-      <DynamicButton
-        icon={faFilter}
-        text="Filtrar"
-        onClick={toggleModal}
-      />
+      <DynamicButton icon={faFilter} text="Filtrar" onClick={toggleModal} />
 
-      <Modal show={isOpen} handleClose={toggleModal} title={"Filtrar"}>
-        <p>Conteúdo</p>
-      </Modal>
+      <Container>
+        <Modal show={isOpen} handleClose={toggleModal} title={"Filtrar"} className="filter-modal">
+          <p>Conteúdo</p>
+        </Modal>
+      </Container>
     </>
   );
 };

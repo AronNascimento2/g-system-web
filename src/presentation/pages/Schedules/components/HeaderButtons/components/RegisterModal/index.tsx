@@ -26,7 +26,7 @@ export const RegisterModal: React.FC<Props> = ({ details }) => {
         disabled={!details?.Codigo}
       />
       <Container>
-        <Modal show={isOpen} handleClose={toggleModal} title={"Registrar"}>
+        <Modal show={isOpen} handleClose={toggleModal} title={"Registrar"} className="register-modal">
           <div style={{ paddingBottom: "10px" }}>
             <p>Observação da ligação:</p>
             <textarea name="" id=""></textarea>

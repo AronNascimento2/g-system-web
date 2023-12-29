@@ -1,6 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+.confirm-modal{
+  width: 750px;
+  height: 820px;
+  @media (max-width: 1080px) {
+    width: 98%;
+    top:43%;
+  }
+}
   .client-container {
     display: flex;
     gap: 10px;

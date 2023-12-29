@@ -27,7 +27,7 @@ export const EditModal: React.FC<Props> = ({ details }) => {
         disabled={!details?.Codigo}
       />
       <Container>
-        <Modal show={isOpen} handleClose={toggleModal} title={"Editar"}>
+        <Modal show={isOpen} handleClose={toggleModal} title={"Editar"} className="edit-modal">
           <div className="container-map">
             <Maps />
           </div>

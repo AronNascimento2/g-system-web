@@ -38,8 +38,7 @@ export const ConfirmModal: React.FC<Props> = ({ details }) => {
 
       <Container>
         <Modal
-          width="710px"
-          height="500px"
+          className="confirm-modal"
           position="top: 30%; left: 50%;"
           show={isOpen}
           handleClose={toggleModal}

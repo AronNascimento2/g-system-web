@@ -102,7 +102,7 @@ export const ModalMaps: React.FC<Props> = () => {
         handleDateSelected={handleDateSelected}
         handleClosSelecteDate={handleClosSelecteDate}
       />{" "}
-      <Modal show={isOpen} handleClose={toggleModal} width={"700px"}>
+      <Modal show={isOpen} handleClose={toggleModal} className="map-services-modal">
         <div className="client-names">
           <ol>
             {usuarios.map((user, index) => (

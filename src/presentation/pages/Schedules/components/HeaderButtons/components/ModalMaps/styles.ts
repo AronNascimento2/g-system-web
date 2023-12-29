@@ -1,6 +1,14 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+.map-services-modal{
+    width: 750px;
+    @media (max-width: 1080px) {
+      width: 98%;
+      padding: 5px;
+
+    }
+}
   .client-names {
     border: 1px solid lightgray;
     font-size: 14px;

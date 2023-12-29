@@ -5,6 +5,13 @@ interface ModalContainerProps {
 }
 
 export const Container = styled.div`
+.filter-modal {
+    width: 500px;
+    @media (max-width: 1080px) {
+      width: 98%;
+    }
+  }
+
 
 `;
 export const ModalContainer = styled.div<ModalContainerProps>`

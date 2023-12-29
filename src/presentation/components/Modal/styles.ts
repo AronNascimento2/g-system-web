@@ -32,16 +32,14 @@ export const ModalContent = styled.div<ModalProps>`
       : css`
           display: none;
         `}
-  min-width: ${({ width }) => width ?? "400px"}; // Largura do modal
-  min-height: ${({ height }) => height ?? "200px"}; // Altura do modal
+ 
   position: absolute;
   ${({ position }) => position ?? "top: 50%; left: 50%;"}
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 20px;
   border-radius: 5px;
-  max-width: 30%;
-  max-height: 80%;
+  
   overflow-y: auto;
   z-index:999;
   .buttons-modal {
@@ -51,11 +49,7 @@ export const ModalContent = styled.div<ModalProps>`
   }
 
   @media screen and (max-width: 1080px) {
-    min-width: 90%;
-    max-width: 90%;
-    min-height: 20%;
-    max-height: 80%;
-    ${({ position }) => (position ? "" : "top: 50%; left: 50%;")}
+   
   }
  
 `;

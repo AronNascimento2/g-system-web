@@ -14,18 +14,19 @@ interface ModalProps {
   height?: string; // Prop para a altura do modal
   width?: string; // Prop para a largura do modal
   title?: string;
+  className?:string
 }
 
-export const Modal = ({ show,position, handleClose,width,height,children, title }: ModalProps) => {
+export const Modal = ({ show,position, handleClose,width,height,children, title,className }: ModalProps) => {
   return (
     <>
       <ModalWrapper position={position} onClick={handleClose} show={show} />
-      <ModalContent show={show} width={width} height={height}>
+      <ModalContent show={show} width={width} height={height} className={className}>
         <div className="buttons-modal">
           <Title>{title}</Title>
           <CloseButton onClick={handleClose}>&times;</CloseButton>
         </div>
-        <Content>{children}</Content>
+        <Content >{children}</Content>
       </ModalContent>
     </>
   );
