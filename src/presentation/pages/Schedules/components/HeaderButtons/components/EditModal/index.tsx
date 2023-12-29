@@ -6,6 +6,7 @@ import { WrapperButton } from "../../../../../../components/WrapperButton/styles
 import { AppointmentProps } from "../../../../types";
 import Maps from "../../../../../../components/Maps";
 import { Container } from "./styles";
+import DatePicker from "react-datepicker";
 
 interface Props {
   details: AppointmentProps;
@@ -34,6 +35,34 @@ export const EditModal: React.FC<Props> = ({ details }) => {
           title={"Editar"}
           className="edit-modal"
         >
+          <div className="client-container">
+            <div className="client-data">
+              <p>Serviço:</p>
+              <p>{details?.Servico}</p>
+              <p>Tipo:</p>
+              <select name="" id=""></select>
+            </div>
+            <div className="client-data">
+              <p>Técnico:</p>
+              <p>{details?.Tecnico}</p>
+            </div>
+            <div className="client-data">
+              <p>Endereço:</p>
+              <p className="adress">{details?.Endereco}</p>
+            </div>
+            <div className="client-data">
+              <p>Data:</p>
+              <p>Presencial</p>
+              <DatePicker />
+              <p>Período:</p>
+              <p>{details?.Periodo}</p>
+            </div>
+            <div className="client-data">
+              <p>Observação:</p>
+              <p className="obs">{details?.Observacao}</p>
+            </div>
+          </div>
+
           <div className="container-map">
             <Maps />
           </div>
