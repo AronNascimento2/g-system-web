@@ -17,7 +17,6 @@ import {
   faSortUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { HeaderButtons } from "../../pages/Schedules/components/HeaderButtons";
-import { ContainerButtons } from "../../pages/Schedules/styles";
 import { ClipLoader } from "react-spinners";
 import { useEffect } from "react";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
@@ -33,6 +32,9 @@ export const ReactTable = ({
   searchText,
   loading,
   details,
+  startDate,
+  endDate,
+  setDateRange,
 }) => {
   const {
     getTableProps,
@@ -66,18 +68,18 @@ export const ReactTable = ({
   useEffect(() => {
     setGlobalFilter(searchText || undefined);
   }, [searchText, setGlobalFilter]);
-  console.log("sdds", details);
 
   return (
     <ScheduleTableContainer>
-      <ContainerButtons>
-        <HeaderButtons
-          details={details}
-          update={fetchData}
-          onSearch={handleSearch}
-          searchText={searchText}
-        />
-      </ContainerButtons>
+      <HeaderButtons
+        startDate={startDate}
+        endDate={endDate}
+        setDateRange={setDateRange}
+        details={details}
+        update={fetchData}
+        onSearch={handleSearch}
+        searchText={searchText}
+      />
 
       {loading ? (
         <div className="loader-container">
@@ -192,42 +194,45 @@ export const ReactTable = ({
         </>
       )}
       <div className="obs-container">
-          <div className="obs">
-        {details && (
-            <><ul>
-              <li>
-                <strong>Cliente:</strong> {details?.Cliente}
-              </li>
-              <li>
-                <strong>Codigo:</strong> {details.Codigo}
-              </li>
-              <li>
-                <strong>Técnico:</strong> {details.Tecnico}
-              </li>
-              <li>
-                <strong>Data:</strong> {details.Data}
-              </li>
-              <li>
-                <strong>Data de criação:</strong>{" "}
-                {formatDateAndHour(details.DataCriacao)}
-              </li>
+        <div className="obs">
+          {details && (
+            <>
+              <ul>
+                <li>
+                  <strong>Cliente:</strong> {details?.Cliente}
+                </li>
+                <li>
+                  <strong>Codigo:</strong> {details.Codigo}
+                </li>
+                <li>
+                  <strong>Técnico:</strong> {details.Tecnico}
+                </li>
+                <li>
+                  <strong>Data:</strong> {details.Data}
+                </li>
+                <li>
+                  <strong>Data de criação:</strong>{" "}
+                  {formatDateAndHour(details.DataCriacao)}
+                </li>
 
-              <li>
-                <strong>Endereço:</strong> {details.Endereco}
-              </li>
-              <li>
-                <strong>Período:</strong> {details.Periodo}
-              </li>
-              <li>
-                <strong>Valor do serviço:</strong> R$ {details.ValorServico}
-              </li>
-              <li>
-                <strong>Não Presencial:</strong> {details.NãoPresencial}
-              </li>
-              <li>
-                <strong>Status Faturamento:</strong> {details.StatusFaturamento}
-              </li>
-            </ul><ul>
+                <li>
+                  <strong>Endereço:</strong> {details.Endereco}
+                </li>
+                <li>
+                  <strong>Período:</strong> {details.Periodo}
+                </li>
+                <li>
+                  <strong>Valor do serviço:</strong> R$ {details.ValorServico}
+                </li>
+                <li>
+                  <strong>Não Presencial:</strong> {details.NãoPresencial}
+                </li>
+                <li>
+                  <strong>Status Faturamento:</strong>{" "}
+                  {details.StatusFaturamento}
+                </li>
+              </ul>
+              <ul>
                 {Array.isArray(details.Veiculos) &&
                   details.Veiculos.length > 0 && (
                     <li>
@@ -235,8 +240,9 @@ export const ReactTable = ({
                       {details.Veiculos.map((veiculo: any, index: number) => (
                         <div key={index}>
                           <p>
-                            [ Código do Veículo: {veiculo.CodigoVeiculo}, Status:{" "}
-                            {veiculo.Status}, Veiculo: {veiculo.Veiculo} ]
+                            [ Código do Veículo: {veiculo.CodigoVeiculo},
+                            Status: {veiculo.Status}, Veiculo: {veiculo.Veiculo}{" "}
+                            ]
                           </p>
                         </div>
                       ))}
@@ -252,7 +258,8 @@ export const ReactTable = ({
                 <li>
                   <strong>Cliente antigo:</strong> {details.ClienteAntigo}
                 </li>
-              </ul><ul>
+              </ul>
+              <ul>
                 <li>
                   <strong>Custo do deslocamento:</strong>{" "}
                   {details.CustoDeslocamento}
@@ -277,14 +284,16 @@ export const ReactTable = ({
                   <strong>Valor adicional:</strong> {details.ValorAdicional}
                 </li>
                 <li>
-                  <strong>Status Faturamento:</strong> {details.StatusFaturamento}
+                  <strong>Status Faturamento:</strong>{" "}
+                  {details.StatusFaturamento}
                 </li>
                 <li>
                   <strong>Obs.</strong> {details.Observacao}
                 </li>
-              </ul></>
-        )}
-          </div>
+              </ul>
+            </>
+          )}
+        </div>
       </div>
     </ScheduleTableContainer>
   );

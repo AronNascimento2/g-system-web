@@ -29,6 +29,7 @@ export const HeaderButtonsMobile: React.FC<HeaderButtonsMobileProps> = ({
         value={searchText}
         onChange={handleInputChange}
       />
+      
       <FilterOptionsMobile />
       <ModalOptionsMobile />
     </Container>

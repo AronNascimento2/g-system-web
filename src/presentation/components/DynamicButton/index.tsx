@@ -20,7 +20,7 @@ const ButtonContainer = styled.button<ButtonContainerProps>`
   color: #fff;
   font-weight: 600;
   gap: 0.5rem;
-  height: 40px;
+  height: 35px;
   cursor: ${({ disabled, loading }) =>
     disabled || loading ? "not-allowed" : "pointer"};
   background-color: ${({ disabled }) => (disabled ? "#ccc" : "#3498db")};

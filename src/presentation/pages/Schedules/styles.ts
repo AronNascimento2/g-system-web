@@ -20,7 +20,18 @@ export const ContainerButtons = styled.div`
   gap: 0.4rem;
   padding: 1rem;
   flex-wrap: wrap;
-  
+  .datepicker {
+    width: 220px;
+    height: 40px;
+    font-size: 14px;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid lightgray;
+  }
+  @media (max-width: 1080px) {
+    padding-bottom: 10px;
+  }
   .input-label {
     display: flex;
     align-items: center;
@@ -45,10 +56,10 @@ export const ContainerButtons = styled.div`
 `;
 
 export const WrapperTable = styled.div`
-  max-width: 100%;
   padding: 1rem;
-  height: 100%;
-  overflow-x: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @media screen and (max-width: 767px) {
     justify-content: center;
     padding: 0;

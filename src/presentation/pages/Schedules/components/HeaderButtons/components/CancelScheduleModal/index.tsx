@@ -21,6 +21,8 @@ export const CancelScheduleModal: React.FC<Props> = ({ details }) => {
     <>
       <DynamicButton
         icon={faClose}
+        width="120px"
+
         text="Cancelar"
         onClick={toggleModal}
         disabled={!details?.Codigo}

@@ -18,7 +18,12 @@ export const InvoiceModal: React.FC<Props> = () => {
 
   return (
     <>
-      <DynamicButton icon={faDollar} text="Faturar" onClick={toggleModal} width="100px"/>
+      <DynamicButton
+        width="120px"
+        icon={faDollar}
+        text="Faturar"
+        onClick={toggleModal}
+      />
 
       <Modal show={isOpen} handleClose={toggleModal} title={"Faturar"}>
         <div style={{ paddingBottom: "10px" }}>

@@ -23,6 +23,8 @@ export const ExcludeModal: React.FC<Props> = ({ details }) => {
         text="Excluir"
         onClick={toggleModal}
         disabled={!details?.Codigo}
+        width="120px"
+
       />
       <Container>
         <Modal show={isOpen} handleClose={toggleModal} title={"Excluir"} className="exclude-modal">

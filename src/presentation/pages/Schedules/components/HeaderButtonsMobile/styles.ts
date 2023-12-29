@@ -6,7 +6,7 @@ export const Container = styled.div`
   gap: 0.5rem;
   align-items: center;
   justify-content: center;
-  
+
   
   .open-options-button {
     width: 40px;

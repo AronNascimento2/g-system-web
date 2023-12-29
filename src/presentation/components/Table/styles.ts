@@ -2,10 +2,12 @@ import styled from "styled-components";
 type Props = { disabled?: boolean };
 export const ScheduleTableContainer = styled.div<Props>`
   width: 100%;
+  overflow: hidden;
   border: 1px solid lightgray;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
+  background-color: #fff;
+ 
   .loader-container {
     width: 100%;
     height: 64vh;
@@ -61,7 +63,6 @@ export const ScheduleTableContainer = styled.div<Props>`
       background: #2980b9;
       color: #fff;
     }
-    
   }
   .container-th {
     gap: 0.5rem;
@@ -126,7 +127,7 @@ export const ScheduleTableContainer = styled.div<Props>`
       font-size: 14px;
       overflow: auto;
       display: flex;
-      ul{
+      ul {
         list-style-type: none;
       }
     }

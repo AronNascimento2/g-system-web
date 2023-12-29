@@ -30,6 +30,7 @@ export const ConfirmModal: React.FC<Props> = ({ details }) => {
   return (
     <>
       <DynamicButton
+        width="120px"
         icon={faCheck}
         text="Confirmar"
         onClick={toggleModal}

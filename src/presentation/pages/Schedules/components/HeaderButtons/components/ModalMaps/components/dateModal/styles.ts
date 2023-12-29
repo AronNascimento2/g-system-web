@@ -7,6 +7,9 @@ export const Container = styled.div`
       width: 98%;
     }
   }
+  .react-datepicker {
+    /* Outros estilos para telas menores, se necessário */
+  }
   input {
     width: 150px;
     padding: 10px;

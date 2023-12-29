@@ -19,14 +19,19 @@ export const RegisterModal: React.FC<Props> = ({ details }) => {
   return (
     <>
       <DynamicButton
-        width="100px"
+        width="120px"
         icon={faEdit}
         text="Registrar"
         onClick={toggleModal}
         disabled={!details?.Codigo}
       />
       <Container>
-        <Modal show={isOpen} handleClose={toggleModal} title={"Registrar"} className="register-modal">
+        <Modal
+          show={isOpen}
+          handleClose={toggleModal}
+          title={"Registrar"}
+          className="register-modal"
+        >
           <div style={{ paddingBottom: "10px" }}>
             <p>Observação da ligação:</p>
             <textarea name="" id=""></textarea>

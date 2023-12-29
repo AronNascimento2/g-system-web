@@ -13,10 +13,20 @@ export const FilterOptions: React.FC = () => {
 
   return (
     <>
-      <DynamicButton icon={faFilter} text="Filtrar" onClick={toggleModal} />
+      <DynamicButton
+        icon={faFilter}
+        text="Filtrar"
+        onClick={toggleModal}
+        width="120px"
+      />
 
       <Container>
-        <Modal show={isOpen} handleClose={toggleModal} title={"Filtrar"} className="filter-modal">
+        <Modal
+          show={isOpen}
+          handleClose={toggleModal}
+          title={"Filtrar"}
+          className="filter-modal"
+        >
           <p>Conteúdo</p>
         </Modal>
       </Container>

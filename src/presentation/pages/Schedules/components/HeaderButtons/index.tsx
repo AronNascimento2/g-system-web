@@ -11,12 +11,17 @@ import { EditModal } from "./components/EditModal";
 import { AppointmentProps } from "../../types";
 import { ModalMaps } from "./components/ModalMaps";
 import { ExcludeModal } from "./components/ExcludeModal";
+import { DocumentsButton } from "./components/DocumentsButton";
+import DatePicker from "react-datepicker";
 
 interface HeaderButtonsProps {
   update: () => void;
   onSearch: (text: string) => void;
   searchText: string; // Definindo searchText como uma string
   details: AppointmentProps;
+  startDate;
+  endDate;
+  setDateRange;
 }
 
 export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
@@ -24,21 +29,14 @@ export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
   onSearch,
   searchText,
   details,
+  startDate,
+  endDate,
+  setDateRange,
 }) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const text = event.target.value;
     onSearch(text); // Chama a função de busca com o texto atualizado
   };
-
-  const buttonsData = [
-    {
-      icon: faFile,
-      text: "Documentos",
-      onClick: () => console.log("Botão Confirmar clicado"),
-    },
-  ];
-
-
 
   return (
     <Container>
@@ -46,7 +44,7 @@ export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
         onClick={update}
         icon={faArrowsRotate}
         text="Atualizar"
-        width="100px"
+        width="120px"
       />
       <input
         className="input-search"
@@ -55,23 +53,25 @@ export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
         value={searchText}
         onChange={handleInputChange}
       />
-
-      {buttonsData.map((button, index) => (
-        <DynamicButton
-          key={index}
-          icon={button?.icon}
-          text={button.text}
-          onClick={button.onClick}
-          disabled
-        />
-      ))}
+      <DatePicker
+        className="datepicker"
+        dateFormat="dd/MM/yyyy"
+        selectsRange={true}
+        startDate={startDate}
+        endDate={endDate}
+        onChange={(update) => {
+          setDateRange(update as [Date | null, Date | null]);
+        }}
+        isClearable={true}
+      />
+      <DocumentsButton />
       <ExcludeModal details={details} />
       <CancelScheduleModal details={details} />
       <EditModal details={details} />
       <ConfirmModal details={details} />
       <InvoiceModal details={details} />
       <RegisterModal details={details} />
-      <ModalMaps  />
+      <ModalMaps />
       <FilterOptions />
     </Container>
   );
