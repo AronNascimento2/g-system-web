@@ -1,6 +1,11 @@
 import React from "react";
-import { Container } from "../Attendance/styles";
+import { TableCharges } from "./components/TableCharges";
+import { Container } from "./styles";
 
 export const ChargesPage: React.FC = () => {
-  return <Container>Página Cobranças em Construção !!!</Container>;
+  return (
+    <Container>
+      <TableCharges />
+    </Container>
+  );
 };
