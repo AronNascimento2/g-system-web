@@ -2,11 +2,14 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
+
 interface ButtonContainerProps {
   disabled?: boolean;
   loading?: boolean;
-  width?: string
+  width?: string;
+  isMobile?: boolean; // Propriedade para identificar o modo mobile
 }
+
 const ButtonContainer = styled.button<ButtonContainerProps>`
   display: flex;
   align-items: center;
@@ -14,12 +17,12 @@ const ButtonContainer = styled.button<ButtonContainerProps>`
   border: none;
   background: none;
   background-color: #3498db;
-  width: ${({ width }) =>
-    width ? width : ""}; /* Definindo a largura dinâmica */
+  width: ${({ width }) => (width ? width : "")};
   border-radius: 8px;
   color: #fff;
   font-weight: 600;
   gap: 0.5rem;
+
   height: 35px;
   cursor: ${({ disabled, loading }) =>
     disabled || loading ? "not-allowed" : "pointer"};
@@ -29,8 +32,28 @@ const ButtonContainer = styled.button<ButtonContainerProps>`
     cursor: not-allowed;
     color: black;
   }
-  @media(max-width:1080px){
-    max-width: 200px;
+  @media (max-width: 1080px) {
+    p {
+      display: ${({ isMobile }) => (isMobile ? "none" : "block")};
+    }
+    ${({ isMobile }) =>
+      isMobile &&
+      `
+    width: 40px;
+    border-radius: 50%;
+    height: 40px;
+    outline: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #3498db;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+      p {
+       display: none;
+     }
+    `}
   }
 `;
 
@@ -40,7 +63,8 @@ interface DynamicButtonProps {
   onClick?: () => void;
   className?: string;
   disabled?: boolean;
-  width?: string
+  width?: string;
+  isMobile?: boolean; // Propriedade para identificar o modo mobile
 }
 
 export const DynamicButton = ({
@@ -50,15 +74,18 @@ export const DynamicButton = ({
   className,
   disabled,
   width,
+  isMobile = false, // Valor padrão para isMobile é falso
 }: DynamicButtonProps) => {
   return (
     <ButtonContainer
-      width={width} // Passando a propriedade width para o ButtonContainer
+      width={width}
       disabled={disabled}
       className={className}
       onClick={onClick}
+      isMobile={isMobile} // Passando a propriedade isMobile para o ButtonContainer
     >
-      {icon && <FontAwesomeIcon icon={icon as IconProp} />} <p>{text}</p>
+      {icon && <FontAwesomeIcon icon={icon as IconProp} />}
+      {text && <p>{text}</p>}
     </ButtonContainer>
   );
 };

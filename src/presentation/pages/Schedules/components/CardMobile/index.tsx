@@ -13,10 +13,7 @@ import {
   WrapperCard,
   WrapperContent,
 } from "./styles";
-import {
-  faChevronDown,
-  faChevronUp,
-} from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { AppointmentProps, AppointmentType } from "../../types";
 import { ClipLoader } from "react-spinners";
 import { CancelScheduleModal } from "../HeaderButtons/components/CancelScheduleModal";
@@ -78,19 +75,21 @@ export const CardMobile: React.FC<CardMobileProps> = ({
               onSearch={handleSearch}
               searchText={searchText}
             />
-            <DatePicker
-              className="datepicker"
-              dateFormat="dd/MM/yyyy"
-              selectsRange={true}
-              startDate={startDate}
-              endDate={endDate}
-              onChange={(update) => {
-                setDateRange(update as [Date | null, Date | null]);
-              }}
-              isClearable={true}
-            />
-            <InvoiceModal />
-            <ModalMaps />
+            <div className="container">
+              <InvoiceModal />
+              <DatePicker
+                className="datepicker"
+                dateFormat="dd/MM/yyyy"
+                selectsRange={true}
+                startDate={startDate}
+                endDate={endDate}
+                onChange={(update) => {
+                  setDateRange(update as [Date | null, Date | null]);
+                }}
+                isClearable={true}
+              />
+              <ModalMaps />
+            </div>
           </ContainerButtons>
         )}
         <button

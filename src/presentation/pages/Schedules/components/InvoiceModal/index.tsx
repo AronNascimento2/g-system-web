@@ -23,6 +23,7 @@ export const InvoiceModal: React.FC<Props> = () => {
         icon={faDollar}
         text="Faturar"
         onClick={toggleModal}
+        isMobile={true}
       />
 
       <Modal

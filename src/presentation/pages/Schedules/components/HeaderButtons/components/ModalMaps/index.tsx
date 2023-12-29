@@ -95,8 +95,10 @@ export const ModalMaps: React.FC<Props> = () => {
         text="Mapa de serviços"
         onClick={toggleDateModal}
         width="120px"
+        isMobile={true}
 
       />
+      
       <Container>
         <DateModal
           show={isDateModalOpen}
@@ -107,7 +109,7 @@ export const ModalMaps: React.FC<Props> = () => {
           show={isOpen}
           handleClose={toggleModal}
           className="map-services-modal"
-          top="150%"
+          top="200%"
 
         >
           <div className="client-names">

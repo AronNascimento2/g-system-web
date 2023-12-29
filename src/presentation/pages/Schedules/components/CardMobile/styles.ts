@@ -153,9 +153,8 @@ export const WrapperButtons = styled.div`
   align-items: center;
   position: sticky;
   top: 0;
- z-index: 999;
+  z-index: 999;
   .menubutton {
-   
     height: 40px;
     width: 100px;
     background-color: #fff;
@@ -178,14 +177,30 @@ export const ContainerButtons = styled.div`
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   flex-wrap: wrap;
+  .container {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .submenuwrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+  }
   .datepicker {
-    width: 198px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra desejada */
+    font-size: 16px;
     height: 40px;
-    padding-right: 25px;
-    font-size: 14px;
-    text-align: center;
     border-radius: 20px;
-    border: 1px solid lightgray;
+    outline: 0;
+    border: 1px solid #ccc;
+    padding-left: 4rem; /* Adicione uma borda sólida de 2px com cor cinza claro */
+    padding: 0.5rem; /* Adicione um preenchimento para afastar o texto da borda */
   }
   @media (max-width: 1080px) {
     padding-bottom: 10px;
