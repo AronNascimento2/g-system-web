@@ -62,6 +62,8 @@ const DateModal: React.FC<DateModalProps> = ({
               readOnly // Make the input read-only to prevent direct editing
             />{" "}
             <DatePicker
+              readOnly // Tente adicionar a propriedade readOnly diretamente
+
               selected={selectedDate}
               onChange={handleDateChange}
               dateFormat="dd/MM/yyyy"
