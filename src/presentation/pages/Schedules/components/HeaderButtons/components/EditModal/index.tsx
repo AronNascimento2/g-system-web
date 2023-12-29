@@ -34,7 +34,7 @@ export const EditModal: React.FC<Props> = ({ details }) => {
           handleClose={toggleModal}
           title={"Editar"}
           className="edit-modal"
-          top="45%"
+          top="48%"
         >
           <div className="client-container">
             <div className="client-data">

@@ -34,6 +34,8 @@ export const Container = styled.div`
     width: 750px;
     @media (max-width: 1080px) {
       width: 98%;
+      height: 550px;
+
     }
   }
   .container-map {

@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   .select-date-modal {
-    width: 750px;
+    width: 400px;
     @media (max-width: 1080px) {
+      height: 550px;
       width: 98%;
     }
   }

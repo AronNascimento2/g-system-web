@@ -152,7 +152,7 @@ export const WrapperButtons = styled.div`
   align-items: center;
   position: sticky;
   top: 0;
- 
+ z-index: 999;
   .menubutton {
    
     height: 40px;

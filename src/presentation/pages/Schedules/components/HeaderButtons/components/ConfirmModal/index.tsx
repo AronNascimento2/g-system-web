@@ -43,6 +43,7 @@ export const ConfirmModal: React.FC<Props> = ({ details }) => {
           show={isOpen}
           handleClose={toggleModal}
           title={"Confirmar"}
+          top="100%"
         >
           <div className="client-container">
             <div className="client-data">

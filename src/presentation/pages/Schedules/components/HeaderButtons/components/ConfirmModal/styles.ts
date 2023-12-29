@@ -6,7 +6,9 @@ export const Container = styled.div`
   height: 820px;
   @media (max-width: 1080px) {
     width: 98%;
-    top:43%;
+    height: 550px;
+
+    top:48%;
   }
 }
   .client-container {
