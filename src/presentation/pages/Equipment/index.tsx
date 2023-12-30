@@ -1,6 +1,11 @@
 import React from "react";
-import { Container } from "../Attendance/styles";
+import { Container } from "./styles";
+import { TableEquipment } from "./components/TableEquipment";
 
 export const EquipmentPage: React.FC = () => {
-  return <Container>Página Equipamentos em Construção !!!</Container>;
+  return (
+    <Container>
+      <TableEquipment />
+    </Container>
+  );
 };

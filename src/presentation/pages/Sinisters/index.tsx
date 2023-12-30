@@ -1,13 +1,10 @@
-import { Container } from "../Attendance/styles";
+import { TableSinisters } from "./components/TableSinisters";
+import { Container } from "./styles";
 
 export const SinistersPage = () => {
-
-    return (
-      <Container>
-            Página Sinistros em Construção !!!
-
-      </Container>
-    );
-  };
-  
-  
+  return (
+    <Container>
+      <TableSinisters />
+    </Container>
+  );
+};

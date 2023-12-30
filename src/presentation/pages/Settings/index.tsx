@@ -1,5 +1,5 @@
-import { Container } from "../Attendance/styles";
+import { Container } from "./styles";
 
 export const SettingsPage = () => {
-  return <Container> Página Configuracoes em Construção !!!</Container>;
+  return <Container> Página Configurações em Construção !!!</Container>;
 };

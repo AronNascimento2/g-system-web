@@ -18,13 +18,13 @@ import {
   CustomersPage,
   DirectionPage,
   EquipmentPage,
-  HomePage,
   LoginPage,
   PendenciesPage,
   SalesPage,
   SchedulesPage,
   SettingsPage,
   SinistersPage,
+  SumaryPage,
   SupervisionPage,
 } from "../pages";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
@@ -130,7 +130,7 @@ export const ROUTES_PATHS = [
 
   {
     path: '/Sumario',
-    element: HomePage,
+    element: SumaryPage,
     title: 'Sumario',
     label: 'Sumário',
     isPrivate: true,

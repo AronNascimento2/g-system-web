@@ -10,5 +10,6 @@ export * from "./Settings";
 export * from "./Sinisters";
 export * from "./Supervision";
 export * from "./Login";
-export * from "./Home";
+export * from "./Sumary";
+
 
