@@ -1,5 +1,10 @@
-import { Container } from "../Attendance/styles";
+import { TableSupervision } from "./components/TableSupervision";
+import { Container } from "./styles";
 
 export const SupervisionPage = () => {
-  return <Container>Página Supervisao em Construção !!!</Container>;
+  return (
+    <Container>
+      <TableSupervision />
+    </Container>
+  );
 };
