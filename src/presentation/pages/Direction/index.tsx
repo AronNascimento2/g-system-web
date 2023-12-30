@@ -1,6 +1,11 @@
 import React from "react";
-import { Container } from "../Attendance/styles";
+import { TableDirection } from "./components/TableDirection";
+import { Container } from "./styles";
 
 export const DirectionPage: React.FC = () => {
-  return <Container>Página Diretoria em Construção !!!</Container>;
+  return (
+    <Container>
+      <TableDirection />
+    </Container>
+  );
 };
