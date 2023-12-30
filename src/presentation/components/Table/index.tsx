@@ -57,10 +57,10 @@ export const ReactTable = ({
       data,
       initialState: { pageIndex: 0, pageSize: 10 },
     },
-    useFilters, // Utilizando filtros
-    useGlobalFilter, // Utilizando o filtro global
-    useSortBy, // Habilitando a ordenação
-    usePagination // Adicionando paginação
+    useFilters,
+    useGlobalFilter, 
+    useSortBy, 
+    usePagination 
   );
   type props = {
     Codigo: string;

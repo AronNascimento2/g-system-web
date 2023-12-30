@@ -138,10 +138,7 @@ export const TableCustomers = () => {
             <div className="filter-tab"></div>
           </div>
           <div className="box" {...getTableProps()}>
-            <div className="selects">
-              <select name="" id=""></select>
-              <input type="text" />
-            </div>
+            
             <table>
               <thead>
                 {headerGroups.map((headerGroup) => (
