@@ -1,6 +1,11 @@
 import React from "react";
-import { Container } from "../Attendance/styles";
+import { Container } from "./styles";
+import { TableCustomers } from "./components/TableCustomers";
 
 export const CustomersPage: React.FC = () => {
-  return <Container>Página Clientes em Construção !!!</Container>;
+  return (
+    <Container>
+      <TableCustomers />
+    </Container>
+  );
 };
