@@ -1,9 +1,10 @@
+import { TableAttendance } from "./components/TableAttendance";
 import { Container } from "./styles";
 
 export const AttendancePage = () => {
   return (
     <Container>
-      <p>Página Atendimento em Construção !!!</p>
+      <TableAttendance />
     </Container>
   );
 };
