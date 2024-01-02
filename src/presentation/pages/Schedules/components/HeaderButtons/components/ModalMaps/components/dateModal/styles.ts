@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  .container-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   .select-date-modal {
     width: 400px;
     @media (max-width: 1080px) {

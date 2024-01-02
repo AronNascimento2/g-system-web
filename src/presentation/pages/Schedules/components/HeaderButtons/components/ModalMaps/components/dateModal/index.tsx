@@ -94,7 +94,7 @@ const DateModal: React.FC<DateModalProps> = ({
             }}
           >
             {error ? (
-              <div>
+              <div className="container-error">
                 <p>{error}</p>
                 <DynamicButton
                   text="Nova busca"
