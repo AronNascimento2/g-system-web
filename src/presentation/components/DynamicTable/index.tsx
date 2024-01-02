@@ -68,7 +68,6 @@ export const DynamicTable = ({columns, data}) => {
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
                   <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                    {/* Adicionando ícone de ordenação */}
                     <div className="container-th">
                       {column.render("Header")}
                       <span className="icon-sort">

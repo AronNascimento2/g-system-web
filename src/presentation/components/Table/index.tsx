@@ -34,7 +34,7 @@ export const ReactTable = ({
   details,
   startDate,
   endDate,
-  setDateRange,
+  handleDateChange
 }) => {
   const {
     getTableProps,
@@ -79,9 +79,9 @@ export const ReactTable = ({
   return (
     <ScheduleTableContainer>
       <HeaderButtons
+      handleDateChange={handleDateChange}
         startDate={startDate}
         endDate={endDate}
-        setDateRange={setDateRange}
         details={details}
         update={fetchData}
         onSearch={handleSearch}

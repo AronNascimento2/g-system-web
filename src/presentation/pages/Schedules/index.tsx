@@ -7,7 +7,6 @@ import { useMediaQuery } from "react-responsive";
 import { ReactTable } from "../../components/Table";
 import { formatDate } from "../../utils/formateHourAndDate";
 
-
 const parseDateString = (dateString) => {
   return dateString ? new Date(dateString) : null;
 };
@@ -27,14 +26,12 @@ export const SchedulesPage: React.FC = () => {
   const [details, setDetails] = useState(null);
 
   const today = new Date();
-  const firstDate = new Date(today.getFullYear(), today.getMonth(), 1);
-
-  // Cálculo do último dia do mês
-  const lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+  const firstDate = new Date(today.getFullYear(), today.getMonth(), today.getDate()); 
+  const lastDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 30);
 
   const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([
-    parseDateString(firstDate),
-    parseDateString(lastDate),
+    parseDateString(lastDate), // Setting lastDate as startDate
+    parseDateString(firstDate), // Setting firstDate as endDate
   ]);
 
   const [startDate, endDate] = dateRange;
@@ -58,9 +55,16 @@ export const SchedulesPage: React.FC = () => {
   };
 
   useEffect(() => {
-    fetchData(startDate, endDate);
+    if (endDate) {
+      fetchData(startDate, endDate);
+    }
   }, [startDate, endDate]);
+  
 
+  const handleDateChange = (dates) => {
+    const [start, end] = dates;
+    setDateRange([start, end]);
+  };
   const handleSearch = (text: string) => {
     setSearchText(text);
   };
@@ -102,15 +106,14 @@ export const SchedulesPage: React.FC = () => {
           />
       ) : (
         <WrapperTable>
-          <ReactTable
+           <ReactTable
             startDate={startDate}
             endDate={endDate}
-            setDateRange={setDateRange}
             loading={loading}
             columns={columns}
             data={dataWithIds}
             handleRowClick={handleRowClick}
-            fetchData={() => fetchData(startDate, endDate)}
+            handleDateChange={handleDateChange} // Adicionando o manipulador de alteração de data
             handleSearch={handleSearch}
             searchText={searchText}
             details={details}

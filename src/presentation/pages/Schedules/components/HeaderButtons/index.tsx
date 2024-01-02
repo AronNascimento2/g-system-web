@@ -21,7 +21,8 @@ interface HeaderButtonsProps {
   details: AppointmentProps;
   startDate;
   endDate;
-  setDateRange;
+
+  handleDateChange;
 }
 
 export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
@@ -31,7 +32,7 @@ export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
   details,
   startDate,
   endDate,
-  setDateRange,
+  handleDateChange,
 }) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const text = event.target.value;
@@ -60,10 +61,11 @@ export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
         startDate={startDate}
         endDate={endDate}
         onChange={(update) => {
-          setDateRange(update as [Date | null, Date | null]);
+          handleDateChange(update as [Date | null, Date | null]);
         }}
         isClearable={true}
       />
+
       <DocumentsButton />
       <ExcludeModal details={details} />
       <CancelScheduleModal details={details} />
@@ -71,7 +73,7 @@ export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
       <ConfirmModal details={details} />
       <InvoiceModal details={details} />
       <RegisterModal details={details} />
-      <ModalMaps />
+      <ModalMaps  />
       <FilterOptions />
     </Container>
   );

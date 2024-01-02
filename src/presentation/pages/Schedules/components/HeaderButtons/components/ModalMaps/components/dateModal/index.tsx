@@ -4,6 +4,16 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Modal } from "../../../../../../../../components/Modal";
 import { DynamicButton } from "../../../../../../../../components/DynamicButton";
 import { Container } from "./styles";
+import { fetchAppointments } from "../../../../../../../../../services/Schedule";
+import { AppointmentType } from "../../../../../../types";
+
+const formatDateToYYYYMMDD = (date) => {
+  if (!date) return "";
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const day = date.getDate().toString().padStart(2, "0");
+  return `${year}-${month}-${day}`;
+};
 
 interface DateModalProps {
   show: boolean;
@@ -14,19 +24,49 @@ interface DateModalProps {
 const DateModal: React.FC<DateModalProps> = ({
   show,
   handleDateSelected,
-  handleClosSelecteDate = () => {}, // Provide a default empty function
+  handleClosSelecteDate = () => {},
 }) => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [appointments, setAppointments] = useState<AppointmentType>([]);
+  const [error, setError] = useState<string | null>(null);
 
   const handleDateChange = (date: Date | null) => {
     setSelectedDate(date);
   };
-  const handleConfirmDate = () => {
+
+  const handleConfirmDate = async () => {
+    setError(null);
     if (selectedDate) {
-      handleDateSelected(selectedDate);
+      try {
+        const data = await fetchData(selectedDate, selectedDate);
+        setAppointments(data);
+        handleDateSelected(selectedDate);
+      } catch (error) {
+        setError("Erro ao buscar os agendamentos.");
+      }
     }
   };
-  console.log("aqui", selectedDate);
+
+  const handleReloadComponent = () => {
+    setSelectedDate(null);
+    setAppointments([]);
+    setError(null);
+  };
+
+  const fetchData = async (start: Date, end: Date) => {
+    try {
+      const formattedStartDate = formatDateToYYYYMMDD(start);
+      const formattedEndDate = formatDateToYYYYMMDD(end);
+
+      const data = await fetchAppointments(
+        formattedStartDate,
+        formattedEndDate
+      );
+      return data;
+    } catch (error) {
+      throw new Error("Erro ao buscar os agendamentos.");
+    }
+  };
 
   return (
     <Container>
@@ -53,29 +93,40 @@ const DateModal: React.FC<DateModalProps> = ({
               flexDirection: "column",
             }}
           >
-            <input
-              placeholder="Selecione uma data"
-              type="text"
-              value={
-                selectedDate ? selectedDate.toLocaleDateString("pt-BR") : ""
-              }
-              readOnly // Make the input read-only to prevent direct editing
-            />{" "}
-            <DatePicker
-              readOnly // Tente adicionar a propriedade readOnly diretamente
-
-              selected={selectedDate}
-              onChange={handleDateChange}
-              dateFormat="dd/MM/yyyy"
-              showPopperArrow={false} // Hide the arrow indicating the date picker
-              inline // Set the DatePicker to be always visible
-            />
-            <DynamicButton
-              text="Buscar"
-              onClick={handleConfirmDate}
-              disabled={!selectedDate}
-              width="200px"
-            />
+            {error ? (
+              <div>
+                <p>{error}</p>
+                <DynamicButton
+                  text="Nova busca"
+                  onClick={handleReloadComponent}
+                  width="200px"
+                />
+              </div>
+            ) : (
+              <>
+                <input
+                  placeholder="Selecione uma data"
+                  type="text"
+                  value={
+                    selectedDate ? selectedDate.toLocaleDateString("pt-BR") : ""
+                  }
+                  readOnly
+                />
+                <DatePicker
+                  selected={selectedDate}
+                  onChange={handleDateChange}
+                  dateFormat="dd/MM/yyyy"
+                  showPopperArrow={false}
+                  inline
+                />
+                <DynamicButton
+                  text="Buscar"
+                  onClick={handleConfirmDate}
+                  disabled={!selectedDate}
+                  width="200px"
+                />
+              </>
+            )}
           </div>
         </div>
       </Modal>
