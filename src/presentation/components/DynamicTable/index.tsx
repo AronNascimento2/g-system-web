@@ -16,7 +16,7 @@ import {
   faSortUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export const DynamicTable = ({columns, data}) => {
   const {
@@ -46,14 +46,14 @@ export const DynamicTable = ({columns, data}) => {
     usePagination // Adicionando paginação
   );
 
-  type props = {
-    Codigo: string;
-  };
-  const [clickedRows, setClickedRows] = useState<props[]>([]);
+  // type props = {
+  //   Codigo: string;
+  // };
+  // const [clickedRows, setClickedRows] = useState<props[]>([]);
 
-  const isRowClicked = (row) => {
-    return clickedRows.some((clickedRow) => clickedRow.Codigo === row.Codigo);
-  };
+  // const isRowClicked = (row) => {
+  //   return clickedRows.some((clickedRow) => clickedRow.Codigo === row.Codigo);
+  // };
 
   const { pageIndex } = state;
   useEffect(() => {
