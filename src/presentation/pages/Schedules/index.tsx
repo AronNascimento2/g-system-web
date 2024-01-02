@@ -84,7 +84,7 @@ export const SchedulesPage: React.FC = () => {
     { Header: "Data", accessor: "Data" },
     { Header: "Serviço", accessor: "Servico" },
     { Header: "Período", accessor: "Periodo" },
-    { Header: "Técnico", accessor: "Tecnico" },
+    { Header: "Técnco", accessor: "Tecnico" },
     { Header: "Ordem", accessor: "Ordem" },
     { Header: "Endereço", accessor: "Endereco" },
   ];
