@@ -98,7 +98,7 @@ console.log(appointments);
               <div className="container-error">
                 <p>{error}</p>
                 <DynamicButton
-                  text="Nova busca"
+                  text="Tentar Novamente"
                   onClick={handleReloadComponent}
                   width="200px"
                 />
