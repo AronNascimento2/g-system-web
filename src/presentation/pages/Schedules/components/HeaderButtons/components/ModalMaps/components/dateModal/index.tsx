@@ -29,6 +29,7 @@ const DateModal: React.FC<DateModalProps> = ({
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [appointments, setAppointments] = useState<AppointmentType>([]);
   const [error, setError] = useState<string | null>(null);
+console.log(appointments);
 
   const handleDateChange = (date: Date | null) => {
     setSelectedDate(date);
