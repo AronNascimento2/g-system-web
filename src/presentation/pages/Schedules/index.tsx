@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { fetchAppointments } from "../../../services/Schedule";
-import { Container,  WrapperTable } from "./styles";
+import { Container, WrapperTable } from "./styles";
 import { AppointmentType } from "./types";
 import { CardMobile } from "./components/CardMobile";
 import { useMediaQuery } from "react-responsive";
@@ -26,8 +26,16 @@ export const SchedulesPage: React.FC = () => {
   const [details, setDetails] = useState(null);
 
   const today = new Date();
-  const firstDate = new Date(today.getFullYear(), today.getMonth(), today.getDate()); 
-  const lastDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 30);
+  const firstDate = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate()
+  );
+  const lastDate = new Date(
+    today.getFullYear(),
+    today.getMonth(),
+    today.getDate() - 30
+  );
 
   const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([
     parseDateString(lastDate), // Setting lastDate as startDate
@@ -59,7 +67,6 @@ export const SchedulesPage: React.FC = () => {
       fetchData(startDate, endDate);
     }
   }, [startDate, endDate]);
-  
 
   const handleDateChange = (dates) => {
     const [start, end] = dates;
@@ -84,7 +91,7 @@ export const SchedulesPage: React.FC = () => {
     { Header: "Data", accessor: "Data" },
     { Header: "Serviço", accessor: "Servico" },
     { Header: "Período", accessor: "Periodo" },
-    { Header: "Técnco", accessor: "Tecnico" },
+    { Header: "Técnico", accessor: "Tecnico" },
     { Header: "Ordem", accessor: "Ordem" },
     { Header: "Endereço", accessor: "Endereco" },
   ];
@@ -94,19 +101,20 @@ export const SchedulesPage: React.FC = () => {
   return (
     <Container>
       {isMobile ? (
-          <CardMobile
-            startDate={startDate}
-            endDate={endDate}
-            setDateRange={setDateRange}
-            fetchData={() => fetchData(startDate, endDate)}
-            handleSearch={handleSearch}
-            searchText={searchText}
-            loading={loading}
-            appointments={appointments}
-          />
+        <CardMobile
+          startDate={startDate}
+          endDate={endDate}
+          setDateRange={setDateRange}
+          fetchData={() => fetchData(startDate, endDate)}
+          handleSearch={handleSearch}
+          searchText={searchText}
+          loading={loading}
+          appointments={appointments}
+        />
       ) : (
         <WrapperTable>
-           <ReactTable
+          <ReactTable
+            fetchData={fetchData}
             startDate={startDate}
             endDate={endDate}
             loading={loading}
