@@ -26,6 +26,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { InvoiceModal } from "../InvoiceModal";
 import { ModalMaps } from "../HeaderButtons/components/ModalMaps";
 import { RegisterModal } from "../HeaderButtons/components/RegisterModal";
+import { AttachmentsModal } from "../HeaderButtons/components/AttachmentsModal";
 
 interface CardMobileProps {
   appointments: AppointmentType;
@@ -277,6 +278,7 @@ export const CardMobile: React.FC<CardMobileProps> = ({
                         <ExcludeModal details={selectedAppointment} />
                         <CancelScheduleModal details={selectedAppointment} />
                         <RegisterModal details={selectedAppointment} />
+                        <AttachmentsModal details={selectedAppointment}/>
                       </div>
                     </div>
                   </div>

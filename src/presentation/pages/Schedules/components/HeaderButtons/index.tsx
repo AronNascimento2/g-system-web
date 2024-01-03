@@ -13,6 +13,7 @@ import { ModalMaps } from "./components/ModalMaps";
 import { ExcludeModal } from "./components/ExcludeModal";
 import { DocumentsButton } from "./components/DocumentsButton";
 import DatePicker from "react-datepicker";
+import { AttachmentsModal } from "./components/AttachmentsModal";
 
 interface HeaderButtonsProps {
   update: () => void;
@@ -74,6 +75,7 @@ export const HeaderButtons: React.FC<HeaderButtonsProps> = ({
       <InvoiceModal details={details} />
       <RegisterModal details={details} />
       <ModalMaps  />
+      <AttachmentsModal details={details} update={update} />
       <FilterOptions />
     </Container>
   );
